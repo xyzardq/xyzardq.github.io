@@ -290,7 +290,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="本地端"><a href="#本地端" class="headerlink" title="本地端"></a>本地端</h1><h2 id="Hexo的deploy设置"><a href="#Hexo的deploy设置" class="headerlink" title="Hexo的deploy设置"></a>Hexo的deploy设置</h2><h3 id="1-安装hexo-deployer-git"><a href="#1-安装hexo-deployer-git" class="headerlink" title="1. 安装hexo-deployer-git"></a>1. 安装<code>hexo-deployer-git</code></h3><p><code>npm install hexo-deployer-git –save</code></p>
+        <p>通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。</p>
+<h1 id="主机端"><a href="#主机端" class="headerlink" title="主机端"></a>主机端</h1><h2 id="Hexo的deploy设置"><a href="#Hexo的deploy设置" class="headerlink" title="Hexo的deploy设置"></a>Hexo的deploy设置</h2><h3 id="1-安装hexo-deployer-git"><a href="#1-安装hexo-deployer-git" class="headerlink" title="1. 安装hexo-deployer-git"></a>1. 安装<code>hexo-deployer-git</code></h3><p><code>npm install hexo-deployer-git –save</code></p>
 <h3 id="2-在根目录下的配置文件-config-yml中添加deploy配置"><a href="#2-在根目录下的配置文件-config-yml中添加deploy配置" class="headerlink" title="2. 在根目录下的配置文件_config.yml中添加deploy配置"></a>2. 在根目录下的配置文件<code>_config.yml</code>中添加deploy配置</h3><p>deploy配置是部署的基础，在deploy配置中，用户需填上部署服务器的类型，仓库名称，分支名等信息。一个正确的部署配置中至少要有<code>type</code>参数。<br>标准格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: &lt;repository url&gt;</div><div class="line">  branch: [branch]</div><div class="line">  message: [message]</div></pre></td></tr></table></figure></p>
 <table>
 <thead>
@@ -302,7 +303,7 @@
 <tbody>
 <tr>
 <td>repo</td>
-<td>库&#40;Repository&#41;地址</td>
+<td>库(Repository)地址</td>
 </tr>
 <tr>
 <td>branch</td>
@@ -315,6 +316,9 @@
 </tbody>
 </table>
 <p>  如果同时使用多个deployer，则格式为：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo:</div><div class="line">- type: heroku</div><div class="line">  repo:</div></pre></td></tr></table></figure></p>
+<p>不过以上格式有点臃肿，看了其他博主的配置方法，这种格式比较简洁：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- type: git</div><div class="line">  repo: &lt;repository url&gt;,[branch]</div><div class="line">- type: git</div><div class="line">  repo: &lt;repository url&gt;,[branch]</div></pre></td></tr></table></figure></p>
+<p>以下是本人的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo: git@github.com:xyzardq/xyzardq.github.io.git,master</div><div class="line">- type: git</div><div class="line">  repo: git@git.coding.net:xyzardq/xyzardq.git,master</div></pre></td></tr></table></figure></p>
+<p>其中，repositories（仓库）的地址有两种形式：<br>第一种是https，类似<code>https://github.com/xyzardq/xyzardq.github.io.git</code><br>第二种是ssH，类似<code>git@github.com:xyzardq/xyzardq.github.io.git</code><br>这两种仓库地址有什么区别呢？https是在部署时直接通过https协议push到对应的repositories，所以在push的时候需要输入仓库所对应的代码托管平台的账号密码。而ssH是在部署时用云端的公匙解锁本地的私匙，如果对应就直接push到对应的repositories，从而不用输入账户密码。</p>
 
       
     </div>
