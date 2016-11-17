@@ -367,8 +367,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。</p>
-<h1 id="主机端"><a href="#主机端" class="headerlink" title="主机端"></a>主机端</h1><h2 id="Hexo的deploy设置"><a href="#Hexo的deploy设置" class="headerlink" title="Hexo的deploy设置"></a>Hexo的deploy设置</h2><h3 id="1-安装hexo-deployer-git"><a href="#1-安装hexo-deployer-git" class="headerlink" title="1. 安装hexo-deployer-git"></a>1. 安装<code>hexo-deployer-git</code></h3><p><code>npm install hexo-deployer-git –save</code></p>
+        <p>通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。  </p>
+<h1 id="多repositories部署"><a href="#多repositories部署" class="headerlink" title="多repositories部署"></a>多repositories部署</h1><h2 id="1-安装hexo-deployer-git"><a href="#1-安装hexo-deployer-git" class="headerlink" title="1. 安装hexo-deployer-git"></a>1. 安装<code>hexo-deployer-git</code></h2><p><code>npm install hexo-deployer-git –save</code></p>
 <h3 id="2-在根目录下的配置文件-config-yml中添加deploy配置"><a href="#2-在根目录下的配置文件-config-yml中添加deploy配置" class="headerlink" title="2. 在根目录下的配置文件_config.yml中添加deploy配置"></a>2. 在根目录下的配置文件<code>_config.yml</code>中添加deploy配置</h3><p>deploy配置是部署的基础，在deploy配置中，用户需填上部署服务器的类型，仓库名称，分支名等信息。一个正确的部署配置中至少要有<code>type</code>参数。<br>标准格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: &lt;repository url&gt;</div><div class="line">  branch: [branch]</div><div class="line">  message: [message]</div></pre></td></tr></table></figure></p>
 <table>
 <thead>
@@ -395,7 +395,55 @@
 <p>  如果同时使用多个deployer，则格式为：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo:</div><div class="line">- type: heroku</div><div class="line">  repo:</div></pre></td></tr></table></figure></p>
 <p>不过以上格式有点臃肿，看了其他博主的配置方法，这种格式比较简洁：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo: &lt;repository url&gt;,[branch]</div><div class="line">- type: git</div><div class="line">  repo: &lt;repository url&gt;,[branch]</div></pre></td></tr></table></figure></p>
 <p>以下是本人的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo: git@github.com:xyzardq/xyzardq.github.io.git,master</div><div class="line">- type: git</div><div class="line">  repo: git@git.coding.net:xyzardq/xyzardq.git,master</div></pre></td></tr></table></figure></p>
-<p>其中，repositories（仓库）的地址有两种形式：<br>第一种是https，类似<code>https://github.com/xyzardq/xyzardq.github.io.git</code><br>第二种是ssH，类似<code>git@github.com:xyzardq/xyzardq.github.io.git</code><br>这两种仓库地址有什么区别呢？https是在部署时直接通过https协议push到对应的repositories，所以在push的时候需要输入仓库所对应的代码托管平台的账号密码。而ssH是在部署时用云端的公匙解锁本地的私匙，如果对应就直接push到对应的repositories，从而不用输入账户密码。</p>
+<p>其中，repositories（仓库）的地址有两种形式：<br>第一种是https，类似<code>https://github.com/xyzardq/xyzardq.github.io.git</code><br>第二种是SSH，类似<code>git@github.com:xyzardq/xyzardq.github.io.git</code><br>这两种仓库地址有什么区别呢？https是在部署时直接通过https协议push到对应的repositories，所以在push的时候需要输入仓库所对应的代码托管平台的账号密码。而SSH是在部署时用云端的公匙解锁本地的私匙，如果对应就直接push到对应的repositories，从而不用输入账户密码。本人比较推荐用SSH，毕竟不用输入密码比较方便。  </p>
+<h3 id="两种repositories地址的使用方法"><a href="#两种repositories地址的使用方法" class="headerlink" title="两种repositories地址的使用方法"></a>两种repositories地址的使用方法</h3><p>Github的repositories地址提取位置在当前仓库的菜单栏右侧<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Github地址提取位置.png" alt="Github地址提取位置"><br>Coding的repositories地址提取位置在当前仓库的左下角<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Coding地址提取位置.png" alt="Coding地址提取位置"></p>
+<h4 id="https地址的使用"><a href="#https地址的使用" class="headerlink" title="https地址的使用"></a>https地址的使用</h4><p>https地址的使用比较简单，直接把对应的https地址填入repo中然后在部署时输入账户密码即可</p>
+<h5 id="SSH地址的使用"><a href="#SSH地址的使用" class="headerlink" title="SSH地址的使用"></a>SSH地址的使用</h5><p>SSH地址需要配置SSH key，将公匙上传到云端后方可使用</p>
+<ol>
+<li>配置SSH key<br><a href="http://www.xyzardq.com/2016/11/16/git%E6%96%B0%E5%BB%BAsshkey%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0/">git新建SSHkey并添加到代码托管平台</a>  </li>
+<li>将对应的SSH地址填入repo中即可</li>
+</ol>
+<h2 id="3-部署到云端"><a href="#3-部署到云端" class="headerlink" title="3. 部署到云端"></a>3. 部署到云端</h2><p><code>Hexo deploy</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-g</td>
+<td>部署前先搭建  </td>
+</tr>
+<tr>
+<td>-m “commit”</td>
+<td>添加commit</td>
+</tr>
+</tbody>
+</table>
+<h1 id="DNS分流"><a href="#DNS分流" class="headerlink" title="DNS分流"></a>DNS分流</h1><p>现在，我们已经把Blog部署到了两个以上的平台上，那么，怎样才能根据访客不同的线路类型解析到不同的page上呢？这时就需要域名的DNS解析分流了。据我所知，目前DNSPod和cloudxds都支持DNS分流，下面以DNSpod为例。</p>
+<h2 id="注册DNSPod"><a href="#注册DNSPod" class="headerlink" title="注册DNSPod"></a>注册DNSPod</h2><p><a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a></p>
+<h2 id="添加CNAME记录"><a href="#添加CNAME记录" class="headerlink" title="添加CNAME记录"></a>添加CNAME记录</h2><ol>
+<li>添加要解析的域名<br>ps:填写的域名不要带www前缀</li>
+<li>添加CNAME记录<br>由于我们要进行DNS分流解析，所以一般来说需要添加两条以上的CNAME记录，下面以分为国外和国内两条线路为例：<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_CNAME记录示例.png" alt="CNAME记录示例"><br>ps:除了国外和国内，DNSPod还提供电信移动联通等运营商和谷歌百度等搜索引擎的线路提供<h2 id="修改NS记录"><a href="#修改NS记录" class="headerlink" title="修改NS记录"></a>修改NS记录</h2>什么是NS记录？<blockquote>
+<p>NS记录（name server）即域名服务器记录，用于指定该域名由哪个 DNS 服务器进行域名解析。注册域名时，总会有默认的 NS 记录。</p>
+</blockquote>
+</li>
+</ol>
+<p>ps:如果是在DNSPod注册的域名，请跳过此步。</p>
+<ol>
+<li><p>记下DNSPod的域名服务器<br>DNSPod的域名服务器存储在控制台的DNS记录中，默认为</p>
+<blockquote>
+<p>f1g1ns1.dnspod.net<br>f1g1ns2.dnspod.net</p>
+</blockquote>
+</li>
+<li><p>修改所用域名注册商的域名服务器<br>登录所用域名的域名注册商，进入DNS管理，将域名服务器（有的注册商为DNS记录中的NS记录）修改为DNSPod的域名服务器</p>
+</li>
+<li><p>测试DNS解析是否生效<br>打开<a href="http://tool.chinaz.com/dns/" target="_blank" rel="external">Dns检测|Dns查询- 站长工具</a>，输入你的域名，选择CNAME类型，检测。如果国内国外的响应IP分别为你设置的两个记录值，则DNS分流设置成功</p>
+</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://ppting.me/2015/02/08/gitcafe/" target="_blank" rel="external">同时将博客部署在Github和Gitcafe上，并通过DNSPOD分流</a><br><a href="http://www.cnblog.me/2015/04/26/dnspod/" target="_blank" rel="external">使用 DNSPod 解决 GoDaddy 域名解析不稳定的问题</a></p>
 
       
     </div>
