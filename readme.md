@@ -2,6 +2,7 @@
 ## 当前域名：
 ## http://www.xyzardq.com/
 ## http://xyzardq.github.io/
+## http://xyzardq.coding.me/xyzardq/
 
 ### 基础进度
 
