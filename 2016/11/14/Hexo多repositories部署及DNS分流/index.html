@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Github地址提取位置.png">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Coding地址提取位置.png">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_CNAME记录示例.png">
-<meta property="og:updated_time" content="2016-11-17T13:14:30.696Z">
+<meta property="og:updated_time" content="2016-11-20T14:40:18.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo多repositories部署及DNS分流">
 <meta name="twitter:description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。  
@@ -301,7 +301,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="DNS分流"><a href="#DNS分流" class="headerlink" title="DNS分流"></a>DNS分流</h1><p>现在，我们已经把Blog部署到了两个以上的平台上，那么，怎样才能根据访客不同的线路类型解析到不同的page上呢？这时就需要域名的DNS解析分流了。据我所知，目前DNSPod和cloudxds都支持DNS分流，下面以DNSpod为例。</p>
+<h1 id="DNS分流"><a href="#DNS分流" class="headerlink" title="DNS分流"></a>DNS分流</h1><p>现在，我们已经把Blog部署到了两个以上的平台上，那么，怎样才能根据访客不同的线路类型解析到不同的page上呢？这时就需要域名的DNS解析分流了。据我所知，目前DNSPod和cloudxds都支持DNS分流。DNSPod的免费版就支持DNS解析分流，但是缺点是免费版显性转址需要网站正常代理满30天….30天过去黄花菜都凉了，不过CNAME不受此限制。cloudxds的免费版号称DNSPod的收费版，但是缺点是没备案的域名用不了…所以如果是没备案的域名只能使用DNSPod了。下面以DNSpod为例。</p>
 <h2 id="注册DNSPod"><a href="#注册DNSPod" class="headerlink" title="注册DNSPod"></a>注册DNSPod</h2><p><a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a></p>
 <h2 id="添加CNAME记录"><a href="#添加CNAME记录" class="headerlink" title="添加CNAME记录"></a>添加CNAME记录</h2><ol>
 <li>添加要解析的域名<br>ps:填写的域名不要带www前缀</li>
