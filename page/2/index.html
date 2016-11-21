@@ -115,7 +115,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Coding/" style="font-size: 10px;">Coding</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/encoding/" style="font-size: 10px;">encoding</a> <a href="/tags/yilia/" style="font-size: 15px;">yilia</a>
+						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Coding/" style="font-size: 10px;">Coding</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/UWP/" style="font-size: 10px;">UWP</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/encoding/" style="font-size: 10px;">encoding</a> <a href="/tags/yilia/" style="font-size: 15px;">yilia</a>
 					</div>
 				</section>
 				
@@ -194,6 +194,73 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Hexo新建文章后立即打开文本编辑器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/14/Hexo新建文章后立即打开文本编辑器/" class="article-date">
+  	<time datetime="2016-04-14T13:50:23.000Z" itemprop="datePublished">2016-04-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/14/Hexo新建文章后立即打开文本编辑器/">Hexo新建文章后立即打开文本编辑器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>平时在Hexo根目录下new一篇文章以后还要手动打开文件夹中的文件进行编辑。创建这个脚本后就可以在<code> hexo new XXX</code>一篇新文章后直接打开用文本编辑器打开该文章进行编辑。</p>
+<h1 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h1><p>新建scripts/openfile.js（名字任取，文件夹没有就新建一个）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var exec = require(&apos;child_process&apos;).exec;</div><div class="line">hexo.on(&apos;new&apos;, function(data)&#123;</div><div class="line">  exec(&apos;start  &quot;D:/Program Files/Sublime Text 3/sublime_text.exe&quot; &apos; + data.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>ps1:仅Hexo 3.0后有效<br>ps2:将代码中的路径替换为你的文本编辑器的绝对路径  </p>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>当打开<code>.md</code>文件的默认打开方式已经为文本编辑器时，代码则为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var exec = require(&apos;child_process&apos;).exec;</div><div class="line">hexo.on(&apos;new&apos;, function(data)&#123;</div><div class="line">  exec(&apos;start &apos; + data.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>ps1:仅Hexo 3.0后有效</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/资料总结/">资料总结</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Hexo添加文章置顶" class="article article-type-post" itemscope itemprop="blogPost">
   
