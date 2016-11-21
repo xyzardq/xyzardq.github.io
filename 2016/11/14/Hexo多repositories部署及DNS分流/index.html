@@ -6,22 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Hexo多repositories部署及DNS分流 | 你个沙皮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。  
-多repositories部署1. 安装hexo-deployer">
+  <meta name="description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo多repositories部署及DNS分流">
 <meta property="og:url" content="www.xyzardq.com/2016/11/14/Hexo多repositories部署及DNS分流/index.html">
 <meta property="og:site_name" content="你个沙皮">
-<meta property="og:description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。  
-多repositories部署1. 安装hexo-deployer">
+<meta property="og:description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Github地址提取位置.png">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Coding地址提取位置.png">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_CNAME记录示例.png">
-<meta property="og:updated_time" content="2016-11-20T14:50:59.026Z">
+<meta property="og:updated_time" content="2016-11-21T02:24:27.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo多repositories部署及DNS分流">
-<meta name="twitter:description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。  
-多repositories部署1. 安装hexo-deployer">
+<meta name="twitter:description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。">
 <meta name="twitter:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Github地址提取位置.png">
   
     <link rel="alternative" href="/atom.xml" title="你个沙皮" type="application/atom+xml">
@@ -246,7 +243,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。  </p>
+        <p>通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。<br><a id="more"></a>  </p>
 <h1 id="多repositories部署"><a href="#多repositories部署" class="headerlink" title="多repositories部署"></a>多repositories部署</h1><h2 id="1-安装hexo-deployer-git"><a href="#1-安装hexo-deployer-git" class="headerlink" title="1. 安装hexo-deployer-git"></a>1. 安装<code>hexo-deployer-git</code></h2><p><code>npm install hexo-deployer-git –save</code></p>
 <h3 id="2-在根目录下的配置文件-config-yml中添加deploy配置"><a href="#2-在根目录下的配置文件-config-yml中添加deploy配置" class="headerlink" title="2. 在根目录下的配置文件_config.yml中添加deploy配置"></a>2. 在根目录下的配置文件<code>_config.yml</code>中添加deploy配置</h3><p>deploy配置是部署的基础，在deploy配置中，用户需填上部署服务器的类型，仓库名称，分支名等信息。一个正确的部署配置中至少要有<code>type</code>参数。<br>标准格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: &lt;repository url&gt;</div><div class="line">  branch: [branch]</div><div class="line">  message: [message]</div></pre></td></tr></table></figure></p>
 <table>
