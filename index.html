@@ -115,7 +115,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Coding/" style="font-size: 10px;">Coding</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/UWP/" style="font-size: 10px;">UWP</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/encoding/" style="font-size: 10px;">encoding</a> <a href="/tags/yilia/" style="font-size: 15px;">yilia</a>
+						<a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/Coding/" style="font-size: 10px;">Coding</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/UWP/" style="font-size: 10px;">UWP</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/encoding/" style="font-size: 10px;">encoding</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/yilia/" style="font-size: 15px;">yilia</a>
 					</div>
 				</section>
 				
@@ -317,6 +317,106 @@
         <p class="article-more-link">
           <a  href="/2016/10/19/Chrome实用插件推荐/#more">more >></a>
         </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-服务器概念科普" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/28/服务器概念科普/" class="article-date">
+  	<time datetime="2016-11-28T02:15:40.000Z" itemprop="datePublished">2016-11-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/28/服务器概念科普/">服务器概念科普</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>每周一篇的Blog不知道要写些什么，正好昨天剁了台辣鸡vps，就来讲讲服务器的各种概念吧（哼哼，为了买服务器我还是研究了很久的说</p>
+<h1 id="各种服务器的定义和区别"><a href="#各种服务器的定义和区别" class="headerlink" title="各种服务器的定义和区别"></a>各种服务器的定义和区别</h1><p>目前市场上最流行的服务器是VPS，其次还有独服，ECS，虚拟主机</p>
+<h2 id="独立服务器（独服，杜甫，毒妇）"><a href="#独立服务器（独服，杜甫，毒妇）" class="headerlink" title="独立服务器（独服，杜甫，毒妇）"></a>独立服务器（独服，杜甫，毒妇）</h2><p>独立服务器，顾名思义，就是一个躺在机房的实实在在的物理服务器，也可理解为你的游戏主机一样。  </p>
+<ul>
+<li>优点：性能高  </li>
+<li>缺点：价格高，高可用性低（比如断电，硬盘坏了……）  </li>
+</ul>
+<h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p>Virtual Private Server 虚拟专用服务器,一般是将一个独立服务器通过虚拟化技术虚拟成多个虚拟专用服务器。  </p>
+<ul>
+<li>优点：价格便宜  </li>
+<li>缺点：性能低，高可用性低（除了其所在的物理机出问题了会收到影响，虚拟化技术出问题也会收到影响）  </li>
+</ul>
+<h2 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h2><p>Elastic Compute Service, 简称ECS 好多人理解云服务器和VPS一样，更有甚者说以前的VPS现在的说法就是云服务器，其实不然，云服务器是一个计算，网络，存储的组合。简单点说就是通过多个CPU，内存，硬盘组成的计算池和存储池和网络的组合。  </p>
+<ul>
+<li>优点：价格适中，使用灵活，高可用性（单个或多个物理离线不会对整个服务造成太大的影响）  </li>
+<li>缺点：性能相对较低  </li>
+</ul>
+<h2 id="虚拟主机"><a href="#虚拟主机" class="headerlink" title="虚拟主机"></a>虚拟主机</h2><p>Virtual hosts （Vhost）虚拟主机是通过，物理服务器，VPS或者云服务器安装例如CPanel，Plesk等面板搭建的。虚拟主机市场比较混乱，不同的厂商价格一般会有很大的差异，一般来说看一个虚拟主机的好坏可以从以下几点来看，主机系统：CloudLinux 更适合多租户虚拟主机，CPanel，Plesk 面板在市场上最受市场欢迎，一般来说价格相对较贵，使用云服务器最好（比如阿里云），物理服务器也可，一般不选择VPS作为虚拟主机的服务器。  </p>
+<ul>
+<li>优点：价格低，使用方便  </li>
+<li>缺点：一般来说只能做网站，或应用后端服务器，市场杂乱比较难选购  </li>
+</ul>
+<p>（以上资料转自<a href="https://www.zhihu.com/question/19856629/answer/105591462" target="_blank" rel="external">VPS 与虚拟主机有什么异同？</a>）  </p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>正常使用的话，独服就不在考虑范围以内了，太贵了。虚拟主机只能用来建站，适用范围比较小，所以买服务器一般考虑VPS和ECS。国外VPS比较多，国内不少大厂的云服务提供的是ECS，比如腾讯云。VPS性价比比较高，但是相应的水也很深。<br>所以，如果只是用来做站的推荐购买虚拟主机，用来搭梯子，建网站，挂脚本的，推荐VPS，下面也着重讲解VPS。</p>
+<h1 id="OPENVZ、KVM、Xen、VMware的区别"><a href="#OPENVZ、KVM、Xen、VMware的区别" class="headerlink" title="OPENVZ、KVM、Xen、VMware的区别"></a>OPENVZ、KVM、Xen、VMware的区别</h1><p>选购VPS时，经常可以看到OPENVZ(OVZ)，KVM等字眼。这些事Linux虚拟化技术。通常，VPS都是由一个独服（母鸡）通过虚拟化做成的很多歌小鸡，而OVZ和KVM就是虚拟这些小鸡的虚拟化技术。下面简单介绍一下他们的区别。</p>
+<h2 id="OPENVZ"><a href="#OPENVZ" class="headerlink" title="OPENVZ"></a>OPENVZ</h2><p>这个平台是最便宜的VPS平台，在各个vps商哪里都是价格最低的。OPENVZ本身运行在linux之上，它通过自己的虚拟化技术把一个 服务器虚拟化成多个可以分别安装操作系统的实例，这样的每一个实体就是一个VPS，从客户的角度来看这就是一个虚拟的服务器，可以等同看做一台独立的服务 器。OPENVZ虚拟化出来的VPS只能安装linux操作系统，不能安装windows系统，比如Centos、Fedora、 Gentoo、Debian等。不能安装windows操作系统是openvz的第一个缺点，需要使用windows平台的用户不能使用OPENVZ VPS。OPENVZ的第二个缺点是OPENVZ不是完全的虚拟化，每个VPS账户共用母机内核，不能单独修改内核。好在绝大多少用户根本不需要修改内 核，所以这个缺点对多数人可以忽略不计。而这一点也正是openvz的优点，这一共用内核特性使得openvz的效率最高，超过KVM、Xen、 VMware等平台。在不超售的情况下，openvz是最快速效率最高的VPS平台。</p>
+<h2 id="KVM、Xen、VMware"><a href="#KVM、Xen、VMware" class="headerlink" title="KVM、Xen、VMware"></a>KVM、Xen、VMware</h2><p>这几个VPS平台可以归为一类，它们在虚拟化母机时，是完全的虚拟化，各个VPS示例之间不共用母机内核，各自都是独立 的，几乎所有的操作系统都可以安装到这些被虚拟化出来的VPS上。完全的虚拟化使得这些平台的VPS效率上要低于OPENVZ。但由于其完全的虚拟化，同 一母机上的各个VPS之间几乎没有相互干扰，而OPENVZ则取决于VPS是否超售，如果openvz VPS被超售，则性能会受到影响。如果位于同一母机上的openvz VPS有滥用资源行为，将会影响到其它VPS的性能。OPENVZ的这一特点和虚拟主机很类似。虚拟主机就是完全共用虚拟主机母机的资源，虚拟主机的性能 受到同一母机上其它虚拟主机的影响最大。OPENVZ则比虚拟主机要好很多。KVM、Xen、VMware平台的VPS则几乎完全不受其它VPS账户的影响。  </p>
+<p>（以上资料转自<a href="http://www.cnblogs.com/sammyliu/articles/4389981.html" target="_blank" rel="external">虚拟化</a>）</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>现在VMware已经很少见了,Xen用的网站很少，出现的基本都是KVM和OVZ。OVZ咋一看性价比很高，但是其实很不稳定。第一，OVZ是最好超售的机型，KVM一般只能超售三倍，OVZ可以超售十几倍之多，性能和面板相比差距很大。第二，OVZ的网速很容易受同一母鸡上其他小鸡的影响，如果你的邻居都是些挂D攻击，锐速加速之类的，你的日子就不好过了…总之追求稳定性的话应该选KVM。一般来说，KVM&gt;Xen&gt;openvz</p>
+<h1 id="一些零散概念"><a href="#一些零散概念" class="headerlink" title="一些零散概念"></a>一些零散概念</h1><p>oneman:指只有一个人经营的idc服务商，业内比较出名的有ramnode，不过这家严格说并不是oneman，人家是夫妻店，是俩人23333。还有那个常年侮辱中国客户的bugetvz，是个澳洲村炮自己开的oneman店。  </p>
+<p>小鸡：指小型vps，往往配置非常低，但是麻雀虽小五脏俱全，往往都有独立ip，同时价格也很便宜。另外一个意思就是独立服务器里开出来的小vps，也叫小鸡。  </p>
+<p>母鸡：指独立服务器。因为vps都是拿独立服务器虚拟出来的（其实就是独服开了一堆虚拟机），所以小vps叫小鸡，生出小vps来的独服叫母鸡。  </p>
+<p>超售：前面说了，vps其实就是独服的虚拟机。超售就是开了太多的小鸡在独服里。举个例子，本来一台独服是4核4g内存，如果用kvm开小鸡，如果要开的套餐是1核1g内存，那么就只能开4台出来。但是实际的情况并不是这样，商家为了多赚钱，强行开了八台出来，还全都是1核512m内存的，其原因就是超了cpu，强行让本来应该为四个人服务的cpu给八个人服务，但是却内存没超。虚拟的主流架构有openvz，kvm和xen，其中ovz啥都能超，kvm可以超cpu但是不能超内存和硬盘。xen不太了解，应该和kvm一样（存疑，超售的这个具体原理我也不是很懂）</p>
+<p>传家宝：部分vps卖断货后，往往其价格会飞速飙升。这是因为如果商家不再开卖的话，一台母鸡里就这么多小鸡了，商家不会再超售了。那么小鸡的稳定性就大大提升，求购二手vps的基佬就会趋之若鹜，价格自然水涨船高。当年搬瓦工3.99刀卖断货后价格一度飞涨七八倍，涨幅都超过五道口宇宙中心的房价涨幅了，被戏称为传家宝。传家宝一名因此得来。</p>
+<p>黄牛：倒卖各种二手vps的人，称之为黄牛，鄙人也是做这买卖的。干这行非常考验眼力和手速，当然利润也是相当不错。曾经一刀买的800块人民币卖掉了，我会乱说？</p>
+<p>石头盘：指硬盘io过低的vps。基本低于100m/s就是石头盘了。有人笑称是用石头做出来的硬盘，因此得名。硬盘转速太低基本干啥都卡，因此大家都不喜欢石头盘的vps。与此同时还有一个说法是钻石盘，指垃圾中的战斗机硬盘。当年cac的vps一度跑出了10m/s的成绩，惊为天人，简直是石头盘中的石头盘，钻石盘这个说法就出来了。</p>
+<p>探针：一个php小程序，挂在vps上能够查看vps的各项参数性能。基佬们经常互相交换探针地址来加深友♂谊，是py交易的前奏。</p>
+<p>油管：指youtube，很多基佬喜欢用u2b的视频播放效果来衡量线路的好坏，虽然这个并不是一个很精准的检验方法。</p>
+<p>海外机房缩写：HK香港，KR韩国，JP日本，SG新加坡， LA洛杉矶。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPS/">VPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/host/">host</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/资料总结/">资料总结</a>
+	</div>
+
+
       
       <div class="clearfix"></div>
     </div>
@@ -767,70 +867,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/05/11/yilia主题侧边栏添加新的社交账号/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Hexo文章小技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/17/Hexo文章小技巧/" class="article-date">
-  	<time datetime="2016-04-17T12:45:56.000Z" itemprop="datePublished">2016-04-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/17/Hexo文章小技巧/">Hexo文章小技巧</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="首页文章部分显示"><a href="#首页文章部分显示" class="headerlink" title="首页文章部分显示"></a>首页文章部分显示</h1><p>在需要在首页显示的内容后加<code>&lt;!–more–&gt;</code><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yilia/">yilia</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技巧经验/">技巧经验</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/17/Hexo文章小技巧/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
