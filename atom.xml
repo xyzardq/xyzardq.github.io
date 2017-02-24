@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>你个沙皮</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="www.xyzardq.com/"/>
+  <updated>2016-11-28T02:58:39.762Z</updated>
+  <id>www.xyzardq.com/</id>
+  
+  <author>
+    <name>xyzardQ</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>服务器概念科普</title>
+    <link href="www.xyzardq.com/2016/11/28/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A6%82%E5%BF%B5%E7%A7%91%E6%99%AE/"/>
+    <id>www.xyzardq.com/2016/11/28/服务器概念科普/</id>
+    <published>2016-11-28T02:15:40.000Z</published>
+    <updated>2016-11-28T02:58:39.762Z</updated>
+    
+    <content type="html"><![CDATA[<p>每周一篇的Blog不知道要写些什么，正好昨天剁了台辣鸡vps，就来讲讲服务器的各种概念吧（哼哼，为了买服务器我还是研究了很久的说<br><a id="more"></a></p>
+<h1 id="各种服务器的定义和区别"><a href="#各种服务器的定义和区别" class="headerlink" title="各种服务器的定义和区别"></a>各种服务器的定义和区别</h1><p>目前市场上最流行的服务器是VPS，其次还有独服，ECS，虚拟主机</p>
+<h2 id="独立服务器（独服，杜甫，毒妇）"><a href="#独立服务器（独服，杜甫，毒妇）" class="headerlink" title="独立服务器（独服，杜甫，毒妇）"></a>独立服务器（独服，杜甫，毒妇）</h2><p>独立服务器，顾名思义，就是一个躺在机房的实实在在的物理服务器，也可理解为你的游戏主机一样。  </p>
+<ul>
+<li>优点：性能高  </li>
+<li>缺点：价格高，高可用性低（比如断电，硬盘坏了……）  </li>
+</ul>
+<h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p>Virtual Private Server 虚拟专用服务器,一般是将一个独立服务器通过虚拟化技术虚拟成多个虚拟专用服务器。  </p>
+<ul>
+<li>优点：价格便宜  </li>
+<li>缺点：性能低，高可用性低（除了其所在的物理机出问题了会收到影响，虚拟化技术出问题也会收到影响）  </li>
+</ul>
+<h2 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h2><p>Elastic Compute Service, 简称ECS 好多人理解云服务器和VPS一样，更有甚者说以前的VPS现在的说法就是云服务器，其实不然，云服务器是一个计算，网络，存储的组合。简单点说就是通过多个CPU，内存，硬盘组成的计算池和存储池和网络的组合。  </p>
+<ul>
+<li>优点：价格适中，使用灵活，高可用性（单个或多个物理离线不会对整个服务造成太大的影响）  </li>
+<li>缺点：性能相对较低  </li>
+</ul>
+<h2 id="虚拟主机"><a href="#虚拟主机" class="headerlink" title="虚拟主机"></a>虚拟主机</h2><p>Virtual hosts （Vhost）虚拟主机是通过，物理服务器，VPS或者云服务器安装例如CPanel，Plesk等面板搭建的。虚拟主机市场比较混乱，不同的厂商价格一般会有很大的差异，一般来说看一个虚拟主机的好坏可以从以下几点来看，主机系统：CloudLinux 更适合多租户虚拟主机，CPanel，Plesk 面板在市场上最受市场欢迎，一般来说价格相对较贵，使用云服务器最好（比如阿里云），物理服务器也可，一般不选择VPS作为虚拟主机的服务器。  </p>
+<ul>
+<li>优点：价格低，使用方便  </li>
+<li>缺点：一般来说只能做网站，或应用后端服务器，市场杂乱比较难选购  </li>
+</ul>
+<p>（以上资料转自<a href="https://www.zhihu.com/question/19856629/answer/105591462" target="_blank" rel="external">VPS 与虚拟主机有什么异同？</a>）  </p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>正常使用的话，独服就不在考虑范围以内了，太贵了。虚拟主机只能用来建站，适用范围比较小，所以买服务器一般考虑VPS和ECS。国外VPS比较多，国内不少大厂的云服务提供的是ECS，比如腾讯云。VPS性价比比较高，但是相应的水也很深。<br>所以，如果只是用来做站的推荐购买虚拟主机，用来搭梯子，建网站，挂脚本的，推荐VPS，下面也着重讲解VPS。</p>
+<h1 id="OPENVZ、KVM、Xen、VMware的区别"><a href="#OPENVZ、KVM、Xen、VMware的区别" class="headerlink" title="OPENVZ、KVM、Xen、VMware的区别"></a>OPENVZ、KVM、Xen、VMware的区别</h1><p>选购VPS时，经常可以看到OPENVZ(OVZ)，KVM等字眼。这些事Linux虚拟化技术。通常，VPS都是由一个独服（母鸡）通过虚拟化做成的很多歌小鸡，而OVZ和KVM就是虚拟这些小鸡的虚拟化技术。下面简单介绍一下他们的区别。</p>
+<h2 id="OPENVZ"><a href="#OPENVZ" class="headerlink" title="OPENVZ"></a>OPENVZ</h2><p>这个平台是最便宜的VPS平台，在各个vps商哪里都是价格最低的。OPENVZ本身运行在linux之上，它通过自己的虚拟化技术把一个 服务器虚拟化成多个可以分别安装操作系统的实例，这样的每一个实体就是一个VPS，从客户的角度来看这就是一个虚拟的服务器，可以等同看做一台独立的服务 器。OPENVZ虚拟化出来的VPS只能安装linux操作系统，不能安装windows系统，比如Centos、Fedora、 Gentoo、Debian等。不能安装windows操作系统是openvz的第一个缺点，需要使用windows平台的用户不能使用OPENVZ VPS。OPENVZ的第二个缺点是OPENVZ不是完全的虚拟化，每个VPS账户共用母机内核，不能单独修改内核。好在绝大多少用户根本不需要修改内 核，所以这个缺点对多数人可以忽略不计。而这一点也正是openvz的优点，这一共用内核特性使得openvz的效率最高，超过KVM、Xen、 VMware等平台。在不超售的情况下，openvz是最快速效率最高的VPS平台。</p>
+<h2 id="KVM、Xen、VMware"><a href="#KVM、Xen、VMware" class="headerlink" title="KVM、Xen、VMware"></a>KVM、Xen、VMware</h2><p>这几个VPS平台可以归为一类，它们在虚拟化母机时，是完全的虚拟化，各个VPS示例之间不共用母机内核，各自都是独立 的，几乎所有的操作系统都可以安装到这些被虚拟化出来的VPS上。完全的虚拟化使得这些平台的VPS效率上要低于OPENVZ。但由于其完全的虚拟化，同 一母机上的各个VPS之间几乎没有相互干扰，而OPENVZ则取决于VPS是否超售，如果openvz VPS被超售，则性能会受到影响。如果位于同一母机上的openvz VPS有滥用资源行为，将会影响到其它VPS的性能。OPENVZ的这一特点和虚拟主机很类似。虚拟主机就是完全共用虚拟主机母机的资源，虚拟主机的性能 受到同一母机上其它虚拟主机的影响最大。OPENVZ则比虚拟主机要好很多。KVM、Xen、VMware平台的VPS则几乎完全不受其它VPS账户的影响。  </p>
+<p>（以上资料转自<a href="http://www.cnblogs.com/sammyliu/articles/4389981.html" target="_blank" rel="external">虚拟化</a>）</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>现在VMware已经很少见了,Xen用的网站很少，出现的基本都是KVM和OVZ。OVZ咋一看性价比很高，但是其实很不稳定。第一，OVZ是最好超售的机型，KVM一般只能超售三倍，OVZ可以超售十几倍之多，性能和面板相比差距很大。第二，OVZ的网速很容易受同一母鸡上其他小鸡的影响，如果你的邻居都是些挂D攻击，锐速加速之类的，你的日子就不好过了…总之追求稳定性的话应该选KVM。一般来说，KVM&gt;Xen&gt;openvz</p>
+<h1 id="一些零散概念"><a href="#一些零散概念" class="headerlink" title="一些零散概念"></a>一些零散概念</h1><p>oneman:指只有一个人经营的idc服务商，业内比较出名的有ramnode，不过这家严格说并不是oneman，人家是夫妻店，是俩人23333。还有那个常年侮辱中国客户的bugetvz，是个澳洲村炮自己开的oneman店。  </p>
+<p>小鸡：指小型vps，往往配置非常低，但是麻雀虽小五脏俱全，往往都有独立ip，同时价格也很便宜。另外一个意思就是独立服务器里开出来的小vps，也叫小鸡。  </p>
+<p>母鸡：指独立服务器。因为vps都是拿独立服务器虚拟出来的（其实就是独服开了一堆虚拟机），所以小vps叫小鸡，生出小vps来的独服叫母鸡。  </p>
+<p>超售：前面说了，vps其实就是独服的虚拟机。超售就是开了太多的小鸡在独服里。举个例子，本来一台独服是4核4g内存，如果用kvm开小鸡，如果要开的套餐是1核1g内存，那么就只能开4台出来。但是实际的情况并不是这样，商家为了多赚钱，强行开了八台出来，还全都是1核512m内存的，其原因就是超了cpu，强行让本来应该为四个人服务的cpu给八个人服务，但是却内存没超。虚拟的主流架构有openvz，kvm和xen，其中ovz啥都能超，kvm可以超cpu但是不能超内存和硬盘。xen不太了解，应该和kvm一样（存疑，超售的这个具体原理我也不是很懂）</p>
+<p>传家宝：部分vps卖断货后，往往其价格会飞速飙升。这是因为如果商家不再开卖的话，一台母鸡里就这么多小鸡了，商家不会再超售了。那么小鸡的稳定性就大大提升，求购二手vps的基佬就会趋之若鹜，价格自然水涨船高。当年搬瓦工3.99刀卖断货后价格一度飞涨七八倍，涨幅都超过五道口宇宙中心的房价涨幅了，被戏称为传家宝。传家宝一名因此得来。</p>
+<p>黄牛：倒卖各种二手vps的人，称之为黄牛，鄙人也是做这买卖的。干这行非常考验眼力和手速，当然利润也是相当不错。曾经一刀买的800块人民币卖掉了，我会乱说？</p>
+<p>石头盘：指硬盘io过低的vps。基本低于100m/s就是石头盘了。有人笑称是用石头做出来的硬盘，因此得名。硬盘转速太低基本干啥都卡，因此大家都不喜欢石头盘的vps。与此同时还有一个说法是钻石盘，指垃圾中的战斗机硬盘。当年cac的vps一度跑出了10m/s的成绩，惊为天人，简直是石头盘中的石头盘，钻石盘这个说法就出来了。</p>
+<p>探针：一个php小程序，挂在vps上能够查看vps的各项参数性能。基佬们经常互相交换探针地址来加深友♂谊，是py交易的前奏。</p>
+<p>油管：指youtube，很多基佬喜欢用u2b的视频播放效果来衡量线路的好坏，虽然这个并不是一个很精准的检验方法。</p>
+<p>海外机房缩写：HK香港，KR韩国，JP日本，SG新加坡， LA洛杉矶。</p>
+<p>（以上资料转自<a href="https://zhuanlan.zhihu.com/p/23151978?refer=VPS-youhuima" target="_blank" rel="external">VPS黑话大全</a>）</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://www.zhihu.com/question/19856629/answer/105591462" target="_blank" rel="external">VPS 与虚拟主机有什么异同？</a><br><a href="http://www.cnblogs.com/sammyliu/articles/4389981.html" target="_blank" rel="external">虚拟化</a><br><a href="https://zhuanlan.zhihu.com/p/23151978?refer=VPS-youhuima" target="_blank" rel="external">VPS黑话大全</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;每周一篇的Blog不知道要写些什么，正好昨天剁了台辣鸡vps，就来讲讲服务器的各种概念吧（哼哼，为了买服务器我还是研究了很久的说&lt;br&gt;
+    
+    </summary>
+    
+      <category term="资料总结" scheme="www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="host" scheme="www.xyzardq.com/tags/host/"/>
+    
+      <category term="VPS" scheme="www.xyzardq.com/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows实用软件推荐</title>
+    <link href="www.xyzardq.com/2016/11/21/Windows%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    <id>www.xyzardq.com/2016/11/21/Windows实用软件推荐/</id>
+    <published>2016-11-21T01:05:49.000Z</published>
+    <updated>2016-11-21T08:13:31.889Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>以下软件是博主亲自用过后比较得出的。</li>
+<li>同类软件推荐不超过两个，免得选择强迫症抓狂（</li>
+<li>想到再写<a id="more"></a>
+</li>
+</ol>
+<h1 id="系统工具"><a href="#系统工具" class="headerlink" title="系统工具"></a>系统工具</h1><table>
+<thead>
+<tr>
+<th>软件类型</th>
+<th>软件名称</th>
+<th>一句话描述</th>
+<th>资源扩展</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>桌面美化</td>
+<td><a href="https://www.rainmeter.net/" target="_blank" rel="external">Rainmeter</a></td>
+<td>资源最丰富的桌面美化软件</td>
+<td><a href="http://rainmeter.cn/cms/" target="_blank" rel="external">中文主站</a>、<a href="http://bbs.rainmeter.cn/" target="_blank" rel="external">雨滴中文论坛</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="http://www.gpbeta.com/post/develop/sao-utils/" target="_blank" rel="external">SAO Utils</a></td>
+<td>最炫酷的SAO启动菜单</td>
+<td></td>
+</tr>
+<tr>
+<td>快速启动</td>
+<td><a href="http://www.launchy.net/" target="_blank" rel="external">Launchy</a></td>
+<td>轻度定制的快速启动软件</td>
+<td><a href="http://www.deviantart.com/browse/all/customization/skins/applaunchers/launchy/?order=5" target="_blank" rel="external">Launchy skin on deviantart</a></td>
+</tr>
+<tr>
+<td>文件搜索</td>
+<td><a href="https://www.voidtools.com/" target="_blank" rel="external">Everything</a></td>
+<td>搜索整个硬盘只需几秒</td>
+<td></td>
+</tr>
+<tr>
+<td>截图工具</td>
+<td><a href="https://zh.snipaste.com/" target="_blank" rel="external">snipaste</a></td>
+<td>专注截图的截图工具</td>
+<td></td>
+</tr>
+<tr>
+<td>远程控制</td>
+<td><a href="https://www.teamviewer.com/Zhcn/" target="_blank" rel="external">Teamviewer</a></td>
+<td>简单实用</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h1><table>
+<thead>
+<tr>
+<th>软件类型</th>
+<th>软件名称</th>
+<th>一句话描述</th>
+<th>资源扩展</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>视频播放</td>
+<td><a href="http://potplayer.daum.net/?lang=zh_CN" target="_blank" rel="external">Potplayer</a></td>
+<td>无广告，功能多到无法想象</td>
+<td></td>
+</tr>
+<tr>
+<td>音乐播放</td>
+<td><a href="music.163.com/">网易云音乐</a></td>
+<td>免费320K，无广告</td>
+<td></td>
+</tr>
+<tr>
+<td>视频格式</td>
+<td><a href="http://www.pcfreetime.com/CN/index.html" target="_blank" rel="external">格式工厂</a></td>
+<td>支持格式丰富，使用方便</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="网络工具"><a href="#网络工具" class="headerlink" title="网络工具"></a>网络工具</h1><table>
+<thead>
+<tr>
+<th>软件类型</th>
+<th>软件名称</th>
+<th>一句话描述</th>
+<th>资源扩展</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浏览器</td>
+<td><a href="https://www.google.com/chrome/" target="_blank" rel="external">Chrome</a></td>
+<td>没什么好说的</td>
+<td><a href="https://chrome.google.com/webstore/category/extensions?utm_source=chrome-ntp-icon" target="_blank" rel="external">Chrome网上应用店</a></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;以下软件是博主亲自用过后比较得出的。&lt;/li&gt;
+&lt;li&gt;同类软件推荐不超过两个，免得选择强迫症抓狂（&lt;/li&gt;
+&lt;li&gt;想到再写
+    
+    </summary>
+    
+      <category term="资料总结" scheme="www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="Windows" scheme="www.xyzardq.com/tags/Windows/"/>
+    
+      <category term="UWP" scheme="www.xyzardq.com/tags/UWP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git新建SSHkey并添加到代码托管平台</title>
+    <link href="www.xyzardq.com/2016/11/16/git%E6%96%B0%E5%BB%BAsshkey%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0/"/>
+    <id>www.xyzardq.com/2016/11/16/git新建sshkey并添加到代码托管平台/</id>
+    <published>2016-11-16T05:04:33.000Z</published>
+    <updated>2016-11-21T02:24:40.885Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="检查当前电脑中有没有SSH-key"><a href="#检查当前电脑中有没有SSH-key" class="headerlink" title="检查当前电脑中有没有SSH key"></a>检查当前电脑中有没有SSH key</h1><p><code>$ cd ~/. ssh</code><br>如果提示<code>No such file or directory</code>则说明之前没有生成SSH key<br><a id="more"></a></p>
+<h1 id="生成新的SSH-key"><a href="#生成新的SSH-key" class="headerlink" title="生成新的SSH key"></a>生成新的SSH key</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;yourmail@youremail.com&lt;你的邮件地址&gt;&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</div></pre></td></tr></table></figure>
+<p>ps1:此处的<code>-C</code>必须是大写<br>然后系统会提示你输入密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</div><div class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</div></pre></td></tr></table></figure></p>
+<p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。<br>然后就设置成功了。</p>
+<h1 id="添加SSH-key到代码托管平台"><a href="#添加SSH-key到代码托管平台" class="headerlink" title="添加SSH key到代码托管平台"></a>添加SSH key到代码托管平台</h1><p>在本机设置SSH Key之后，需要添加到代码托管平台上，以完成SSH链接的设置。下面以Gtihub为例。</p>
+<ol>
+<li><p>打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。<br>ps1:Administrator是当前账户的名称，如果当前账户不是Admin，请选择进入相应名称的账户。  </p>
+</li>
+<li><p>登陆github系统。点击右上角的 Settings - SSH and GPG keys - New SSH keys</p>
+</li>
+<li><p>把你本地生成的密钥复制到里面（key文本框中），名称栏填写一个名称（可随意填写）点击 add SSH key 就可以了。</p>
+<h1 id="测试添加SSH-key是否成功"><a href="#测试添加SSH-key是否成功" class="headerlink" title="测试添加SSH key是否成功"></a>测试添加SSH key是否成功</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com&lt;git@github.com不要修改&gt;</div><div class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输入yes，如果看到<br><code>Hi xyzardq&lt;你的ID&gt;! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>那就说明SSH key已经设置成功了。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;检查当前电脑中有没有SSH-key&quot;&gt;&lt;a href=&quot;#检查当前电脑中有没有SSH-key&quot; class=&quot;headerlink&quot; title=&quot;检查当前电脑中有没有SSH key&quot;&gt;&lt;/a&gt;检查当前电脑中有没有SSH key&lt;/h1&gt;&lt;p&gt;&lt;code&gt;$ cd ~/. ssh&lt;/code&gt;&lt;br&gt;如果提示&lt;code&gt;No such file or directory&lt;/code&gt;则说明之前没有生成SSH key&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Git" scheme="www.xyzardq.com/tags/Git/"/>
+    
+      <category term="Github" scheme="www.xyzardq.com/tags/Github/"/>
+    
+      <category term="Coding" scheme="www.xyzardq.com/tags/Coding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo多repositories部署及DNS分流</title>
+    <link href="www.xyzardq.com/2016/11/14/Hexo%E5%A4%9Arepositories%E9%83%A8%E7%BD%B2%E5%8F%8ADNS%E5%88%86%E6%B5%81/"/>
+    <id>www.xyzardq.com/2016/11/14/Hexo多repositories部署及DNS分流/</id>
+    <published>2016-11-14T14:51:57.000Z</published>
+    <updated>2016-11-21T02:24:27.184Z</updated>
+    
+    <content type="html"><![CDATA[<p>通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。<br><a id="more"></a>  </p>
+<h1 id="多repositories部署"><a href="#多repositories部署" class="headerlink" title="多repositories部署"></a>多repositories部署</h1><h2 id="1-安装hexo-deployer-git"><a href="#1-安装hexo-deployer-git" class="headerlink" title="1. 安装hexo-deployer-git"></a>1. 安装<code>hexo-deployer-git</code></h2><p><code>npm install hexo-deployer-git –save</code></p>
+<h3 id="2-在根目录下的配置文件-config-yml中添加deploy配置"><a href="#2-在根目录下的配置文件-config-yml中添加deploy配置" class="headerlink" title="2. 在根目录下的配置文件_config.yml中添加deploy配置"></a>2. 在根目录下的配置文件<code>_config.yml</code>中添加deploy配置</h3><p>deploy配置是部署的基础，在deploy配置中，用户需填上部署服务器的类型，仓库名称，分支名等信息。一个正确的部署配置中至少要有<code>type</code>参数。<br>标准格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: &lt;repository url&gt;</div><div class="line">  branch: [branch]</div><div class="line">  message: [message]</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>repo</td>
+<td>库(Repository)地址</td>
+</tr>
+<tr>
+<td>branch</td>
+<td>分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测</td>
+</tr>
+<tr>
+<td>message</td>
+<td>自定义提交信息 &#40;默认为 Site updated: &#123;&#123; now&#40;’YYYY-MM-DD HH:mm:ss’&#41; &#125;&#125;&#41;</td>
+</tr>
+</tbody>
+</table>
+<p>  如果同时使用多个deployer，则格式为：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo:</div><div class="line">- type: heroku</div><div class="line">  repo:</div></pre></td></tr></table></figure></p>
+<p>不过以上格式有点臃肿，看了其他博主的配置方法，这种格式比较简洁：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo: &lt;repository url&gt;,[branch]</div><div class="line">- type: git</div><div class="line">  repo: &lt;repository url&gt;,[branch]</div></pre></td></tr></table></figure></p>
+<p>以下是本人的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo: git@github.com:xyzardq/xyzardq.github.io.git,master</div><div class="line">- type: git</div><div class="line">  repo: git@git.coding.net:xyzardq/xyzardq.git,master</div></pre></td></tr></table></figure></p>
+<p>其中，repositories（仓库）的地址有两种形式：<br>第一种是https，类似<code>https://github.com/xyzardq/xyzardq.github.io.git</code><br>第二种是SSH，类似<code>git@github.com:xyzardq/xyzardq.github.io.git</code><br>这两种仓库地址有什么区别呢？https是在部署时直接通过https协议push到对应的repositories，所以在push的时候需要输入仓库所对应的代码托管平台的账号密码。而SSH是在部署时用云端的公匙解锁本地的私匙，如果对应就直接push到对应的repositories，从而不用输入账户密码。本人比较推荐用SSH，毕竟不用输入密码比较方便。  </p>
+<h3 id="两种repositories地址的使用方法"><a href="#两种repositories地址的使用方法" class="headerlink" title="两种repositories地址的使用方法"></a>两种repositories地址的使用方法</h3><p>Github的repositories地址提取位置在当前仓库的菜单栏右侧<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Github地址提取位置.png" alt="Github地址提取位置"><br>Coding的repositories地址提取位置在当前仓库的左下角<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Coding地址提取位置.png" alt="Coding地址提取位置"></p>
+<h4 id="https地址的使用"><a href="#https地址的使用" class="headerlink" title="https地址的使用"></a>https地址的使用</h4><p>https地址的使用比较简单，直接把对应的https地址填入repo中然后在部署时输入账户密码即可</p>
+<h5 id="SSH地址的使用"><a href="#SSH地址的使用" class="headerlink" title="SSH地址的使用"></a>SSH地址的使用</h5><p>SSH地址需要配置SSH key，将公匙上传到云端后方可使用</p>
+<ol>
+<li>配置SSH key<br><a href="http://www.xyzardq.com/2016/11/16/git%E6%96%B0%E5%BB%BAsshkey%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0/">git新建SSHkey并添加到代码托管平台</a>  </li>
+<li>将对应的SSH地址填入repo中即可</li>
+</ol>
+<h2 id="3-部署到云端"><a href="#3-部署到云端" class="headerlink" title="3. 部署到云端"></a>3. 部署到云端</h2><p><code>Hexo deploy</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-g</td>
+<td>部署前先搭建  </td>
+</tr>
+<tr>
+<td>-m “commit”</td>
+<td>添加commit</td>
+</tr>
+</tbody>
+</table>
+<h1 id="DNS分流"><a href="#DNS分流" class="headerlink" title="DNS分流"></a>DNS分流</h1><p>现在，我们已经把Blog部署到了两个以上的平台上，那么，怎样才能根据访客不同的线路类型解析到不同的page上呢？这时就需要域名的DNS解析分流了。据我所知，目前DNSPod和cloudxds都支持DNS分流。DNSPod的免费版就支持DNS解析分流，但是缺点是免费版显性转址需要网站正常代理满30天….30天过去黄花菜都凉了，不过CNAME不受此限制。cloudxds的免费版号称DNSPod的收费版，但是缺点是没备案的域名用不了…所以如果是没备案的域名只能使用DNSPod了。下面以DNSpod为例。</p>
+<h2 id="注册DNSPod"><a href="#注册DNSPod" class="headerlink" title="注册DNSPod"></a>注册DNSPod</h2><p><a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a></p>
+<h2 id="添加CNAME记录"><a href="#添加CNAME记录" class="headerlink" title="添加CNAME记录"></a>添加CNAME记录</h2><ol>
+<li>添加要解析的域名<br>ps:填写的域名不要带www前缀</li>
+<li>添加CNAME记录<br>由于我们要进行DNS分流解析，所以一般来说需要添加两条以上的CNAME记录，下面以分为国外和国内两条线路为例：<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_CNAME记录示例.png" alt="CNAME记录示例"><br>ps:除了国外和国内，DNSPod还提供电信移动联通等运营商和谷歌百度等搜索引擎的线路提供<h2 id="修改NS记录"><a href="#修改NS记录" class="headerlink" title="修改NS记录"></a>修改NS记录</h2>什么是NS记录？<blockquote>
+<p>NS记录（name server）即域名服务器记录，用于指定该域名由哪个 DNS 服务器进行域名解析。注册域名时，总会有默认的 NS 记录。</p>
+</blockquote>
+</li>
+</ol>
+<p>ps:如果是在DNSPod注册的域名，请跳过此步。</p>
+<ol>
+<li><p>记下DNSPod的域名服务器<br>DNSPod的域名服务器存储在控制台的DNS记录中，默认为</p>
+<blockquote>
+<p>f1g1ns1.dnspod.net<br>f1g1ns2.dnspod.net</p>
+</blockquote>
+</li>
+<li><p>修改所用域名注册商的域名服务器<br>登录所用域名的域名注册商，进入DNS管理，将域名服务器（有的注册商为DNS记录中的NS记录）修改为DNSPod的域名服务器</p>
+</li>
+<li><p>测试DNS解析是否生效<br>打开<a href="http://tool.chinaz.com/dns/" target="_blank" rel="external">Dns检测|Dns查询- 站长工具</a>，输入你的域名，选择CNAME类型，检测。如果国内国外的响应IP分别为你设置的两个记录值，则DNS分流设置成功</p>
+</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://ppting.me/2015/02/08/gitcafe/" target="_blank" rel="external">同时将博客部署在Github和Gitcafe上，并通过DNSPOD分流</a><br><a href="http://www.cnblog.me/2015/04/26/dnspod/" target="_blank" rel="external">使用 DNSPod 解决 GoDaddy 域名解析不稳定的问题</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo常见问题解决方案</title>
+    <link href="www.xyzardq.com/2016/11/14/Hexo%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>www.xyzardq.com/2016/11/14/Hexo常见问题解决方案/</id>
+    <published>2016-11-14T12:16:58.000Z</published>
+    <updated>2017-02-24T07:50:37.279Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="无法执行now-函数"><a href="#无法执行now-函数" class="headerlink" title="无法执行now()函数"></a>无法执行now()函数</h2><h3 id="错误内容"><a href="#错误内容" class="headerlink" title="错误内容"></a>错误内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FATAL (unknown path) [Line 7, Column 533]</div><div class="line">  Error: Unable to call `now`, which is undefined or falsey Template render error: (unknown path) [Line 7, Column 533]</div></pre></td></tr></table></figure>
+<h3 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h3><p>由于文章中有类似now()的结构，Hexo编译时误认为是now函数，结果找不到函数就报错了</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>将now( )的小括号通过<code>&amp;#40;</code> <code>&amp;#41;</code> 进行转换</p>
+<h2 id="部分插件加载失败"><a href="#部分插件加载失败" class="headerlink" title="部分插件加载失败"></a>部分插件加载失败</h2><h3 id="错误内容-1"><a href="#错误内容-1" class="headerlink" title="错误内容"></a>错误内容</h3><p><code>ERROR Plugin load failed:hexo-generator-json-content</code></p>
+<h3 id="错误原因-1"><a href="#错误原因-1" class="headerlink" title="错误原因"></a>错误原因</h3><p>部分插件需要新版node.js支持</p>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>升级node.js</p>
+<h1 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h1><h2 id="Deploy报错"><a href="#Deploy报错" class="headerlink" title="Deploy报错"></a>Deploy报错</h2><h3 id="终极解决方案"><a href="#终极解决方案" class="headerlink" title="终极解决方案"></a>终极解决方案</h3><p>1.删除根目录下的<code>.deploy_git</code>文件夹<br>2.在根目录运行<code>hexo clean</code><br>3.修改根目录下的<code>_config.yml</code>后运行<code>hexo deploy</code>部署到云端</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://www.voidcn.com/blog/chwshuang/article/p-6178796.html" target="_blank" rel="external">Hexo在Github中搭建博客系统(6)异常处理</a><br><a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/" target="_blank" rel="external">Hexo常见问题解决方案</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h1&gt;&lt;h2 id=&quot;无法执行now-函数&quot;&gt;&lt;a href=&quot;#无法执行now-函数&quot; class=&quot;headerlink&quot; title=&quot;无法执行n
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo添加文章目录</title>
+    <link href="www.xyzardq.com/2016/11/04/Hexo%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95/"/>
+    <id>www.xyzardq.com/2016/11/04/Hexo添加文章目录/</id>
+    <published>2016-11-04T04:52:05.000Z</published>
+    <updated>2016-11-14T15:28:41.676Z</updated>
+    
+    <content type="html"><![CDATA[<p>全文转载自<a href="http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/" target="_blank" rel="external">为Hexo博客添加目录</a>。平时写类似添加功能的东西我都是看一遍网上的教程，自己理解后按自己的方法做然后写成文章的，这次全文摘抄是因为我TM根本看不懂，不会改…不过以后在学好前端后也会回来做修改（先挖好坑）个人更喜欢<a href="http://moxfive.xyz/2015/08/20/blog-building/" target="_blank" rel="external">MOxFIVE建站日志</a>这种类型的文章目录，不过那是修改好的主题，直接拿来用就没什么意思了。废话就这样，以下全文转载。<br><a id="more"></a><br>本文的转载符合文章作者的<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external">版权声明</a>。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Hexo博客系统的核心支持生成目录（Table of Contents），但其默认的主题Landscape并不支持目录的显示。我们只需对Landscape的主题文件稍作修改并添加一点目录的CSS就可以在文章前面显示友好的目录了。<br>ps1:我修改的不是默认主题Landscape而是主题yilia，经实验yilia主题也可以应用这个方法。</p>
+<h1 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h1><h2 id="修改Landscape主题的ejs文件"><a href="#修改Landscape主题的ejs文件" class="headerlink" title="修改Landscape主题的ejs文件"></a>修改Landscape主题的ejs文件</h2><p>我们首先要编辑文章显示页面的模板，也就是<code>themes/landscape/layout/_partial/article.ejs</code>文件。为了将目录生成在正文之前，我们首先在这个文件中找到<code>&lt;%- post.content %&gt;</code>，并在这一行之前加入如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- Table of Contents --&gt;</div><div class="line">&lt;% if (!index &amp;&amp; post.toc)&#123; %&gt;</div><div class="line">  &lt;div id=&quot;toc&quot; class=&quot;toc-article&quot;&gt;</div><div class="line">    &lt;strong class=&quot;toc-title&quot;&gt;文章目录&lt;/strong&gt;</div><div class="line">    &lt;%- toc(post.content) %&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
+<p>这段代码的含义清晰明了，if语句中有两个条件，<code>!index</code>是为了不在首页的文章摘要中生成目录，<code>post.toc</code>确保了只在显式地标记了<code>toc: true</code>的文章中生成目录。若这两个条件满足，则创建一个目录的<code>&lt;div&gt;</code>。</p>
+<p>修改完这个文件之后，找一篇包含了多个子标题的文章，并在文章开头的<code>front-matter</code>中添加一句<code>toc: true</code>，在浏览器中访问这篇文章，应该可以看到文章的开头处已经有了带链接的目录。但是这样的目录实在太难看，我们还需要添加相应的CSS来将其指定为我们想要的样式。</p>
+<h2 id="为目录编写CSS文件"><a href="#为目录编写CSS文件" class="headerlink" title="为目录编写CSS文件"></a>为目录编写CSS文件</h2><p>要指定目录的样式，我们要修改的文件是<code>themes/landscape/source/css/_partial/article.styl</code>。在文件的最后，添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">/*toc*/</div><div class="line">.toc-article</div><div class="line">  background #eee</div><div class="line">  border 1px solid #bbb</div><div class="line">  border-radius 10px</div><div class="line">  margin 1.5em 0 0.3em 1.5em</div><div class="line">  padding 1.2em 1em 0 1em</div><div class="line">  max-width 28%</div><div class="line"></div><div class="line">.toc-title</div><div class="line">  font-size 120%</div><div class="line"></div><div class="line">#toc</div><div class="line">  line-height 1em</div><div class="line">  font-size 0.9em</div><div class="line">  float right</div><div class="line">  .toc</div><div class="line">    padding 0</div><div class="line">    margin 1em</div><div class="line">    line-height 1.8em</div><div class="line">    li</div><div class="line">      list-style-type none</div><div class="line"></div><div class="line">  .toc-child</div><div class="line">    margin-left 1em</div></pre></td></tr></table></figure></p>
+<p>第一段的<code>toc-article</code>指定了目录整个<code>&lt;div&gt;</code>的背景色、边框色、倒角半径、各种间距以及最大的宽度。注意这里最好指定目录的最大宽度，我将其设为了28%，也就是文章正文那个框的宽度的28%，也可以设为一个固定的长度，比如在笔记本电脑上16em就是个不错的宽度，但为了能适配各种不同尺寸的屏幕，最好还是设置为百分比。如果不指定最大宽度，遇到比较长的标题时，生成的目录会非常难看。这个最大宽度的设置是我在网上其他添加目录的方法中没有见到的。</p>
+<p>第二段的<code>toc-title</code>指的就是“文章目录”那四个字，这四个字要比其他字大一些，将其字号设为其他字的120%。</p>
+<p>第三段的<code>#toc.toc</code>指定了目录列表的一些细节，将<code>font-size</code>设为0.9em会让目录的字比文章的字稍小一些。最后的<code>.toc-child</code>指定了二级目录的缩进量。</p>
+<p>再次生成页面，应该已经可以显示比较美观的目录了。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/" target="_blank" rel="external">为Hexo博客添加目录</a><br><a href="http://moxfive.xyz/2015/08/20/blog-building/" target="_blank" rel="external">MOxFIVE建站日志</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;全文转载自&lt;a href=&quot;http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/&quot;&gt;为Hexo博客添加目录&lt;/a&gt;。平时写类似添加功能的东西我都是看一遍网上的教程，自己理解后按自己的方法做然后写成文章的，这次全文摘抄是因为我TM根本看不懂，不会改…不过以后在学好前端后也会回来做修改（先挖好坑）个人更喜欢&lt;a href=&quot;http://moxfive.xyz/2015/08/20/blog-building/&quot;&gt;MOxFIVE建站日志&lt;/a&gt;这种类型的文章目录，不过那是修改好的主题，直接拿来用就没什么意思了。废话就这样，以下全文转载。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo添加分类功能</title>
+    <link href="www.xyzardq.com/2016/11/02/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD/"/>
+    <id>www.xyzardq.com/2016/11/02/Hexo添加分类功能/</id>
+    <published>2016-11-02T11:41:27.000Z</published>
+    <updated>2016-11-14T15:28:06.579Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="添加分类功能"><a href="#添加分类功能" class="headerlink" title="添加分类功能"></a>添加分类功能</h1><p>其实很早就想添加分类功能，因为纯标签的分类太弱了，以前收藏的几个大佬的Blog都没写，今天逛了逛yilia主题的issure，找到了解决方案，还是在知乎上的…言归正传，下面开始正题。<br>其实Hexo自带有归档功能categories，不过要先对配置文件进行一些修改。<br><a id="more"></a></p>
+<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="1-生成（文章）时默认生成categories配置项"><a href="#1-生成（文章）时默认生成categories配置项" class="headerlink" title="1.生成（文章）时默认生成categories配置项"></a>1.生成（文章）时默认生成categories配置项</h3><p>categories有点类似tags，写在文章属性之中，所以需要在文章生成时添加categories属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">tags:</div><div class="line">categories:</div></pre></td></tr></table></figure></p>
+<h3 id="2-在生成文章后编辑categories属性"><a href="#2-在生成文章后编辑categories属性" class="headerlink" title="2.在生成文章后编辑categories属性"></a>2.在生成文章后编辑categories属性</h3><p>在新建文章后，编辑categories属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: Hexo添加归档/分类功能</div><div class="line">date: 2016-11-02 19:41:27</div><div class="line">tags: [Hexo,Blog]</div><div class="line">categories: 技巧经验</div></pre></td></tr></table></figure></p>
+<p>这样在文章发布后，使用hexo g命令，hexo会在根目录/public/categrises下自动生成归档文件夹  </p>
+<h1 id="实现分类功能"><a href="#实现分类功能" class="headerlink" title="实现分类功能"></a>实现分类功能</h1><p>以上，这样其实就成功添加了分类功能。不过这样添加的分类只能显示在文章的属性中，没有从首页直接查看分类的方法。以下提供一种实现方法</p>
+<h2 id="博客侧边栏展示归档"><a href="#博客侧边栏展示归档" class="headerlink" title="博客侧边栏展示归档"></a>博客侧边栏展示归档</h2><h3 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h3><p><img src="http://source.xyzardq.com/source/_posts/Hexo添加分类功能_实现效果.png" alt="实现效果"></p>
+<h2 id="食用方法-1"><a href="#食用方法-1" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="1-在主题配置文件中添加分类选项"><a href="#1-在主题配置文件中添加分类选项" class="headerlink" title="1.在主题配置文件中添加分类选项"></a>1.在主题配置文件中添加分类选项</h3><p>在主题配置文件<code>themes/_config.yml</code>中添加以下代码（#号后为注释内容）:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  主页: /</div><div class="line">  所有文章: /archives</div><div class="line">  技巧经验: /categories/技巧经验     # 博客首页展示文本： 访问路径/自定义归档名称</div><div class="line">  资料总结: /categories/资料总结</div></pre></td></tr></table></figure></p>
+<p> ps1:目前在博客侧边栏添加此功能你后，在本地部署会报错，同步到云端后才可以正常显示</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p> <a href="https://www.zhihu.com/question/33324071/answer/58775540" target="_blank" rel="external">hexo下新建页面下如何放多个文章？</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;添加分类功能&quot;&gt;&lt;a href=&quot;#添加分类功能&quot; class=&quot;headerlink&quot; title=&quot;添加分类功能&quot;&gt;&lt;/a&gt;添加分类功能&lt;/h1&gt;&lt;p&gt;其实很早就想添加分类功能，因为纯标签的分类太弱了，以前收藏的几个大佬的Blog都没写，今天逛了逛yilia主题的issure，找到了解决方案，还是在知乎上的…言归正传，下面开始正题。&lt;br&gt;其实Hexo自带有归档功能categories，不过要先对配置文件进行一些修改。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome实用插件推荐</title>
+    <link href="www.xyzardq.com/2016/10/19/Chrome%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    <id>www.xyzardq.com/2016/10/19/Chrome实用插件推荐/</id>
+    <published>2016-10-19T08:17:13.000Z</published>
+    <updated>2016-11-06T01:44:07.595Z</updated>
+    
+    <content type="html"><![CDATA[<p>总结一些自用的或者网上看到的Chrome实用插件。<br>ps:Chrome是最好用的浏览器好吗！<br><a id="more"></a></p>
+<h1 id="网络工具"><a href="#网络工具" class="headerlink" title="网络工具"></a>网络工具</h1><h2 id="Tunnello"><a href="#Tunnello" class="headerlink" title="Tunnello"></a>Tunnello</h2><p><a href="https://chrome.google.com/webstore/category/extensions" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://tunnello.com/" target="_blank" rel="external">官网</a>（需要翻墙）<br>一款免费翻墙软件，号称比别的翻墙工具更快更安全（<br>目前提供14个国家的免费节点，支持国家如下：<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Tunnello支持国家.png" alt="Tunnello支持国家"><br>香港节点看y2b视频能到3000kbps，算是很不错的速度了。</p>
+<h2 id="Proxy-SwitchyOmega"><a href="#Proxy-SwitchyOmega" class="headerlink" title="Proxy SwitchyOmega"></a>Proxy SwitchyOmega</h2><p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">Github</a><br>一款魔法上网插件，如果使用shadowsocks进行翻墙的话需要配合Proxy SwitchyOmega在Chrome上实现，另外附带黑白名单功能。<br>附简单教程：<a href="https://portal.shadowsocks.com/knowledgebase.php?action=displayarticle&amp;id=13" target="_blank" rel="external">Chrome + Proxy SwitchyOmega 设置</a></p>
+<h2 id="Adblock-Plus"><a href="#Adblock-Plus" class="headerlink" title="Adblock Plus"></a>Adblock Plus</h2><p><a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?utm_source=chrome-ntp-icon" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://adblockplus.org/" target="_blank" rel="external">官网</a><br>这没什么好解释的…一款广告拦截软件，通过社区上不断更新的过滤列表拦截页面上的广告。</p>
+<h2 id="wappalyzer"><a href="#wappalyzer" class="headerlink" title="wappalyzer"></a>wappalyzer</h2><p><a href="https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg/related" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://wappalyzer.com/" target="_blank" rel="external">官网</a><br>一款网站前端分析插件，可以分析当前网站都用了什么数据库，什么服务器。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_wappalyzer.png" alt="wappalyzer"></p>
+<h2 id="Chrono下载管理器"><a href="#Chrono下载管理器" class="headerlink" title="Chrono下载管理器"></a>Chrono下载管理器</h2><p><a href="https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="http://www.chronodownloader.net/" target="_blank" rel="external">官网</a><br>一款下载功能增强插件，完全替换并增强Chrome浏览器自带的下载管理界面，可以嗅探器网页上的所有链接、图片、音频和视频，还支持批量加载等功能。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Chrono下载管理器.png" alt="Chrono下载管理器"></p>
+<h1 id="办公学习"><a href="#办公学习" class="headerlink" title="办公学习"></a>办公学习</h1><h2 id="Anki-划词制卡助手"><a href="#Anki-划词制卡助手" class="headerlink" title="Anki 划词制卡助手"></a>Anki 划词制卡助手</h2><p><a href="https://chrome.google.com/webstore/detail/anki-%E5%88%92%E8%AF%8D%E5%88%B6%E5%8D%A1%E5%8A%A9%E6%89%8B/ajencmdaamfnkgilhpgkepfhfgjfplnn?hl=zh-CN" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://github.com/ninja33/anki-dict-helper" target="_blank" rel="external">Github</a><br>官方介绍：英语学习者在新闻网站或者社交媒体上进行增量阅读(Incremental Reading)或者沉浸式阅读(Immersion Reading)时，往往需要能够随手翻译生词帮助理解，而阅读过后，又希望能将刚才阅读时遇到的生词和上下文语句作为笔记保存，以供日后复习。Anki本身提供了不错的间隔式复习功能，但是制卡的过程略微繁琐。Anki划词制卡助手，就是为了帮助学习者在阅读的同时，将生词，释义，音标，语音音频和上下文例句一键保存并制作成Anki卡片，以供日后复习。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Anki 划词制卡助手使用界面.jpg" alt="Anki划卡制卡助手使用界面"><br>简单来说，Anki划卡制卡助手可以在阅读英文文章时查阅不明白的单词。如果想要日后记忆的话，就点击右上角的绿色加号将单词做成卡片，上传至ankiweb账号，在多平台查看记忆。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Anki 划词制卡助手卡片界面.jpg" alt="Anki划卡制卡助手卡片界面"></p>
+<h2 id="印象笔记·剪藏"><a href="#印象笔记·剪藏" class="headerlink" title="印象笔记·剪藏"></a>印象笔记·剪藏</h2><p><a href="https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://evernote.com" target="_blank" rel="external">官网</a><br>虽然evernote不是最好用的笔记本，（不支持markdowm啊啊啊啊啊）但是印象笔记·剪藏可以说是最好用的剪藏插件。在网页上看到什么值得收藏的文章，直接点击插件，设置剪藏类型，目录后即可收藏成笔记。特别推荐剪藏类型中的隐藏广告，直接把网页中的CSS样式屏蔽，只留下最简单的标题和正文。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_印象笔记·剪藏隐藏广告.jpg" alt="隐藏广告"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;总结一些自用的或者网上看到的Chrome实用插件。&lt;br&gt;ps:Chrome是最好用的浏览器好吗！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="资料总结" scheme="www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="Google" scheme="www.xyzardq.com/tags/Google/"/>
+    
+      <category term="Chrome" scheme="www.xyzardq.com/tags/Chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git系列学习资料</title>
+    <link href="www.xyzardq.com/2016/10/11/Git%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>www.xyzardq.com/2016/10/11/Git学习资料/</id>
+    <published>2016-10-11T04:56:13.000Z</published>
+    <updated>2016-11-14T09:09:00.835Z</updated>
+    
+    <content type="html"><![CDATA[<p>总结一些网上自己看过的Git和GitHub学习资料吧…新手向。<br><a id="more"></a></p>
+<h1 id="stormzhang的从0开始学习-GitHub-系列"><a href="#stormzhang的从0开始学习-GitHub-系列" class="headerlink" title="stormzhang的从0开始学习 GitHub 系列"></a>stormzhang的从0开始学习 GitHub 系列</h1><p>我自己先前也看过两三个Git和GitHub的教程，今天看完了张老师的教程，感觉是我看过所有GitHub教程中写的最好的。语言浅显易懂，内容涵盖面也很广，推荐给对Git和GitHub一无所知的新手学习。  </p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661735&amp;idx=1&amp;sn=9aceac07d272e9202d1b5294f857a5ff&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「初识 GitHub」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661762&amp;idx=1&amp;sn=8282241cf7414030f4e1d315a173beb1&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「加入 GitHub」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650662303&amp;idx=1&amp;sn=3df7cba7cd85b33a82b4c05bb12cfff5&amp;chksm=87d138c0b0a6b1d6140da9bab6e58c6e2b258de6118175d31c1ac467b3c58bc1a7c0b1a7db9b&amp;mpshare=1&amp;scene=1&amp;srcid=1011BWZLP8r4n08rj3YLBfw4#rd" target="_blank" rel="external">从0开始学习 GitHub 系列之「GitHub 常见的几种操作」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661788&amp;idx=1&amp;sn=b7c54f9b13f4e30fe151905f11c02800&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「Git速成」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661821&amp;idx=1&amp;sn=c6116ed82bff2d083bb152fbd8cbc38d&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「向GitHub 提交代码」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661929&amp;idx=1&amp;sn=69e00516a30723c5a20af3c7a84173a4&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「Git 进阶」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661978&amp;idx=1&amp;sn=2f5329f5b2bfda7050822cc5e3a4f03f&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「团队合作利器 Branch」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650662079&amp;idx=1&amp;sn=65605f0d9bd741d38f0b179980dc09f1&amp;scene=21#wechat_redirect" target="_blank" rel="external">如何发现优秀的开源项目？</a>  </p>
+<h1 id="廖雪峰的Git教程"><a href="#廖雪峰的Git教程" class="headerlink" title="廖雪峰的Git教程"></a>廖雪峰的Git教程</h1><p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git教程 - 廖雪峰的官方网站</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;总结一些网上自己看过的Git和GitHub学习资料吧…新手向。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="资料总结" scheme="www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="Git" scheme="www.xyzardq.com/tags/Git/"/>
+    
+      <category term="GitHub" scheme="www.xyzardq.com/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>yilia主题侧边栏添加新的社交账号</title>
+    <link href="www.xyzardq.com/2016/05/11/yilia%E4%B8%BB%E9%A2%98%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E7%A4%BE%E4%BA%A4%E8%B4%A6%E5%8F%B7/"/>
+    <id>www.xyzardq.com/2016/05/11/yilia主题侧边栏添加新的社交账号/</id>
+    <published>2016-05-11T12:14:28.000Z</published>
+    <updated>2016-11-21T08:15:11.683Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><p><img src="http://source.xyzardq.com/source/_posts/yilia主题侧边栏添加新的社交账号_实现效果.jpg" alt="实现效果"><br><a id="more"></a></p>
+<h1 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h1><h2 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h2><p>首先需准备想要显示的图标文件，以png为佳，大小32×32（自带社交账号图标都为16×16，亲测后发现不好用，32×32比较合适）</p>
+<h2 id="详细过程"><a href="#详细过程" class="headerlink" title="详细过程"></a>详细过程</h2><h3 id="图标位置"><a href="#图标位置" class="headerlink" title="图标位置"></a>图标位置</h3><p>自带图标的放置位置为<code>themes/yilia/source/img</code></p>
+<h3 id="修改style文件"><a href="#修改style文件" class="headerlink" title="修改style文件"></a>修改style文件</h3><p>打开<code>themes/yilia/source/css/_partial/main.styl</code><br>查找类似<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a.mail &#123;</div><div class="line">  background:url(&apos;/img/mail.png&apos;) center no-repeat #005a87;</div><div class="line">  border:1px solid #005a87;</div><div class="line">  &amp;:hover &#123;</div><div class="line">    border:1px solid #006b98;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>的代码<br>复制一段放在相同的位置，修改其中的函数名和图标位置。图标样式和背景色可自行修改。</p>
+<h3 id="修改config文件"><a href="#修改config文件" class="headerlink" title="修改config文件"></a>修改config文件</h3><p>打开<code>themes/yilia/_config.yml</code><br>在<code>subnav:</code>下添加一行超链接，指向你想引向的网址<br>格式类似<code>github: “<a href="https://github.com/xyzardq" target="_blank" rel="external">https://github.com/xyzardq</a>“</code></p>
+<p>实现到此全部完成，部署后即可查看效果。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实现效果&quot;&gt;&lt;a href=&quot;#实现效果&quot; class=&quot;headerlink&quot; title=&quot;实现效果&quot;&gt;&lt;/a&gt;实现效果&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://source.xyzardq.com/source/_posts/yilia主题侧边栏添加新的社交账号_实现效果.jpg&quot; alt=&quot;实现效果&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+      <category term="yilia" scheme="www.xyzardq.com/tags/yilia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo文章小技巧</title>
+    <link href="www.xyzardq.com/2016/04/17/Hexo%E6%96%87%E7%AB%A0%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>www.xyzardq.com/2016/04/17/Hexo文章小技巧/</id>
+    <published>2016-04-17T12:45:56.000Z</published>
+    <updated>2016-11-14T12:19:14.669Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="首页文章部分显示"><a href="#首页文章部分显示" class="headerlink" title="首页文章部分显示"></a>首页文章部分显示</h1><p>在需要在首页显示的内容后加<code>&lt;!–more–&gt;</code><br><a id="more"></a></p>
+<h1 id="修改代码块大小和样式"><a href="#修改代码块大小和样式" class="headerlink" title="修改代码块大小和样式"></a>修改代码块大小和样式</h1><p>在<code>themes/yilia/source/css/_partial/highlight.styl</code>文件内修改</p>
+<h3 id="新增标签"><a href="#新增标签" class="headerlink" title="新增标签"></a>新增标签</h3><p>新建文章后，打开文章文件，在前几行有如下结构：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">title: Hexo写文章小技巧</div><div class="line">date: 2016-04-17 20:45:56</div></pre></td></tr></table></figure>
+<p>在date这行下面加上：</p>
+<p><pre><code><br>tags: [tag1,tag2,tag3] #tag1，tag2，tag3为你要添加的多个标签，用半角逗号隔开<br></code></pre></p>
+<h3 id="新增分类"><a href="#新增分类" class="headerlink" title="新增分类"></a>新增分类</h3><p>方法同上，在下面加上</p>
+<p><pre><code><br>categories: 技巧经验<br></code></pre><br>需要先完成<a href="http://www.xyzardq.com/2016/11/02/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD/">Hexo添加分类功能</a>中的设置</p>
+<h3 id="新增置顶"><a href="#新增置顶" class="headerlink" title="新增置顶"></a>新增置顶</h3><p>方法同上，在下面加上</p>
+<p><pre><code><br>top: 1 #大的在前面<br></code></pre><br>需要先完成<a href="http://www.xyzardq.com/2016/04/14/Hexo%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6/">Hexo添加文章置顶</a>中的设置</p>
+<h3 id="新增文章目录"><a href="#新增文章目录" class="headerlink" title="新增文章目录"></a>新增文章目录</h3><p>方法同上，在下面加上</p>
+<p><pre><code><br>toc: true<br></code></pre><br>需要先完成<a href="http://www.xyzardq.com/2016/04/14/Hexo%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6/">Hexo添加文章目录</a>中的设置</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;首页文章部分显示&quot;&gt;&lt;a href=&quot;#首页文章部分显示&quot; class=&quot;headerlink&quot; title=&quot;首页文章部分显示&quot;&gt;&lt;/a&gt;首页文章部分显示&lt;/h1&gt;&lt;p&gt;在需要在首页显示的内容后加&lt;code&gt;&amp;lt;!–more–&amp;gt;&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+      <category term="yilia" scheme="www.xyzardq.com/tags/yilia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo新建文章后立即打开文本编辑器</title>
+    <link href="www.xyzardq.com/2016/04/14/Hexo%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E5%90%8E%E7%AB%8B%E5%8D%B3%E6%89%93%E5%BC%80%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    <id>www.xyzardq.com/2016/04/14/Hexo新建文章后立即打开文本编辑器/</id>
+    <published>2016-04-14T13:50:23.000Z</published>
+    <updated>2016-11-21T08:15:20.157Z</updated>
+    
+    <content type="html"><![CDATA[<p>平时在Hexo根目录下new一篇文章以后还要手动打开文件夹中的文件进行编辑。创建这个脚本后就可以在<code> hexo new XXX</code>一篇新文章后直接打开用文本编辑器打开该文章进行编辑。</p>
+<h1 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h1><p>新建scripts/openfile.js（名字任取，文件夹没有就新建一个）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var exec = require(&apos;child_process&apos;).exec;</div><div class="line">hexo.on(&apos;new&apos;, function(data)&#123;</div><div class="line">  exec(&apos;start  &quot;D:/Program Files/Sublime Text 3/sublime_text.exe&quot; &apos; + data.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>ps1:仅Hexo 3.0后有效<br>ps2:将代码中的路径替换为你的文本编辑器的绝对路径  </p>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>当打开<code>.md</code>文件的默认打开方式已经为文本编辑器时，代码则为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var exec = require(&apos;child_process&apos;).exec;</div><div class="line">hexo.on(&apos;new&apos;, function(data)&#123;</div><div class="line">  exec(&apos;start &apos; + data.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>ps1:仅Hexo 3.0后有效</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;平时在Hexo根目录下new一篇文章以后还要手动打开文件夹中的文件进行编辑。创建这个脚本后就可以在&lt;code&gt; hexo new XXX&lt;/code&gt;一篇新文章后直接打开用文本编辑器打开该文章进行编辑。&lt;/p&gt;
+&lt;h1 id=&quot;食用方法&quot;&gt;&lt;a href=&quot;#食用方法&quot; c
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo添加文章置顶</title>
+    <link href="www.xyzardq.com/2016/04/14/Hexo%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6/"/>
+    <id>www.xyzardq.com/2016/04/14/Hexo添加文章置顶/</id>
+    <published>2016-04-14T13:49:24.000Z</published>
+    <updated>2016-11-21T08:15:29.375Z</updated>
+    
+    <content type="html"><![CDATA[<p>置顶功能完全借鉴了Netcan的智慧成果…原理大概是C++的比较函数，具体到下面Netcan的博客里查看。</p>
+<h1 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h1><p>更改node_modules/hexo-generator-index/lib/generator.js<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&apos;use strict&apos;;</div><div class="line"></div><div class="line">var pagination = require(&apos;hexo-pagination&apos;);</div><div class="line">module.exports = function(locals)&#123;</div><div class="line">  var config = this.config;</div><div class="line">  var posts = locals.posts;</div><div class="line">    posts.data = posts.data.sort(function(a, b) &#123;</div><div class="line">        if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义</div><div class="line">            if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排</div><div class="line">            else return b.top - a.top; // 否则按照top值降序排</div><div class="line">        &#125;</div><div class="line">        else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</div><div class="line">            return -1;</div><div class="line">        &#125;</div><div class="line">        else if(!a.top &amp;&amp; b.top) &#123;</div><div class="line">            return 1;</div><div class="line">        &#125;</div><div class="line">        else return b.date - a.date; // 都没定义按照文章日期降序排</div><div class="line">	&#125;);</div><div class="line">  var paginationDir = config.pagination_dir || &apos;page&apos;;</div><div class="line">  return pagination(&apos;&apos;, posts, &#123;</div><div class="line">    perPage: config.index_generator.per_page,</div><div class="line">    layout: [&apos;index&apos;, &apos;archive&apos;],</div><div class="line">    format: paginationDir + &apos;/%d/&apos;,</div><div class="line">    data: &#123;</div><div class="line">      __index: true</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>使用方法：在<code>front-matter</code>中设置需要置顶文章的<code>top</code>值，将会根据<code>top</code>值大小来选择置顶顺序。（大的在前面）<br>ps1:<code>front-matter</code>是每篇文章前面的参数，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: Android学习资料</div><div class="line">top: 3</div><div class="line">date: 2016-04-07 20:16:43</div><div class="line">tags: [Java,Android]</div></pre></td></tr></table></figure></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://www.netcan666.com/2015/11/22/%E8%A7%A3%E5%86%B3Hexo%E7%BD%AE%E9%A1%B6%E9%97%AE%E9%A2%98/" target="_blank" rel="external">解决Hexo置顶问题</a><br><a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="external">Front-matter官方说明文档</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;置顶功能完全借鉴了Netcan的智慧成果…原理大概是C++的比较函数，具体到下面Netcan的博客里查看。&lt;/p&gt;
+&lt;h1 id=&quot;食用方法&quot;&gt;&lt;a href=&quot;#食用方法&quot; class=&quot;headerlink&quot; title=&quot;食用方法&quot;&gt;&lt;/a&gt;食用方法&lt;/h1&gt;&lt;p&gt;更改node_modules/hexo-generator-index/lib/generator.js&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo配置小技巧</title>
+    <link href="www.xyzardq.com/2016/04/14/Hexo%E9%85%8D%E7%BD%AE%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>www.xyzardq.com/2016/04/14/Hexo配置小技巧/</id>
+    <published>2016-04-14T12:25:04.000Z</published>
+    <updated>2016-11-14T15:28:46.480Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="配置简体中文"><a href="#配置简体中文" class="headerlink" title="配置简体中文"></a>配置简体中文</h1><h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><p>更改根目录下<code> _config.yml</code> 中<code>language</code>的值。</p>
+<blockquote>
+<p>language: zh-Hans</p>
+</blockquote>
+<p>在网上查找发现很多修改成<strong>zh</strong>、<strong>zh-CN</strong>经过测试都不能修改成完美的简体中文，菜单还是英文。只有<strong>zh-Hans</strong>才能配置成完美的简体中文。<br>ps1:检查主题文件后发现语言包已经内置在主题内了，在<code>themes\yilia\languages</code>目录下（本人用的yilia主题，不懂其他主题是否是类似的文件结构）<br><a id="more"></a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;配置简体中文&quot;&gt;&lt;a href=&quot;#配置简体中文&quot; class=&quot;headerlink&quot; title=&quot;配置简体中文&quot;&gt;&lt;/a&gt;配置简体中文&lt;/h1&gt;&lt;h2 id=&quot;食用方法&quot;&gt;&lt;a href=&quot;#食用方法&quot; class=&quot;headerlink&quot; title=&quot;食用方法&quot;&gt;&lt;/a&gt;食用方法&lt;/h2&gt;&lt;p&gt;更改根目录下&lt;code&gt; _config.yml&lt;/code&gt; 中&lt;code&gt;language&lt;/code&gt;的值。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;language: zh-Hans&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在网上查找发现很多修改成&lt;strong&gt;zh&lt;/strong&gt;、&lt;strong&gt;zh-CN&lt;/strong&gt;经过测试都不能修改成完美的简体中文，菜单还是英文。只有&lt;strong&gt;zh-Hans&lt;/strong&gt;才能配置成完美的简体中文。&lt;br&gt;ps1:检查主题文件后发现语言包已经内置在主题内了，在&lt;code&gt;themes\yilia\languages&lt;/code&gt;目录下（本人用的yilia主题，不懂其他主题是否是类似的文件结构）&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Hexo" scheme="www.xyzardq.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android学习资料</title>
+    <link href="www.xyzardq.com/2016/04/07/Android%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>www.xyzardq.com/2016/04/07/Android学习资料/</id>
+    <published>2016-04-07T12:16:43.000Z</published>
+    <updated>2016-11-14T09:05:49.012Z</updated>
+    
+    <content type="html"><![CDATA[<p>本人于2016年3月21日加入中南民族大学新思路安卓组，开始学习Android开发。就在这里记录下一路学习使用的学习资料吧（其实是试验置顶功能2333）<br>ps1.带有ps的是本人学习所用的资料。<br>ps2.我觉得ps1在卖萌;<br><a id="more"></a></p>
+<h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><h2 id="Mars老师的Java4Android视频课程"><a href="#Mars老师的Java4Android视频课程" class="headerlink" title="Mars老师的Java4Android视频课程"></a>Mars老师的Java4Android视频课程</h2><p>结合学习，便于初学者很好的理解与入门。<br><a href="http://pan.baidu.com/s/1c1beYo4" target="_blank" rel="external">Java4Android视频下载（百度网盘）</a><br>ps1.已经学完，讲的十分浅显，对于入门Android基本是够用了。</p>
+<h2 id="《Java语言程序设计》"><a href="#《Java语言程序设计》" class="headerlink" title="《Java语言程序设计》"></a>《Java语言程序设计》</h2><p>优点是非常基础，适合初学者，建议只要看到前十四章就ok了，第十二章也可以略过。<br><a href="http://book.douban.com/subject/6529833/" target="_blank" rel="external">《Java语言程序设计》豆瓣书评</a></p>
+<h1 id="Android入门资料"><a href="#Android入门资料" class="headerlink" title="Android入门资料"></a>Android入门资料</h1><h2 id="Android入门基础：从这里开始"><a href="#Android入门基础：从这里开始" class="headerlink" title="Android入门基础：从这里开始"></a>Android入门基础：从这里开始</h2><p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="external">Android入门基础：从这里开始</a><br>ps1.据说是官方资料的翻译版，讲的非常详细。</p>
+<h2 id="imooc"><a href="#imooc" class="headerlink" title="imooc"></a>imooc</h2><p><a href="http://www.imooc.com/course/list?c=android" target="_blank" rel="external">Android开发视频教程</a><br>ps1.看了<strong>Android攻城狮的第一门课</strong>系列，讲的很浅，适合初学者。唯一的问题就是用的IDE是eclipse。不过和eclipse和AS的差别很小，还可以接受。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://stormzhang.com/android/2016/01/21/learn-android-byself/" target="_blank" rel="external">如何自学Android编程</a>（推荐）</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本人于2016年3月21日加入中南民族大学新思路安卓组，开始学习Android开发。就在这里记录下一路学习使用的学习资料吧（其实是试验置顶功能2333）&lt;br&gt;ps1.带有ps的是本人学习所用的资料。&lt;br&gt;ps2.我觉得ps1在卖萌;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="资料总结" scheme="www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="Java" scheme="www.xyzardq.com/tags/Java/"/>
+    
+      <category term="Android" scheme="www.xyzardq.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Windows命令行下编译包含中文字符的Java文件时报错</title>
+    <link href="www.xyzardq.com/2016/04/06/%E5%9C%A8Windows%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E7%BC%96%E8%AF%91%E5%8C%85%E5%90%AB%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%E7%9A%84Java%E6%96%87%E4%BB%B6%E6%97%B6%E6%8A%A5%E9%94%99/"/>
+    <id>www.xyzardq.com/2016/04/06/在Windows命令行下编译包含中文字符的Java文件时报错/</id>
+    <published>2016-04-06T13:15:45.000Z</published>
+    <updated>2016-11-03T05:47:00.536Z</updated>
+    
+    <content type="html"><![CDATA[<p>在初学Java编程并使用cmd编译Java文件时会出现类似<br><img src="http://source.xyzardq.com/source%2F_posts%2F%E5%9C%A8Windows%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E7%BC%96%E8%AF%91%E5%8C%85%E5%90%AB%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6%E7%9A%84Java%E6%96%87%E4%BB%B6%E6%97%B6%E6%8A%A5%E9%94%99_%E7%BC%96%E7%A0%81%E6%8A%A5%E9%94%99.png" alt="编码报错"><br>的错误<br>经过搜索查找后，找到两种解决方法：<br>1.编译Java文件时选择编码为uft-8 无BOM格式编译</p>
+<blockquote>
+<p>javac -encoding utf-8 Exerc02.java</p>
+</blockquote>
+<p>2.保存Java文件时选择编码为uft-8 无BOM格式保存</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在初学Java编程并使用cmd编译Java文件时会出现类似&lt;br&gt;&lt;img src=&quot;http://source.xyzardq.com/source%2F_posts%2F%E5%9C%A8Windows%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="Java" scheme="www.xyzardq.com/tags/Java/"/>
+    
+      <category term="encoding" scheme="www.xyzardq.com/tags/encoding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在不引入第三个变量的前提下，交换两个变量的值</title>
+    <link href="www.xyzardq.com/2016/04/02/%E5%9C%A8%E4%B8%8D%E5%BC%95%E5%85%A5%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%89%8D%E6%8F%90%E4%B8%8B%EF%BC%8C%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC/"/>
+    <id>www.xyzardq.com/2016/04/02/在不引入第三个变量的前提下，交换两个变量的值/</id>
+    <published>2016-04-02T10:47:04.000Z</published>
+    <updated>2016-11-02T12:35:33.014Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a=a+b;/*此时a的值为a+b*/</div><div class="line">b=a-b;/*此时a的值为a+b，则此时的a-b等同于a+b-b，就成功把a的值换到了b上*/</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;c
+    
+    </summary>
+    
+      <category term="技巧经验" scheme="www.xyzardq.com/categories/%E6%8A%80%E5%B7%A7%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="C" scheme="www.xyzardq.com/tags/C/"/>
+    
+      <category term="C++" scheme="www.xyzardq.com/tags/C/"/>
+    
+  </entry>
+  
+</feed>
