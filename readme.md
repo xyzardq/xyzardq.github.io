@@ -54,7 +54,14 @@ qshell（未使用）
 
 ### 安装插件：
 
-<code>npm install <plugin-name> --save</code>
+<code>npm install <plugin-name></code>
+
+参数 | 描述
+----|------
+-S, --save | 自动把模块和版本号添加到dependencies部分
+-D, --save-dev | 自动把模块和版本号添加到devdependencies部分
+-O, --save-optional | 自动把模块和版本号添加到devdependencies部分
+ps:参数一般用```--save```或者不用  
 ### 启用插件：
 在<code>hexo\_config.yml</code>文件添加：
 ```
