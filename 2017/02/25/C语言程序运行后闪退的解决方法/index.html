@@ -6,22 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="www.xyzardq.com">
-  <title>Hexo多repositories部署及DNS分流 | 你个沙皮</title>
+  <title>C语言程序运行后闪退的解决方法 | 你个沙皮</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。">
+  <meta name="description" content="（日常吐槽部分）仔细一看我有两个月没写博客了。其实，我是不想鸽的（）寒假开始前，我都定好了一个非常宏z伟z的计划，每周写XX篇博客啥的，结果发现计划不如变化，三天至少出去玩两天（）于是寒假计划就变成开学计划了！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo多repositories部署及DNS分流">
-<meta property="og:url" content="www.xyzardq.com/2016/11/14/Hexo多repositories部署及DNS分流/index.html">
+<meta property="og:title" content="C语言程序运行后闪退的解决方法">
+<meta property="og:url" content="www.xyzardq.com/2017/02/25/C语言程序运行后闪退的解决方法/index.html">
 <meta property="og:site_name" content="你个沙皮">
-<meta property="og:description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。">
-<meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Github地址提取位置.png">
-<meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Coding地址提取位置.png">
-<meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_CNAME记录示例.png">
-<meta property="og:updated_time" content="2016-11-21T02:24:27.184Z">
+<meta property="og:description" content="（日常吐槽部分）仔细一看我有两个月没写博客了。其实，我是不想鸽的（）寒假开始前，我都定好了一个非常宏z伟z的计划，每周写XX篇博客啥的，结果发现计划不如变化，三天至少出去玩两天（）于是寒假计划就变成开学计划了！">
+<meta property="og:updated_time" content="2017-02-25T02:38:47.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo多repositories部署及DNS分流">
-<meta name="twitter:description" content="通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。">
-<meta name="twitter:image" content="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Github地址提取位置.png">
+<meta name="twitter:title" content="C语言程序运行后闪退的解决方法">
+<meta name="twitter:description" content="（日常吐槽部分）仔细一看我有两个月没写博客了。其实，我是不想鸽的（）寒假开始前，我都定好了一个非常宏z伟z的计划，每周写XX篇博客啥的，结果发现计划不如变化，三天至少出去玩两天（）于是寒假计划就变成开学计划了！">
   
     <link rel="alternative" href="/atom.xml" title="你个沙皮" type="application/atom+xml">
   
@@ -157,103 +153,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hexo多repositories部署及DNS分流" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C语言程序运行后闪退的解决方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo多repositories部署及DNS分流
+      C语言程序运行后闪退的解决方法
     </h1>
   
 
         
-        <a href="/2016/11/14/Hexo多repositories部署及DNS分流/" class="archive-article-date">
-  	<time datetime="2016-11-14T14:51:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-14</time>
+        <a href="/2017/02/25/C语言程序运行后闪退的解决方法/" class="archive-article-date">
+  	<time datetime="2017-02-25T02:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>通过Hexo+Github的方式将Blog搭建在Github上虽然既省钱又方便，但是有个缺点，就是从国内访问有点慢，如果Github被墙了Blog就无法访问了。本篇文章讲的就是如何将Hexo同时部署在Github,coding(原名Gitcafe)等多个代码托管平台上并开启各自的page服务，再通过DNSPod分流访问的方法。<br><a id="more"></a>  </p>
-<h1 id="多repositories部署"><a href="#多repositories部署" class="headerlink" title="多repositories部署"></a>多repositories部署</h1><h2 id="1-安装hexo-deployer-git"><a href="#1-安装hexo-deployer-git" class="headerlink" title="1. 安装hexo-deployer-git"></a>1. 安装<code>hexo-deployer-git</code></h2><p><code>npm install hexo-deployer-git –save</code></p>
-<h3 id="2-在根目录下的配置文件-config-yml中添加deploy配置"><a href="#2-在根目录下的配置文件-config-yml中添加deploy配置" class="headerlink" title="2. 在根目录下的配置文件_config.yml中添加deploy配置"></a>2. 在根目录下的配置文件<code>_config.yml</code>中添加deploy配置</h3><p>deploy配置是部署的基础，在deploy配置中，用户需填上部署服务器的类型，仓库名称，分支名等信息。一个正确的部署配置中至少要有<code>type</code>参数。<br>标准格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: &lt;repository url&gt;</div><div class="line">  branch: [branch]</div><div class="line">  message: [message]</div></pre></td></tr></table></figure></p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>repo</td>
-<td>库(Repository)地址</td>
-</tr>
-<tr>
-<td>branch</td>
-<td>分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测</td>
-</tr>
-<tr>
-<td>message</td>
-<td>自定义提交信息 &#40;默认为 Site updated: &#123;&#123; now&#40;’YYYY-MM-DD HH:mm:ss’&#41; &#125;&#125;&#41;</td>
-</tr>
-</tbody>
-</table>
-<p>  如果同时使用多个deployer，则格式为：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo:</div><div class="line">- type: heroku</div><div class="line">  repo:</div></pre></td></tr></table></figure></p>
-<p>不过以上格式有点臃肿，看了其他博主的配置方法，这种格式比较简洁：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo: &lt;repository url&gt;,[branch]</div><div class="line">- type: git</div><div class="line">  repo: &lt;repository url&gt;,[branch]</div></pre></td></tr></table></figure></p>
-<p>以下是本人的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">- type: git</div><div class="line">  repo: git@github.com:xyzardq/xyzardq.github.io.git,master</div><div class="line">- type: git</div><div class="line">  repo: git@git.coding.net:xyzardq/xyzardq.git,master</div></pre></td></tr></table></figure></p>
-<p>其中，repositories（仓库）的地址有两种形式：<br>第一种是https，类似<code>https://github.com/xyzardq/xyzardq.github.io.git</code><br>第二种是SSH，类似<code>git@github.com:xyzardq/xyzardq.github.io.git</code><br>这两种仓库地址有什么区别呢？https是在部署时直接通过https协议push到对应的repositories，所以在push的时候需要输入仓库所对应的代码托管平台的账号密码。而SSH是在部署时用云端的公匙解锁本地的私匙，如果对应就直接push到对应的repositories，从而不用输入账户密码。本人比较推荐用SSH，毕竟不用输入密码比较方便。  </p>
-<h3 id="两种repositories地址的使用方法"><a href="#两种repositories地址的使用方法" class="headerlink" title="两种repositories地址的使用方法"></a>两种repositories地址的使用方法</h3><p>Github的repositories地址提取位置在当前仓库的菜单栏右侧<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Github地址提取位置.png" alt="Github地址提取位置"><br>Coding的repositories地址提取位置在当前仓库的左下角<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_Coding地址提取位置.png" alt="Coding地址提取位置"></p>
-<h4 id="https地址的使用"><a href="#https地址的使用" class="headerlink" title="https地址的使用"></a>https地址的使用</h4><p>https地址的使用比较简单，直接把对应的https地址填入repo中然后在部署时输入账户密码即可</p>
-<h5 id="SSH地址的使用"><a href="#SSH地址的使用" class="headerlink" title="SSH地址的使用"></a>SSH地址的使用</h5><p>SSH地址需要配置SSH key，将公匙上传到云端后方可使用</p>
-<ol>
-<li>配置SSH key<br><a href="http://www.xyzardq.com/2016/11/16/git%E6%96%B0%E5%BB%BAsshkey%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0/">git新建SSHkey并添加到代码托管平台</a>  </li>
-<li>将对应的SSH地址填入repo中即可</li>
-</ol>
-<h2 id="3-部署到云端"><a href="#3-部署到云端" class="headerlink" title="3. 部署到云端"></a>3. 部署到云端</h2><p><code>Hexo deploy</code></p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-g</td>
-<td>部署前先搭建  </td>
-</tr>
-<tr>
-<td>-m “commit”</td>
-<td>添加commit</td>
-</tr>
-</tbody>
-</table>
-<h1 id="DNS分流"><a href="#DNS分流" class="headerlink" title="DNS分流"></a>DNS分流</h1><p>现在，我们已经把Blog部署到了两个以上的平台上，那么，怎样才能根据访客不同的线路类型解析到不同的page上呢？这时就需要域名的DNS解析分流了。据我所知，目前DNSPod和cloudxds都支持DNS分流。DNSPod的免费版就支持DNS解析分流，但是缺点是免费版显性转址需要网站正常代理满30天….30天过去黄花菜都凉了，不过CNAME不受此限制。cloudxds的免费版号称DNSPod的收费版，但是缺点是没备案的域名用不了…所以如果是没备案的域名只能使用DNSPod了。下面以DNSpod为例。</p>
-<h2 id="注册DNSPod"><a href="#注册DNSPod" class="headerlink" title="注册DNSPod"></a>注册DNSPod</h2><p><a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a></p>
-<h2 id="添加CNAME记录"><a href="#添加CNAME记录" class="headerlink" title="添加CNAME记录"></a>添加CNAME记录</h2><ol>
-<li>添加要解析的域名<br>ps:填写的域名不要带www前缀</li>
-<li>添加CNAME记录<br>由于我们要进行DNS分流解析，所以一般来说需要添加两条以上的CNAME记录，下面以分为国外和国内两条线路为例：<br><img src="http://source.xyzardq.com/source/_posts/Hexo多repositories部署及DNS分流_CNAME记录示例.png" alt="CNAME记录示例"><br>ps:除了国外和国内，DNSPod还提供电信移动联通等运营商和谷歌百度等搜索引擎的线路提供<h2 id="修改NS记录"><a href="#修改NS记录" class="headerlink" title="修改NS记录"></a>修改NS记录</h2>什么是NS记录？<blockquote>
-<p>NS记录（name server）即域名服务器记录，用于指定该域名由哪个 DNS 服务器进行域名解析。注册域名时，总会有默认的 NS 记录。</p>
-</blockquote>
+        <p>（日常吐槽部分）仔细一看我有两个月没写博客了。其实，我是不想鸽的（）寒假开始前，我都定好了一个非常宏z伟z的计划，每周写XX篇博客啥的，结果发现计划不如变化，三天至少出去玩两天（）于是寒假计划就变成开学计划了！<br><a id="more"></a>  </p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不BB了，虽然寒假计划没了，不过囤了不少想法√。所以今天就谈谈C语言程序运行后闪退的解决方法。<br>之前因为做qq bot的需要，装了vc来写C++和C，发现了一个问题，就是写好一个简单的C程序，运行结束后就直接退出了。当时还在想是不是程序的问题，换了一个IDE，运行相同的程序发现最后会有按<code>任意键退出</code>的提示。</p>
+<h2 id="问题起因"><a href="#问题起因" class="headerlink" title="问题起因"></a>问题起因</h2><p>最后发现其实是vc的问题，在整个程序运行完成后vc会自动结束程序，而不是像一些ide会自动往程序最后一行插入一个暂停语句。  </p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li><p>在代码段末尾加上<code>getch();</code>就可以了。（代码段末尾指你程序要执行完之前， 一般在<code>return 0;</code>之前）或者，加上<code>getchar();</code> 也行。<br>原理就是停止，等待用户输入，即你没输入的话，程序就不算执行完毕。<br>个人认为<code>getch();</code>比较好。因为你加<code>getch()</code>;是按任意键退出，而<code>getchar();</code>，你可以输入若干个字符然后按回车才会结束。</p>
+</li>
+<li><p>加个头文件<code>windows.h</code>，然后在代码段末尾加个 <code>system(“pause”);</code><br>这里的system就是调用从程序中调用系统命令（和shell命令）。<br><code>system(“pause”)</code>就是从程序里调用“pause”命令；<br>而“pause”这个系统命令的功能很简单，就是在命令行上输出一行类似于<code>Press any key to exit</code>的字，等待用户按一个键，然后返回。还是同样的道理，等待用户输入，才能算执行完毕。</p>
+</li>
+<li><p>在exe文件同目录下新建一个txt文档，里面输入如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xx.exe</div><div class="line">pause</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>ps:如果是在DNSPod注册的域名，请跳过此步。</p>
-<ol>
-<li><p>记下DNSPod的域名服务器<br>DNSPod的域名服务器存储在控制台的DNS记录中，默认为</p>
-<blockquote>
-<p>f1g1ns1.dnspod.net<br>f1g1ns2.dnspod.net</p>
-</blockquote>
-</li>
-<li><p>修改所用域名注册商的域名服务器<br>登录所用域名的域名注册商，进入DNS管理，将域名服务器（有的注册商为DNS记录中的NS记录）修改为DNSPod的域名服务器</p>
-</li>
-<li><p>测试DNS解析是否生效<br>打开<a href="http://tool.chinaz.com/dns/" target="_blank" rel="external">Dns检测|Dns查询- 站长工具</a>，输入你的域名，选择CNAME类型，检测。如果国内国外的响应IP分别为你设置的两个记录值，则DNS分流设置成功</p>
-</li>
-</ol>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://ppting.me/2015/02/08/gitcafe/" target="_blank" rel="external">同时将博客部署在Github和Gitcafe上，并通过DNSPOD分流</a><br><a href="http://www.cnblog.me/2015/04/26/dnspod/" target="_blank" rel="external">使用 DNSPod 解决 GoDaddy 域名解析不稳定的问题</a></p>
+<p>然后退出保存，把后缀txt改为bat然后运行，那个xx就是文件的名字。<br>然后打开.bat文件运行程序。(.bat文件命名随意)<br>这里的.bat文件是批处理文件（也被称为批处理程序或脚本）是无格式的文本文件，它包含一条或多条命令。它的文件扩展名为 .bat 或 .cmd。在命令提示下键入批处理文件的名称，操作系统就会按照该文件中各个命令出现的顺序来逐个运行它们。（使用批处理文件，可以简化日常或重复性任务。）<br>这里执行了xx.exe这个程序，并且调用了pause。 类似解决方案2.</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://blog.csdn.net/hitwhylz/article/details/14120515" target="_blank" rel="external"> 打开c语言生成exe文件，出现闪退的解决方法</a></p>
 
       
 
@@ -267,7 +200,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
         		</li>
       		
 		</ul>
@@ -334,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http:www.xyzardq.com/2016/11/14/Hexo多repositories部署及DNS分流/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:www.xyzardq.com/2017/02/25/C语言程序运行后闪退的解决方法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -348,18 +281,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/11/16/git新建sshkey并添加到代码托管平台/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/25/通过wifi连接ADB调试Android应用/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          git新建SSHkey并添加到代码托管平台
+          通过wifi连接ADB调试Android应用
         
       </div>
     </a>
   
   
-    <a href="/2016/11/14/Hexo常见问题解决方案/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo常见问题解决方案</div>
+    <a href="/2016/11/28/服务器概念科普/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">服务器概念科普</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -373,7 +306,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Hexo多repositories部署及DNS分流" data-title="Hexo多repositories部署及DNS分流" data-url="www.xyzardq.com/2016/11/14/Hexo多repositories部署及DNS分流/"></div>
+	<div class="ds-thread" data-thread-key="C语言程序运行后闪退的解决方法" data-title="C语言程序运行后闪退的解决方法" data-url="www.xyzardq.com/2017/02/25/C语言程序运行后闪退的解决方法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
