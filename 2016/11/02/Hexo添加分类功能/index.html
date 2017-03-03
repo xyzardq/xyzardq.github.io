@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="xyzardQ的Blog">
 <meta property="og:description" content="添加分类功能其实很早就想添加分类功能，因为纯标签的分类太弱了，以前收藏的几个大佬的Blog都没写，今天逛了逛yilia主题的issure，找到了解决方案，还是在知乎上的…言归正传，下面开始正题。其实Hexo自带有归档功能categories，不过要先对配置文件进行一些修改。">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo添加分类功能_实现效果.png">
-<meta property="og:updated_time" content="2016-11-14T15:28:06.579Z">
+<meta property="og:updated_time" content="2017-03-03T03:38:06.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo添加分类功能">
 <meta name="twitter:description" content="添加分类功能其实很早就想添加分类功能，因为纯标签的分类太弱了，以前收藏的几个大佬的Blog都没写，今天逛了逛yilia主题的issure，找到了解决方案，还是在知乎上的…言归正传，下面开始正题。其实Hexo自带有归档功能categories，不过要先对配置文件进行一些修改。">
@@ -65,6 +65,8 @@
 				<li><a href="/categories/技巧经验">技巧经验</a></li>
 	        
 				<li><a href="/categories/资料总结">资料总结</a></li>
+	        
+				<li><a href="/categories/资料总结">学习笔记</a></li>
 	        
 			</ul>
 		</nav>
@@ -116,6 +118,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -134,13 +138,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">所有文章</a></li>
+					<li style="width: 20%"><a href="/archives">所有文章</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/技巧经验">技巧经验</a></li>
+					<li style="width: 20%"><a href="/categories/技巧经验">技巧经验</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/资料总结">资料总结</a></li>
+					<li style="width: 20%"><a href="/categories/资料总结">资料总结</a></li>
+		        
+					<li style="width: 20%"><a href="/categories/资料总结">学习笔记</a></li>
 		        
 				</ul>
 			</nav>
@@ -176,7 +182,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="添加分类功能"><a href="#添加分类功能" class="headerlink" title="添加分类功能"></a>添加分类功能</h1><p>其实很早就想添加分类功能，因为纯标签的分类太弱了，以前收藏的几个大佬的Blog都没写，今天逛了逛yilia主题的issure，找到了解决方案，还是在知乎上的…言归正传，下面开始正题。<br>其实Hexo自带有归档功能categories，不过要先对配置文件进行一些修改。<br><a id="more"></a></p>
-<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="1-生成（文章）时默认生成categories配置项"><a href="#1-生成（文章）时默认生成categories配置项" class="headerlink" title="1.生成（文章）时默认生成categories配置项"></a>1.生成（文章）时默认生成categories配置项</h3><p>categories有点类似tags，写在文章属性之中，所以需要在文章生成时添加categories属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">tags:</div><div class="line">categories:</div></pre></td></tr></table></figure></p>
+<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="1-生成（文章）时默认生成categories配置项"><a href="#1-生成（文章）时默认生成categories配置项" class="headerlink" title="1.生成（文章）时默认生成categories配置项"></a>1.生成（文章）时默认生成categories配置项</h3><p>categories有点类似tags，写在文章属性之中，所以需要在文章生成时添加categories属性。<br>编辑<code>/scaffolds/post.md</code>，在最下面添加一行categories<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">tags:</div><div class="line">categories:</div></pre></td></tr></table></figure></p>
 <h3 id="2-在生成文章后编辑categories属性"><a href="#2-在生成文章后编辑categories属性" class="headerlink" title="2.在生成文章后编辑categories属性"></a>2.在生成文章后编辑categories属性</h3><p>在新建文章后，编辑categories属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: Hexo添加归档/分类功能</div><div class="line">date: 2016-11-02 19:41:27</div><div class="line">tags: [Hexo,Blog]</div><div class="line">categories: 技巧经验</div></pre></td></tr></table></figure></p>
 <p>这样在文章发布后，使用hexo g命令，hexo会在根目录/public/categrises下自动生成归档文件夹  </p>
 <h1 id="实现分类功能"><a href="#实现分类功能" class="headerlink" title="实现分类功能"></a>实现分类功能</h1><p>以上，这样其实就成功添加了分类功能。不过这样添加的分类只能显示在文章的属性中，没有从首页直接查看分类的方法。以下提供一种实现方法</p>
@@ -395,39 +401,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UWP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,7 +417,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -459,11 +457,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UWP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">host</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
             
             <div class="clearfix"></div>

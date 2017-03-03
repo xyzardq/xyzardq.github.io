@@ -6,18 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="www.xyzardq.com">
-  <title>git新建SSHkey并添加到代码托管平台 | xyzardQ的Blog</title>
+  <title>Tag: Linux | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="检查当前电脑中有没有SSH key$ cd ~/. ssh如果提示No such file or directory则说明之前没有生成SSH key">
-<meta property="og:type" content="article">
-<meta property="og:title" content="git新建SSHkey并添加到代码托管平台">
-<meta property="og:url" content="www.xyzardq.com/2016/11/16/git新建sshkey并添加到代码托管平台/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="xyzardQ的Blog">
+<meta property="og:url" content="www.xyzardq.com/tags/Linux/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
-<meta property="og:description" content="检查当前电脑中有没有SSH key$ cd ~/. ssh如果提示No such file or directory则说明之前没有生成SSH key">
-<meta property="og:updated_time" content="2016-11-21T02:24:40.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git新建SSHkey并添加到代码托管平台">
-<meta name="twitter:description" content="检查当前电脑中有没有SSH key$ cd ~/. ssh如果提示No such file or directory则说明之前没有生成SSH key">
+<meta name="twitter:title" content="xyzardQ的Blog">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -159,189 +155,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git新建sshkey并添加到代码托管平台" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      git新建SSHkey并添加到代码托管平台
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/" class="archive-article-date">
+  	<time datetime="2017-03-03T03:06:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-03</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/">Linux学习笔记——第二章：Linux的用户接口与文本编辑器</a>
     </h1>
   
 
-        
-        <a href="/2016/11/16/git新建sshkey并添加到代码托管平台/" class="archive-article-date">
-  	<time datetime="2016-11-16T05:04:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="检查当前电脑中有没有SSH-key"><a href="#检查当前电脑中有没有SSH-key" class="headerlink" title="检查当前电脑中有没有SSH key"></a>检查当前电脑中有没有SSH key</h1><p><code>$ cd ~/. ssh</code><br>如果提示<code>No such file or directory</code>则说明之前没有生成SSH key<br><a id="more"></a></p>
-<h1 id="生成新的SSH-key"><a href="#生成新的SSH-key" class="headerlink" title="生成新的SSH key"></a>生成新的SSH key</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;yourmail@youremail.com&lt;你的邮件地址&gt;&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</div></pre></td></tr></table></figure>
-<p>ps1:此处的<code>-C</code>必须是大写<br>然后系统会提示你输入密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</div><div class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</div></pre></td></tr></table></figure></p>
-<p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。<br>然后就设置成功了。</p>
-<h1 id="添加SSH-key到代码托管平台"><a href="#添加SSH-key到代码托管平台" class="headerlink" title="添加SSH key到代码托管平台"></a>添加SSH key到代码托管平台</h1><p>在本机设置SSH Key之后，需要添加到代码托管平台上，以完成SSH链接的设置。下面以Gtihub为例。</p>
-<ol>
-<li><p>打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。<br>ps1:Administrator是当前账户的名称，如果当前账户不是Admin，请选择进入相应名称的账户。  </p>
-</li>
-<li><p>登陆github系统。点击右上角的 Settings - SSH and GPG keys - New SSH keys</p>
-</li>
-<li><p>把你本地生成的密钥复制到里面（key文本框中），名称栏填写一个名称（可随意填写）点击 add SSH key 就可以了。</p>
-<h1 id="测试添加SSH-key是否成功"><a href="#测试添加SSH-key是否成功" class="headerlink" title="测试添加SSH key是否成功"></a>测试添加SSH key是否成功</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com&lt;git@github.com不要修改&gt;</div><div class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>输入yes，如果看到<br><code>Hi xyzardq&lt;你的ID&gt;! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code><br>那就说明SSH key已经设置成功了。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Coding</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
+        			<a href="/categories/学习笔记/" class="article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http:www.xyzardq.com/2016/11/16/git新建sshkey并添加到代码托管平台/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2016/11/21/Windows实用软件推荐/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Windows实用软件推荐
-        
-      </div>
-    </a>
   
   
-    <a href="/2016/11/14/Hexo多repositories部署及DNS分流/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo多repositories部署及DNS分流</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="git新建sshkey并添加到代码托管平台" data-title="git新建SSHkey并添加到代码托管平台" data-url="www.xyzardq.com/2016/11/16/git新建sshkey并添加到代码托管平台/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"xyzardq"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -364,9 +242,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",

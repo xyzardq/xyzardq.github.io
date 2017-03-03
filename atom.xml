@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.xyzardq.com/"/>
-  <updated>2017-02-25T03:05:33.762Z</updated>
+  <updated>2017-03-03T10:17:06.955Z</updated>
   <id>www.xyzardq.com/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux学习笔记——第二章：Linux的用户接口与文本编辑器</title>
+    <link href="www.xyzardq.com/2017/03/03/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9ALinux%E7%9A%84%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    <id>www.xyzardq.com/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/</id>
+    <published>2017-03-03T03:06:04.000Z</published>
+    <updated>2017-03-03T10:17:06.955Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><code>ls</code> 查看当前目录下文件和文件夹</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;p&gt;&lt;code&gt;ls&lt;/code&gt; 查看当前目录下文件和文件夹&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="www.xyzardq.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Linux" scheme="www.xyzardq.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>通过wifi连接ADB调试Android应用</title>
     <link href="www.xyzardq.com/2017/02/25/%E9%80%9A%E8%BF%87wifi%E8%BF%9E%E6%8E%A5ADB%E8%B0%83%E8%AF%95Android%E5%BA%94%E7%94%A8/"/>
     <id>www.xyzardq.com/2017/02/25/通过wifi连接ADB调试Android应用/</id>
     <published>2017-02-25T02:43:04.000Z</published>
-    <updated>2017-02-25T03:05:33.762Z</updated>
+    <updated>2017-03-03T03:07:03.341Z</updated>
     
     <content type="html"><![CDATA[<p>以前我调试Android程序都是用usb线连接手机和电脑调试，之后无意间发现一款叫Andoird ADB的app后才发现adb调试是多么好用！于是我从网上找了不少adb调试应用的方法，在这里总结出来。<br><a id="more"></a></p>
 <h2 id="adb简介"><a href="#adb简介" class="headerlink" title="adb简介"></a>adb简介</h2><p>ADB全称Android Debug Bridge，主要存放在sdk安装目录下的platform-tools文件夹中，它是一个非常强大的命令行工具，通过这个工具你能够与你的android设备进行交互。同时这是一个包含了以下三部分的cs模式的程序：<br><img src="http://source.xyzardq.com/source/_posts/通过wifi连接ADB调试Android应用_ADB示意图.png" alt="ADB示意图">  </p>
@@ -47,6 +71,8 @@
       &lt;p&gt;以前我调试Android程序都是用usb线连接手机和电脑调试，之后无意间发现一款叫Andoird ADB的app后才发现adb调试是多么好用！于是我从网上找了不少adb调试应用的方法，在这里总结出来。&lt;br&gt;
     
     </summary>
+    
+      <category term="资料总结" scheme="www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
     
     
       <category term="Android" scheme="www.xyzardq.com/tags/Android/"/>
@@ -495,10 +521,10 @@
     <link href="www.xyzardq.com/2016/11/02/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD/"/>
     <id>www.xyzardq.com/2016/11/02/Hexo添加分类功能/</id>
     <published>2016-11-02T11:41:27.000Z</published>
-    <updated>2016-11-14T15:28:06.579Z</updated>
+    <updated>2017-03-03T03:38:06.961Z</updated>
     
     <content type="html"><![CDATA[<h1 id="添加分类功能"><a href="#添加分类功能" class="headerlink" title="添加分类功能"></a>添加分类功能</h1><p>其实很早就想添加分类功能，因为纯标签的分类太弱了，以前收藏的几个大佬的Blog都没写，今天逛了逛yilia主题的issure，找到了解决方案，还是在知乎上的…言归正传，下面开始正题。<br>其实Hexo自带有归档功能categories，不过要先对配置文件进行一些修改。<br><a id="more"></a></p>
-<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="1-生成（文章）时默认生成categories配置项"><a href="#1-生成（文章）时默认生成categories配置项" class="headerlink" title="1.生成（文章）时默认生成categories配置项"></a>1.生成（文章）时默认生成categories配置项</h3><p>categories有点类似tags，写在文章属性之中，所以需要在文章生成时添加categories属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">tags:</div><div class="line">categories:</div></pre></td></tr></table></figure></p>
+<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="1-生成（文章）时默认生成categories配置项"><a href="#1-生成（文章）时默认生成categories配置项" class="headerlink" title="1.生成（文章）时默认生成categories配置项"></a>1.生成（文章）时默认生成categories配置项</h3><p>categories有点类似tags，写在文章属性之中，所以需要在文章生成时添加categories属性。<br>编辑<code>/scaffolds/post.md</code>，在最下面添加一行categories<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">tags:</div><div class="line">categories:</div></pre></td></tr></table></figure></p>
 <h3 id="2-在生成文章后编辑categories属性"><a href="#2-在生成文章后编辑categories属性" class="headerlink" title="2.在生成文章后编辑categories属性"></a>2.在生成文章后编辑categories属性</h3><p>在新建文章后，编辑categories属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: Hexo添加归档/分类功能</div><div class="line">date: 2016-11-02 19:41:27</div><div class="line">tags: [Hexo,Blog]</div><div class="line">categories: 技巧经验</div></pre></td></tr></table></figure></p>
 <p>这样在文章发布后，使用hexo g命令，hexo会在根目录/public/categrises下自动生成归档文件夹  </p>
 <h1 id="实现分类功能"><a href="#实现分类功能" class="headerlink" title="实现分类功能"></a>实现分类功能</h1><p>以上，这样其实就成功添加了分类功能。不过这样添加的分类只能显示在文章的属性中，没有从首页直接查看分类的方法。以下提供一种实现方法</p>
