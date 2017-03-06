@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="xyzardQ的Blog">
 <meta property="og:description" content="添加分类功能其实很早就想添加分类功能，因为纯标签的分类太弱了，以前收藏的几个大佬的Blog都没写，今天逛了逛yilia主题的issure，找到了解决方案，还是在知乎上的…言归正传，下面开始正题。其实Hexo自带有归档功能categories，不过要先对配置文件进行一些修改。">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/Hexo添加分类功能_实现效果.png">
-<meta property="og:updated_time" content="2017-03-03T03:38:06.961Z">
+<meta property="og:updated_time" content="2017-03-06T00:47:25.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo添加分类功能">
 <meta name="twitter:description" content="添加分类功能其实很早就想添加分类功能，因为纯标签的分类太弱了，以前收藏的几个大佬的Blog都没写，今天逛了逛yilia主题的issure，找到了解决方案，还是在知乎上的…言归正传，下面开始正题。其实Hexo自带有归档功能categories，不过要先对配置文件进行一些修改。">
@@ -66,7 +66,7 @@
 	        
 				<li><a href="/categories/资料总结">资料总结</a></li>
 	        
-				<li><a href="/categories/资料总结">学习笔记</a></li>
+				<li><a href="/categories/学习笔记">学习笔记</a></li>
 	        
 			</ul>
 		</nav>
@@ -146,7 +146,7 @@
 		        
 					<li style="width: 20%"><a href="/categories/资料总结">资料总结</a></li>
 		        
-					<li style="width: 20%"><a href="/categories/资料总结">学习笔记</a></li>
+					<li style="width: 20%"><a href="/categories/学习笔记">学习笔记</a></li>
 		        
 				</ul>
 			</nav>
@@ -185,10 +185,10 @@
 <h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="1-生成（文章）时默认生成categories配置项"><a href="#1-生成（文章）时默认生成categories配置项" class="headerlink" title="1.生成（文章）时默认生成categories配置项"></a>1.生成（文章）时默认生成categories配置项</h3><p>categories有点类似tags，写在文章属性之中，所以需要在文章生成时添加categories属性。<br>编辑<code>/scaffolds/post.md</code>，在最下面添加一行categories<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">tags:</div><div class="line">categories:</div></pre></td></tr></table></figure></p>
 <h3 id="2-在生成文章后编辑categories属性"><a href="#2-在生成文章后编辑categories属性" class="headerlink" title="2.在生成文章后编辑categories属性"></a>2.在生成文章后编辑categories属性</h3><p>在新建文章后，编辑categories属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: Hexo添加归档/分类功能</div><div class="line">date: 2016-11-02 19:41:27</div><div class="line">tags: [Hexo,Blog]</div><div class="line">categories: 技巧经验</div></pre></td></tr></table></figure></p>
 <p>这样在文章发布后，使用hexo g命令，hexo会在根目录/public/categrises下自动生成归档文件夹  </p>
-<h1 id="实现分类功能"><a href="#实现分类功能" class="headerlink" title="实现分类功能"></a>实现分类功能</h1><p>以上，这样其实就成功添加了分类功能。不过这样添加的分类只能显示在文章的属性中，没有从首页直接查看分类的方法。以下提供一种实现方法</p>
+<h1 id="分类功能可视化"><a href="#分类功能可视化" class="headerlink" title="分类功能可视化"></a>分类功能可视化</h1><p>以上，这样其实就成功添加了分类功能。不过这样添加的分类只能显示在文章的属性中，没有从首页直接查看分类的方法。以下提供一种实现方法</p>
 <h2 id="博客侧边栏展示归档"><a href="#博客侧边栏展示归档" class="headerlink" title="博客侧边栏展示归档"></a>博客侧边栏展示归档</h2><h3 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h3><p><img src="http://source.xyzardq.com/source/_posts/Hexo添加分类功能_实现效果.png" alt="实现效果"></p>
 <h2 id="食用方法-1"><a href="#食用方法-1" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="1-在主题配置文件中添加分类选项"><a href="#1-在主题配置文件中添加分类选项" class="headerlink" title="1.在主题配置文件中添加分类选项"></a>1.在主题配置文件中添加分类选项</h3><p>在主题配置文件<code>themes/_config.yml</code>中添加以下代码（#号后为注释内容）:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  主页: /</div><div class="line">  所有文章: /archives</div><div class="line">  技巧经验: /categories/技巧经验     # 博客首页展示文本： 访问路径/自定义归档名称</div><div class="line">  资料总结: /categories/资料总结</div></pre></td></tr></table></figure></p>
-<p> ps1:目前在博客侧边栏添加此功能你后，在本地部署会报错，同步到云端后才可以正常显示</p>
+<h2 id="常见问题及解决方案"><a href="#常见问题及解决方案" class="headerlink" title="常见问题及解决方案"></a>常见问题及解决方案</h2><h3 id="本地部署报错"><a href="#本地部署报错" class="headerlink" title="本地部署报错"></a>本地部署报错</h3><p> 目前在博客侧边栏添加此功能你后，在本地部署会报错，但是同步到云端后就可以正常显示了。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p> <a href="https://www.zhihu.com/question/33324071/answer/58775540" target="_blank" rel="external">hexo下新建页面下如何放多个文章？</a></p>
 
       
@@ -401,11 +401,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -417,11 +417,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -437,31 +437,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ADB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UWP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,6 +462,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">encoding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ADB</a>
               </li>
             
             <div class="clearfix"></div>
