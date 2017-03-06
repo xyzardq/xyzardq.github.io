@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.xyzardq.com/"/>
-  <updated>2017-03-06T09:13:35.745Z</updated>
+  <updated>2017-03-06T14:55:39.247Z</updated>
   <id>www.xyzardq.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="www.xyzardq.com/2017/03/06/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/"/>
     <id>www.xyzardq.com/2017/03/06/Linux学习笔记——第三章：系统管理/</id>
     <published>2017-03-06T08:51:39.000Z</published>
-    <updated>2017-03-06T09:13:35.745Z</updated>
+    <updated>2017-03-06T14:55:39.247Z</updated>
     
     <content type="html"><![CDATA[<h2 id="3-1用户管理"><a href="#3-1用户管理" class="headerlink" title="3.1用户管理"></a>3.1用户管理</h2><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">useradd [选项] [用户账号] #建立用户账号</div><div class="line">passwd [选项] [用户账号]  #更改账号密码</div><div class="line">userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件</div><div class="line">usermod [选项] [用户账号] #修改用户信息</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">groupadd [选项] [组名]  #创建一个新组群</div><div class="line">groupdel [选项] [组名]  #删除组群</div><div class="line">groupmod [选项] [组名]  #更改组群识别码或名称</div><div class="line">gpasswd [选项] [组名]  #管理组</div><div class="line">newgrp [选项] [组名]  #切换当前登录用户所在组</div></pre></td></tr></table></figure>
 <h3 id="su和sudo命令"><a href="#su和sudo命令" class="headerlink" title="su和sudo命令"></a>su和sudo命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su [选项] [用户账号] #切换到另一个账户，默认值为root账户</div><div class="line">sudo [-bhHpV] [-s] [-u用户] command #以另一个账号的身份运行指定命令</div></pre></td></tr></table></figure>
 <h3 id="监视进程"><a href="#监视进程" class="headerlink" title="监视进程"></a>监视进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps      #显示系统中进程的信息</div><div class="line">pstree  #以树状方式表现进程的父子关系</div><div class="line">top     #显示当前系统正在执行的进程的相关信息</div></pre></td></tr></table></figure>
@@ -31,7 +32,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;3-1用户管理&quot;&gt;&lt;a href=&quot;#3-1用户管理&quot; class=&quot;headerlink&quot; title=&quot;3.1用户管理&quot;&gt;&lt;/a&gt;3.1用户管理&lt;/h2&gt;&lt;h3 id=&quot;用户管理&quot;&gt;&lt;a href=&quot;#用户管理&quot; class=&quot;headerlink&quot; titl
+      &lt;h2 id=&quot;3-1用户管理&quot;&gt;&lt;a href=&quot;#3-1用户管理&quot; class=&quot;headerlink&quot; title=&quot;3.1用户管理&quot;&gt;&lt;/a&gt;3.1用户管理&lt;/h2&gt;&lt;h3 id=&quot;用户管理&quot;&gt;&lt;a href=&quot;#用户管理&quot; class=&quot;headerlink&quot; title=&quot;用户管理&quot;&gt;&lt;/a&gt;用户管理&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;useradd [选项] [用户账号] #建立用户账号&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;passwd [选项] [用户账号]  #更改账号密码&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;usermod [选项] [用户账号] #修改用户信息&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -47,9 +48,9 @@
     <link href="www.xyzardq.com/2017/03/03/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9ALinux%E7%9A%84%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     <id>www.xyzardq.com/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/</id>
     <published>2017-03-03T03:06:04.000Z</published>
-    <updated>2017-03-06T08:53:33.046Z</updated>
+    <updated>2017-03-06T14:55:33.764Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="2-1-Shell"><a href="#2-1-Shell" class="headerlink" title="2.1 Shell"></a>2.1 Shell</h2><h3 id="命令和文件名的自动补齐功能"><a href="#命令和文件名的自动补齐功能" class="headerlink" title="命令和文件名的自动补齐功能"></a>命令和文件名的自动补齐功能</h3><p>在命令和文件名输入到一半时，按<code>Tab</code>可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。</p>
+    <content type="html"><![CDATA[<h2 id="2-1-Shell"><a href="#2-1-Shell" class="headerlink" title="2.1 Shell"></a>2.1 Shell</h2><h3 id="命令和文件名的自动补齐功能"><a href="#命令和文件名的自动补齐功能" class="headerlink" title="命令和文件名的自动补齐功能"></a>命令和文件名的自动补齐功能</h3><p>在命令和文件名输入到一半时，按<code>Tab</code>可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。<br><a id="more"></a></p>
 <h3 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alias   #查询当前已经定义的alias列表</div><div class="line">alias   [别名]=[命令名称]     #设置命令的别名</div><div class="line">unalias [别名]    #取消别名设置</div></pre></td></tr></table></figure>
 <p>注意:alias命令仅对该次登录系统有效，如果希望每次登陆系统都能够使用该命令别名，可以编辑<code>~/.bashrc</code>（root用户是<code>/root/.bashrc</code>，普通用户是<code>/home/*/.bashrc</code>，按照<code>alias [别名]=[要替换的终端命令]</code>添加一行命令，注销，再次登录系统，就可以使用了。）</p>
 <h3 id="通配符与文件名变量"><a href="#通配符与文件名变量" class="headerlink" title="通配符与文件名变量"></a>通配符与文件名变量</h3><table>
@@ -84,7 +85,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;2-1-Shell&quot;&gt;&lt;a href=&quot;#2-1-Shell&quot; class=&quot;headerlink&quot; title=&quot;2.1 Shell&quot;&gt;&lt;/a&gt;2.1 Shell&lt;/h2&gt;&lt;h3 id=&quot;命令和文件名的自动补齐功能&quot;&gt;&lt;a href=&quot;#命令和文件名的自动补齐功
+      &lt;h2 id=&quot;2-1-Shell&quot;&gt;&lt;a href=&quot;#2-1-Shell&quot; class=&quot;headerlink&quot; title=&quot;2.1 Shell&quot;&gt;&lt;/a&gt;2.1 Shell&lt;/h2&gt;&lt;h3 id=&quot;命令和文件名的自动补齐功能&quot;&gt;&lt;a href=&quot;#命令和文件名的自动补齐功能&quot; class=&quot;headerlink&quot; title=&quot;命令和文件名的自动补齐功能&quot;&gt;&lt;/a&gt;命令和文件名的自动补齐功能&lt;/h3&gt;&lt;p&gt;在命令和文件名输入到一半时，按&lt;code&gt;Tab&lt;/code&gt;可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。&lt;br&gt;
     
     </summary>
     
@@ -243,12 +244,12 @@
     <link href="www.xyzardq.com/2016/11/21/Windows%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     <id>www.xyzardq.com/2016/11/21/Windows实用软件推荐/</id>
     <published>2016-11-21T01:05:49.000Z</published>
-    <updated>2017-03-06T09:39:30.591Z</updated>
+    <updated>2017-03-06T14:56:10.198Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>以下软件是博主亲自用过后比较得出的。</li>
 <li>同类软件推荐不超过两个，免得选择强迫症抓狂（</li>
-<li>想到再写<a id="more"></a>
+<li>想到再写  <a id="more"></a>
 </li>
 </ol>
 <h1 id="系统工具"><a href="#系统工具" class="headerlink" title="系统工具"></a>系统工具</h1><table>

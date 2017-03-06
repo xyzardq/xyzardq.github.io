@@ -8,19 +8,16 @@
   <link rel="dns-prefetch" href="www.xyzardq.com">
   <title>Linux学习笔记——第三章：系统管理 | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息
-组管理12345groupadd [选项] [组名]  #创建一个新组群groupdel [选项]">
+  <meta name="description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux学习笔记——第三章：系统管理">
 <meta property="og:url" content="www.xyzardq.com/2017/03/06/Linux学习笔记——第三章：系统管理/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
-<meta property="og:description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息
-组管理12345groupadd [选项] [组名]  #创建一个新组群groupdel [选项]">
-<meta property="og:updated_time" content="2017-03-06T09:13:35.745Z">
+<meta property="og:description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
+<meta property="og:updated_time" content="2017-03-06T14:55:39.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux学习笔记——第三章：系统管理">
-<meta name="twitter:description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息
-组管理12345groupadd [选项] [组名]  #创建一个新组群groupdel [选项]">
+<meta name="twitter:description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -183,6 +180,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="3-1用户管理"><a href="#3-1用户管理" class="headerlink" title="3.1用户管理"></a>3.1用户管理</h2><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">useradd [选项] [用户账号] #建立用户账号</div><div class="line">passwd [选项] [用户账号]  #更改账号密码</div><div class="line">userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件</div><div class="line">usermod [选项] [用户账号] #修改用户信息</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">groupadd [选项] [组名]  #创建一个新组群</div><div class="line">groupdel [选项] [组名]  #删除组群</div><div class="line">groupmod [选项] [组名]  #更改组群识别码或名称</div><div class="line">gpasswd [选项] [组名]  #管理组</div><div class="line">newgrp [选项] [组名]  #切换当前登录用户所在组</div></pre></td></tr></table></figure>
 <h3 id="su和sudo命令"><a href="#su和sudo命令" class="headerlink" title="su和sudo命令"></a>su和sudo命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su [选项] [用户账号] #切换到另一个账户，默认值为root账户</div><div class="line">sudo [-bhHpV] [-s] [-u用户] command #以另一个账号的身份运行指定命令</div></pre></td></tr></table></figure>
 <h3 id="监视进程"><a href="#监视进程" class="headerlink" title="监视进程"></a>监视进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps      #显示系统中进程的信息</div><div class="line">pstree  #以树状方式表现进程的父子关系</div><div class="line">top     #显示当前系统正在执行的进程的相关信息</div></pre></td></tr></table></figure>
@@ -389,6 +387,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -397,11 +399,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -413,15 +411,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,15 +435,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,15 +447,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ADB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
             
             <div class="clearfix"></div>

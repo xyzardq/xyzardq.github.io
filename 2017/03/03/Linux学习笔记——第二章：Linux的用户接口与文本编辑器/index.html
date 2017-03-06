@@ -8,22 +8,16 @@
   <link rel="dns-prefetch" href="www.xyzardq.com">
   <title>Linux学习笔记——第二章：Linux的用户接口与文本编辑器 | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2.1 Shell命令和文件名的自动补齐功能在命令和文件名输入到一半时，按Tab可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。
-命令别名123alias   #查询当前已经定义的alias列表alias   [别名]=[命令名称]     #设置命令的别名unalias [别名]    #取消别名设置
-注意:alias命令仅对该次登录系统有效，如果希望每次登陆系统都">
+  <meta name="description" content="2.1 Shell命令和文件名的自动补齐功能在命令和文件名输入到一半时，按Tab可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux学习笔记——第二章：Linux的用户接口与文本编辑器">
 <meta property="og:url" content="www.xyzardq.com/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
-<meta property="og:description" content="2.1 Shell命令和文件名的自动补齐功能在命令和文件名输入到一半时，按Tab可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。
-命令别名123alias   #查询当前已经定义的alias列表alias   [别名]=[命令名称]     #设置命令的别名unalias [别名]    #取消别名设置
-注意:alias命令仅对该次登录系统有效，如果希望每次登陆系统都">
-<meta property="og:updated_time" content="2017-03-06T08:53:33.046Z">
+<meta property="og:description" content="2.1 Shell命令和文件名的自动补齐功能在命令和文件名输入到一半时，按Tab可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。">
+<meta property="og:updated_time" content="2017-03-06T14:55:33.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux学习笔记——第二章：Linux的用户接口与文本编辑器">
-<meta name="twitter:description" content="2.1 Shell命令和文件名的自动补齐功能在命令和文件名输入到一半时，按Tab可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。
-命令别名123alias   #查询当前已经定义的alias列表alias   [别名]=[命令名称]     #设置命令的别名unalias [别名]    #取消别名设置
-注意:alias命令仅对该次登录系统有效，如果希望每次登陆系统都">
+<meta name="twitter:description" content="2.1 Shell命令和文件名的自动补齐功能在命令和文件名输入到一半时，按Tab可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -185,7 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="2-1-Shell"><a href="#2-1-Shell" class="headerlink" title="2.1 Shell"></a>2.1 Shell</h2><h3 id="命令和文件名的自动补齐功能"><a href="#命令和文件名的自动补齐功能" class="headerlink" title="命令和文件名的自动补齐功能"></a>命令和文件名的自动补齐功能</h3><p>在命令和文件名输入到一半时，按<code>Tab</code>可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。</p>
+        <h2 id="2-1-Shell"><a href="#2-1-Shell" class="headerlink" title="2.1 Shell"></a>2.1 Shell</h2><h3 id="命令和文件名的自动补齐功能"><a href="#命令和文件名的自动补齐功能" class="headerlink" title="命令和文件名的自动补齐功能"></a>命令和文件名的自动补齐功能</h3><p>在命令和文件名输入到一半时，按<code>Tab</code>可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。<br><a id="more"></a></p>
 <h3 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alias   #查询当前已经定义的alias列表</div><div class="line">alias   [别名]=[命令名称]     #设置命令的别名</div><div class="line">unalias [别名]    #取消别名设置</div></pre></td></tr></table></figure>
 <p>注意:alias命令仅对该次登录系统有效，如果希望每次登陆系统都能够使用该命令别名，可以编辑<code>~/.bashrc</code>（root用户是<code>/root/.bashrc</code>，普通用户是<code>/home/*/.bashrc</code>，按照<code>alias [别名]=[要替换的终端命令]</code>添加一行命令，注销，再次登录系统，就可以使用了。）</p>
 <h3 id="通配符与文件名变量"><a href="#通配符与文件名变量" class="headerlink" title="通配符与文件名变量"></a>通配符与文件名变量</h3><table>
@@ -427,6 +421,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -435,11 +433,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,15 +445,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,15 +469,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,15 +481,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ADB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
             
             <div class="clearfix"></div>
