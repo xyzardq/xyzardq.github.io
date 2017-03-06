@@ -328,6 +328,83 @@
 
 
   
+    <article id="post-Linux学习笔记——第三章：系统管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/06/Linux学习笔记——第三章：系统管理/">Linux学习笔记——第三章：系统管理</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/06/Linux学习笔记——第三章：系统管理/" class="archive-article-date">
+  	<time datetime="2017-03-06T08:51:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="3-1用户管理"><a href="#3-1用户管理" class="headerlink" title="3.1用户管理"></a>3.1用户管理</h2><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">useradd [选项] [用户账号] #建立用户账号</div><div class="line">passwd [选项] [用户账号]  #更改账号密码</div><div class="line">userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件</div><div class="line">usermod [选项] [用户账号] #修改用户信息</div></pre></td></tr></table></figure>
+<h3 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">groupadd [选项] [组名]  #创建一个新组群</div><div class="line">groupdel [选项] [组名]  #删除组群</div><div class="line">groupmod [选项] [组名]  #更改组群识别码或名称</div><div class="line">gpasswd [选项] [组名]  #管理组</div><div class="line">newgrp [选项] [组名]  #切换当前登录用户所在组</div></pre></td></tr></table></figure>
+<h3 id="su和sudo命令"><a href="#su和sudo命令" class="headerlink" title="su和sudo命令"></a>su和sudo命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su [选项] [用户账号] #切换到另一个账户，默认值为root账户</div><div class="line">sudo [-bhHpV] [-s] [-u用户] command #以另一个账号的身份运行指定命令</div></pre></td></tr></table></figure>
+<h3 id="监视进程"><a href="#监视进程" class="headerlink" title="监视进程"></a>监视进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps      #显示系统中进程的信息</div><div class="line">pstree  #以树状方式表现进程的父子关系</div><div class="line">top     #显示当前系统正在执行的进程的相关信息</div></pre></td></tr></table></figure>
+<h3 id="控制进程"><a href="#控制进程" class="headerlink" title="控制进程"></a>控制进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">kill [选项] PID   #根据PID终止一个进程</div><div class="line">killall [signal] [进程名]  #根据进程名终止一个进程</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习笔记/" class="article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/06/Linux学习笔记——第三章：系统管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Linux学习笔记——第二章：Linux的用户接口与文本编辑器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -348,7 +425,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><code>ls</code> 查看当前目录下文件和文件夹</p>
+        <h2 id="2-1-Shell"><a href="#2-1-Shell" class="headerlink" title="2.1 Shell"></a>2.1 Shell</h2><h3 id="命令和文件名的自动补齐功能"><a href="#命令和文件名的自动补齐功能" class="headerlink" title="命令和文件名的自动补齐功能"></a>命令和文件名的自动补齐功能</h3><p>在命令和文件名输入到一半时，按<code>Tab</code>可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。</p>
+<h3 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alias   #查询当前已经定义的alias列表</div><div class="line">alias   [别名]=[命令名称]     #设置命令的别名</div><div class="line">unalias [别名]    #取消别名设置</div></pre></td></tr></table></figure>
+<p>注意:alias命令仅对该次登录系统有效，如果希望每次登陆系统都能够使用该命令别名，可以编辑<code>~/.bashrc</code>（root用户是<code>/root/.bashrc</code>，普通用户是<code>/home/*/.bashrc</code>，按照<code>alias [别名]=[要替换的终端命令]</code>添加一行命令，注销，再次登录系统，就可以使用了。）</p>
+<h3 id="通配符与文件名变量"><a href="#通配符与文件名变量" class="headerlink" title="通配符与文件名变量"></a>通配符与文件名变量</h3><table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>匹配任何字符和任何数字的字符组合</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配任何单个字符</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>匹配任何包含在括号里的单字符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="输入-输出重定向和管道"><a href="#输入-输出重定向和管道" class="headerlink" title="输入/输出重定向和管道"></a>输入/输出重定向和管道</h3><p>输入重定向：从文件输入命令或可执行文件程序的标准<br>输出重定向：把结果输出重定向到一个文件里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;   #输入重定向</div><div class="line">&gt;   #正确输出重定向、重写文件</div><div class="line">&gt;&gt;  #正确输出重定向、不重写文件</div><div class="line">2&gt;(2&gt;&gt;)     #错误输出重定向</div><div class="line">&amp;&gt;(&amp;&gt;&gt;)     #输出重定向（无论正误）</div></pre></td></tr></table></figure></p>
+<p>Tip:<br>1.可以双重输出重定向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -l 2&gt;error.txt &gt;results.txt</div></pre></td></tr></table></figure></p>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>管道可以把一系列命令链接一起。第一个命令的输出会通过管道传给第二个命令，并且作为第二个命令的输入，第二个命令的输出优惠作为第三个命令的输入，以此类推而管道中的最后一个命令的输出才会显示在屏幕上，如果命令行里使用了输出重定向，将会放进一个文件里。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat file.txt| grep &quot;ztg&quot; |wc -l</div></pre></td></tr></table></figure></p>
+<p>这个管道将cat命令的输出作为grep命令的输入，grep命令的输出则是所有包含单词ztg的行，这个输出又被送给wc命令。</p>
+<h2 id="2-4-实例：使用vim编辑文件"><a href="#2-4-实例：使用vim编辑文件" class="headerlink" title="2.4 实例：使用vim编辑文件"></a>2.4 实例：使用vim编辑文件</h2><p>在命令行中执行命令<code>vim filename</code>，如果filename已存在，则filename被打开且显示其内容；如果filename不存在，则vim在第一次存盘时自动在硬盘上新建filename文件。<br>vim拥有5种编辑模式：命令模式、输入模式、末行模式、可视化模式、查询模式。<br>具体命令查看书p55-p62。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><code>ls</code> 查看当前目录下文件和文件夹<br><code>pwd</code>查看当前目录的绝对路径<br><code>cat [文件]</code>查看指定文件的内容</p>
 
       
 
@@ -867,84 +974,9 @@
 
 
   
-    <article id="post-Hexo添加文章目录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/04/Hexo添加文章目录/">Hexo添加文章目录</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/04/Hexo添加文章目录/" class="archive-article-date">
-  	<time datetime="2016-11-04T04:52:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>全文转载自<a href="http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/">为Hexo博客添加目录</a>。平时写类似添加功能的东西我都是看一遍网上的教程，自己理解后按自己的方法做然后写成文章的，这次全文摘抄是因为我TM根本看不懂，不会改…不过以后在学好前端后也会回来做修改（先挖好坑）个人更喜欢<a href="http://moxfive.xyz/2015/08/20/blog-building/">MOxFIVE建站日志</a>这种类型的文章目录，不过那是修改好的主题，直接拿来用就没什么意思了。废话就这样，以下全文转载。<br>
-        
-          <a class="article-more-a" href="/2016/11/04/Hexo添加文章目录/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/04/Hexo添加文章目录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1019,6 +1051,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Google</a>
               </li>
              
@@ -1043,15 +1083,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1063,11 +1095,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1083,11 +1119,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
