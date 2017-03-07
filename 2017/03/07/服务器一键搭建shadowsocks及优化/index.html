@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="www.xyzardq.com">
-  <title>Tag: Java | xyzardQ的Blog</title>
+  <title>服务器一键搭建shadowsocks及优化 | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xyzardQ的Blog">
-<meta property="og:url" content="www.xyzardq.com/tags/Java/index.html">
+  <meta name="description" content="自从第一次剁了台vps，感觉有点上瘾，最近开了几个vps来玩（感觉钱包药丸）不过都只搭了SS。所以今天就总结下搭建shadowsocks server的一些一键脚本及其优化吧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器一键搭建shadowsocks及优化">
+<meta property="og:url" content="www.xyzardq.com/2017/03/07/服务器一键搭建shadowsocks及优化/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
+<meta property="og:description" content="自从第一次剁了台vps，感觉有点上瘾，最近开了几个vps来玩（感觉钱包药丸）不过都只搭了SS。所以今天就总结下搭建shadowsocks server的一些一键脚本及其优化吧。">
+<meta property="og:updated_time" content="2017-03-07T01:27:53.815Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xyzardQ的Blog">
+<meta name="twitter:title" content="服务器一键搭建shadowsocks及优化">
+<meta name="twitter:description" content="自从第一次剁了台vps，感觉有点上瘾，最近开了几个vps来玩（感觉钱包药丸）不过都只搭了SS。所以今天就总结下搭建shadowsocks server的一些一键脚本及其优化吧。">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -155,52 +159,146 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-服务器一键搭建shadowsocks及优化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/07/Android学习资料/" class="archive-article-date">
-  	<time datetime="2016-04-07T12:16:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/07/Android学习资料/">Android学习资料</a>
+    <h1 class="article-title" itemprop="name">
+      服务器一键搭建shadowsocks及优化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/03/07/服务器一键搭建shadowsocks及优化/" class="archive-article-date">
+  	<time datetime="2017-03-07T00:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自从第一次剁了台vps，感觉有点上瘾，最近开了几个vps来玩（感觉钱包药丸）不过都只搭了SS。所以今天就总结下搭建shadowsocks server的一些一键脚本及其优化吧。<br><a id="more"></a></p>
+<h2 id="shadowsocks-server一键安装脚本"><a href="#shadowsocks-server一键安装脚本" class="headerlink" title="shadowsocks server一键安装脚本"></a>shadowsocks server一键安装脚本</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocksR-%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85" target="_blank" rel="external">shadowsocksR 一键安装</a>（推荐）</td>
+<td>ShadowsocksR 的 Python 语言实现的版本</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-Python-%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85" target="_blank" rel="external">shadowsocks Python 一键安装</a></td>
+<td>Shadowsocks 的 Python 语言实现的版本</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-libev-%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85" target="_blank" rel="external">shadowsocks libev 一键安装</a></td>
+<td>Shadowsocks 的 C 语言实现的版本</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-go-%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85" target="_blank" rel="external">shadowsocks go 一键安装</a></td>
+<td>Shadowsocks 的 Go 语言实现的版本</td>
+</tr>
+</tbody>
+</table>
+<p>Tips:由于某种原因，ss已经停止更新，而另一个作者做的ssr一直在保持更新，加入了不少新特性。所以推荐使用ssr的服务器端，而且ssr也是兼容ss的。</p>
+<h2 id="手动安装shadowsocks-server"><a href="#手动安装shadowsocks-server" class="headerlink" title="手动安装shadowsocks server"></a>手动安装shadowsocks server</h2><p>手动安装shadowsocks客户端比较麻烦，将客户端程序放入vps启动后，还要手动调节混淆，设置成开机启动，并且修改防火墙设置，所以比较推荐使用一键安装脚本</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/breakwa11/shadowsocks-rss/wiki/Server-Setup" target="_blank" rel="external">搭建shadowsocksR</a></td>
+<td>ShadowsocksR 的 Python 语言实现的版本</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-libev" target="_blank" rel="external">搭建shadowsocks libev</a></td>
+<td>Shadowsocks 的 C 语言实现的版本</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocksR-libev" target="_blank" rel="external">搭建shadowsocksR libev</a></td>
+<td>ShadowsocksR 的 C 语言实现的版本</td>
+</tr>
+</tbody>
+</table>
+<h2 id="优化shadowsocks-server"><a href="#优化shadowsocks-server" class="headerlink" title="优化shadowsocks server"></a>优化shadowsocks server</h2><p>由于vps邻居对带宽的滥用，很多时候即使ss搭建好了速度也很慢，20mbps的带宽，连也y2b720P都看不了。这时候就需要对服务器进行一些优化了。</p>
+<h3 id="单边加速篇"><a href="#单边加速篇" class="headerlink" title="单边加速篇"></a>单边加速篇</h3><p>单边加速就是只需要在服务器安装服务器端而不需要再用户处安装客户端。需要注意的是，单边加速基本只适用于非openVZ的vps，因为openVZ无法修改内核。不过最近出了个ovz里装虚拟机从而使用单边加速的黑科技，但是比较繁琐，后面我会贴上教程。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/91yun/serverspeeder" target="_blank" rel="external">serverspeeder(锐速)</a></td>
+<td>多倍发包的鼻祖=。=加速效果显著但是邻居受影响极大</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iMeiji/shadowsocks_install/wiki/Net-Speeder" target="_blank" rel="external">net speeder</a></td>
+<td>高延迟不稳定链路上优化单线程下载速度</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iMeiji/shadowsocks_install/wiki/%E5%BC%80%E5%90%AFTCP-BBR%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95" target="_blank" rel="external">TCP BBR</a>（推荐）</td>
+<td>google开发的新内核， 目的是要尽量跑满带宽，对领居影响很小</td>
+</tr>
+</tbody>
+</table>
+<h3 id="双边加速篇"><a href="#双边加速篇" class="headerlink" title="双边加速篇"></a>双边加速篇</h3><p>双边加速是在客户端和服务器端都要装上加速软件，比较麻烦，不过加速效果显著，而且可以再openVZ的VPS上配置。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/xtaci/kcptun" target="_blank" rel="external">kcptun</a>（推荐）</td>
+<td>使用kcp协议传输数据</td>
+</tr>
+<tr>
+<td><a href="https://github.com/91yun/finalspeed" target="_blank" rel="external">FinalSpeed</a></td>
+<td>压缩流量以增加传输成功率</td>
+</tr>
+</tbody>
+</table>
+<h2 id="黑科技及小技巧篇"><a href="#黑科技及小技巧篇" class="headerlink" title="黑科技及小技巧篇"></a>黑科技及小技巧篇</h2><h3 id="openVZ下启动BBR"><a href="#openVZ下启动BBR" class="headerlink" title="openVZ下启动BBR"></a><a href="https://www.91yun.org/archives/4996" target="_blank" rel="external">openVZ下启动BBR</a></h3><p>Tips作者建议在1G内存以上的vps中使用，实际应用中，有人用128的小鸡成功启动了虚拟机…所以说见仁见智吧  </p>
+<h3 id="一些shadowsocks-server的优化小技巧：shadowsocks-优化篇"><a href="#一些shadowsocks-server的优化小技巧：shadowsocks-优化篇" class="headerlink" title="一些shadowsocks server的优化小技巧：shadowsocks 优化篇"></a>一些shadowsocks server的优化小技巧：<a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-optimize" target="_blank" rel="external">shadowsocks 优化篇</a></h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>大部分脚本转载自秋水逸冰的一键安装脚本<br><a href="https://teddysun.com" target="_blank" rel="external">秋水逸冰</a><br><a href="https://teddysun.com/451.html" target="_blank" rel="external">一键脚本那些事儿</a><br><a href="https://github.com/iMeiji/shadowsocks_install" target="_blank" rel="external">Github_shadowsocks_install</a><br><a href="https://github.com/91yun" target="_blank" rel="external">91yun_Github</a>  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VPS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">shadowsocks</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -213,70 +311,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:www.xyzardq.com/2017/03/07/服务器一键搭建shadowsocks及优化/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/06/在Windows命令行下编译包含中文字符的Java文件时报错/" class="archive-article-date">
-  	<time datetime="2016-04-06T13:15:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/06/在Windows命令行下编译包含中文字符的Java文件时报错/">在Windows命令行下编译包含中文字符的Java文件时报错</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">encoding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/06/Linux学习笔记——第三章：系统管理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux学习笔记——第三章：系统管理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
+
   
-  
-    </div></section>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="服务器一键搭建shadowsocks及优化" data-title="服务器一键搭建shadowsocks及优化" data-url="www.xyzardq.com/2017/03/07/服务器一键搭建shadowsocks及优化/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"xyzardq"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -299,9 +431,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
