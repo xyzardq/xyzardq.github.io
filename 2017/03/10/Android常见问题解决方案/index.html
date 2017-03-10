@@ -8,16 +8,22 @@
   <link rel="dns-prefetch" href="www.xyzardq.com">
   <title>Android常见问题解决方案 | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="错误代码Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] c">
+  <meta name="description" content="最近由于一个grade的问题，重装了as和sdk四五次。。。最后才在网上找到了解决方法。于是就想着吧一些很难解决的错误记录下来，供以后查看。
+常见错误无法创建Grade/无法识别Grade也是版本不兼容所导致的的，最简单的解决方法是把当前用户文件夹下的.grade文件夹删掉，再重开项目等待as重建该文件夹
+错误代码Error while executing: am startservice com">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android常见问题解决方案">
 <meta property="og:url" content="www.xyzardq.com/2017/03/10/Android常见问题解决方案/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
-<meta property="og:description" content="错误代码Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] c">
-<meta property="og:updated_time" content="2017-03-10T02:23:51.078Z">
+<meta property="og:description" content="最近由于一个grade的问题，重装了as和sdk四五次。。。最后才在网上找到了解决方法。于是就想着吧一些很难解决的错误记录下来，供以后查看。
+常见错误无法创建Grade/无法识别Grade也是版本不兼容所导致的的，最简单的解决方法是把当前用户文件夹下的.grade文件夹删掉，再重开项目等待as重建该文件夹
+错误代码Error while executing: am startservice com">
+<meta property="og:updated_time" content="2017-03-10T02:29:00.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android常见问题解决方案">
-<meta name="twitter:description" content="错误代码Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] c">
+<meta name="twitter:description" content="最近由于一个grade的问题，重装了as和sdk四五次。。。最后才在网上找到了解决方法。于是就想着吧一些很难解决的错误记录下来，供以后查看。
+常见错误无法创建Grade/无法识别Grade也是版本不兼容所导致的的，最简单的解决方法是把当前用户文件夹下的.grade文件夹删掉，再重开项目等待as重建该文件夹
+错误代码Error while executing: am startservice com">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -179,8 +185,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><h3 id="Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started"><a href="#Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started" class="headerlink" title="Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started."></a>Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started.</h3><p>通常是由于新版as中运行了旧版的as所导致的的。暂时的解决方法是进入<code>File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Instant Run</code>把Instant Run关掉</p>
+        <p>最近由于一个grade的问题，重装了as和sdk四五次。。。最后才在网上找到了解决方法。于是就想着吧一些很难解决的错误记录下来，供以后查看。</p>
 <h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><h3 id="无法创建Grade-无法识别Grade"><a href="#无法创建Grade-无法识别Grade" class="headerlink" title="无法创建Grade/无法识别Grade"></a>无法创建Grade/无法识别Grade</h3><p>也是版本不兼容所导致的的，最简单的解决方法是把当前用户文件夹下的.grade文件夹删掉，再重开项目等待as重建该文件夹</p>
+<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><h3 id="Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started"><a href="#Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started" class="headerlink" title="Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started."></a>Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started.</h3><p>通常是由于新版as中运行了旧版的as所导致的的。暂时的解决方法是进入<code>File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Instant Run</code>把Instant Run关掉</p>
 
       
 

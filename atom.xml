@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.xyzardq.com/"/>
-  <updated>2017-03-10T02:23:51.078Z</updated>
+  <updated>2017-03-10T02:29:00.559Z</updated>
   <id>www.xyzardq.com/</id>
   
   <author>
@@ -20,15 +20,17 @@
     <link href="www.xyzardq.com/2017/03/10/Android%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>www.xyzardq.com/2017/03/10/Android常见问题解决方案/</id>
     <published>2017-03-10T02:20:07.000Z</published>
-    <updated>2017-03-10T02:23:51.078Z</updated>
+    <updated>2017-03-10T02:29:00.559Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><h3 id="Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started"><a href="#Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started" class="headerlink" title="Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started."></a>Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started.</h3><p>通常是由于新版as中运行了旧版的as所导致的的。暂时的解决方法是进入<code>File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Instant Run</code>把Instant Run关掉</p>
+    <content type="html"><![CDATA[<p>最近由于一个grade的问题，重装了as和sdk四五次。。。最后才在网上找到了解决方法。于是就想着吧一些很难解决的错误记录下来，供以后查看。</p>
 <h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><h3 id="无法创建Grade-无法识别Grade"><a href="#无法创建Grade-无法识别Grade" class="headerlink" title="无法创建Grade/无法识别Grade"></a>无法创建Grade/无法识别Grade</h3><p>也是版本不兼容所导致的的，最简单的解决方法是把当前用户文件夹下的.grade文件夹删掉，再重开项目等待as重建该文件夹</p>
+<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><h3 id="Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started"><a href="#Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started" class="headerlink" title="Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started."></a>Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started.</h3><p>通常是由于新版as中运行了旧版的as所导致的的。暂时的解决方法是进入<code>File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Instant Run</code>把Instant Run关掉</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;错误代码&quot;&gt;&lt;a href=&quot;#错误代码&quot; class=&quot;headerlink&quot; title=&quot;错误代码&quot;&gt;&lt;/a&gt;错误代码&lt;/h2&gt;&lt;h3 id=&quot;Error-while-executing-am-startservice-com-xxx-xxx-com-and
+      &lt;p&gt;最近由于一个grade的问题，重装了as和sdk四五次。。。最后才在网上找到了解决方法。于是就想着吧一些很难解决的错误记录下来，供以后查看。&lt;/p&gt;
+&lt;h2 id=&quot;常见错误&quot;&gt;&lt;a href=&quot;#常见错误&quot; class=&quot;headerlink&quot; title=&quot;常见错误&quot;&gt;
     
     </summary>
     
