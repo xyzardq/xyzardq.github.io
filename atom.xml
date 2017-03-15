@@ -325,7 +325,7 @@
     <link href="www.xyzardq.com/2016/11/28/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A6%82%E5%BF%B5%E7%A7%91%E6%99%AE/"/>
     <id>www.xyzardq.com/2016/11/28/服务器概念科普/</id>
     <published>2016-11-28T02:15:40.000Z</published>
-    <updated>2017-03-07T00:42:43.086Z</updated>
+    <updated>2017-03-14T12:34:45.678Z</updated>
     
     <content type="html"><![CDATA[<p>每周一篇的Blog不知道要写些什么，正好昨天剁了台辣鸡vps，就来讲讲服务器的各种概念吧（哼哼，为了买服务器我还是研究了很久的说<br><a id="more"></a></p>
 <h1 id="各种服务器的定义和区别"><a href="#各种服务器的定义和区别" class="headerlink" title="各种服务器的定义和区别"></a>各种服务器的定义和区别</h1><p>目前市场上最流行的服务器是VPS，其次还有独服，ECS，虚拟主机</p>
@@ -390,7 +390,7 @@
     <link href="www.xyzardq.com/2016/11/21/Windows%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     <id>www.xyzardq.com/2016/11/21/Windows实用软件推荐/</id>
     <published>2016-11-21T01:05:49.000Z</published>
-    <updated>2017-03-06T14:56:10.198Z</updated>
+    <updated>2017-03-15T01:56:56.864Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>以下软件是博主亲自用过后比较得出的。</li>
@@ -433,6 +433,12 @@
 <td></td>
 </tr>
 <tr>
+<td>镜像工具</td>
+<td><a href="https://www.daemon-tools.cc/chn/Downloads" target="_blank" rel="external">DAEMON Tools Lite</a></td>
+<td>使用方便，UI简洁</td>
+<td></td>
+</tr>
+<tr>
 <td>截图工具</td>
 <td><a href="https://zh.snipaste.com/" target="_blank" rel="external">snipaste</a></td>
 <td>专注截图的截图工具</td>
@@ -465,13 +471,13 @@
 <tr>
 <td>视频播放</td>
 <td><a href="http://potplayer.daum.net/?lang=zh_CN" target="_blank" rel="external">Potplayer</a></td>
-<td>无广告，功能多到无法想象</td>
+<td>简洁UI，丰富功能</td>
 <td></td>
 </tr>
 <tr>
 <td>音乐播放</td>
 <td><a href="music.163.com/">网易云音乐</a></td>
-<td>免费320K，无广告</td>
+<td>丰富的歌单，人性的交互</td>
 <td></td>
 </tr>
 <tr>
