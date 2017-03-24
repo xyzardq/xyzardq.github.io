@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.xyzardq.com/"/>
-  <updated>2017-03-24T09:05:07.232Z</updated>
+  <updated>2017-03-24T09:16:29.865Z</updated>
   <id>www.xyzardq.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="www.xyzardq.com/2017/03/24/android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94listview%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89adapter/"/>
     <id>www.xyzardq.com/2017/03/24/android学习笔记——listview和自定义adapter/</id>
     <published>2017-03-24T08:39:16.000Z</published>
-    <updated>2017-03-24T09:05:07.232Z</updated>
+    <updated>2017-03-24T09:16:29.865Z</updated>
     
     <content type="html"><![CDATA[<p>自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。</p>
 <h2 id="定义数据Model"><a href="#定义数据Model" class="headerlink" title="定义数据Model"></a>定义数据Model</h2><p>创建一个测试用类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public class ArrayTest &#123;</div><div class="line">    public ArrayTest(String topic, String time,int picture)&#123;</div><div class="line">        this.topic = topic;</div><div class="line">        this.time = time;</div><div class="line">        this.picture = picture;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    private int picture;</div><div class="line">    private String topic;</div><div class="line">    private String time;</div><div class="line"></div><div class="line">    public int getPicture()&#123;</div><div class="line">        return picture;</div><div class="line">    &#125;</div><div class="line">    public void setPicture(int picture)&#123;</div><div class="line">        this.picture = picture;</div><div class="line">    &#125;</div><div class="line">    public String getTopic() &#123;</div><div class="line">        return topic;</div><div class="line">    &#125;</div><div class="line">    public void setTopic(String topic) &#123;</div><div class="line">        this.topic = topic;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getTime() &#123;</div><div class="line">        return time;</div><div class="line">    &#125;</div><div class="line">    public void setTime(String time) &#123;</div><div class="line">        this.time = time;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
@@ -48,12 +48,10 @@
     
     </summary>
     
-      <category term="资料总结" scheme="www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
+      <category term="学习笔记" scheme="www.xyzardq.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="Android" scheme="www.xyzardq.com/tags/Android/"/>
-    
-      <category term="Chrome" scheme="www.xyzardq.com/tags/Chrome/"/>
     
   </entry>
   
