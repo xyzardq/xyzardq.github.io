@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="www.xyzardq.com">
-  <title>xyzardQ的Blog</title>
+  <title>Android学习笔记——listview和自定义adapter | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xyzardQ的Blog">
-<meta property="og:url" content="www.xyzardq.com/index.html">
+  <meta name="description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。
+定义数据Model创建一个测试用类123456789101112131415161718192021222324252627282930publi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android学习笔记——listview和自定义adapter">
+<meta property="og:url" content="www.xyzardq.com/2017/03/24/Android学习笔记——listview和自定义adapter/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
+<meta property="og:description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。
+定义数据Model创建一个测试用类123456789101112131415161718192021222324252627282930publi">
+<meta property="og:image" content="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_自定义布局样式.png">
+<meta property="og:image" content="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_结果界面.jpg">
+<meta property="og:updated_time" content="2017-03-24T09:25:31.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xyzardQ的Blog">
+<meta name="twitter:title" content="Android学习笔记——listview和自定义adapter">
+<meta name="twitter:description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。
+定义数据Model创建一个测试用类123456789101112131415161718192021222324252627282930publi">
+<meta name="twitter:image" content="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_自定义布局样式.png">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -155,187 +165,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Windows实用软件推荐" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Android学习笔记——listview和自定义adapter" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/21/Windows实用软件推荐/">Windows实用软件推荐</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/21/Windows实用软件推荐/" class="archive-article-date">
-  	<time datetime="2016-11-21T01:05:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>以下软件是博主亲自用过后比较得出的。</li>
-<li>同类软件推荐不超过两个，免得选择强迫症抓狂（</li>
-<li>想到再写
-        
-          <a class="article-more-a" href="/2016/11/21/Windows实用软件推荐/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Windows</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">UWP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/资料总结/" class="article-tag-list-link color5">资料总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/21/Windows实用软件推荐/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Chrome实用插件推荐" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/Chrome实用插件推荐/">Chrome实用插件推荐</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/19/Chrome实用插件推荐/" class="archive-article-date">
-  	<time datetime="2016-10-19T08:17:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>总结一些自用的或者网上看到的Chrome实用插件。<br>ps:Chrome是最好用的浏览器好吗！<br>
-        
-          <a class="article-more-a" href="/2016/10/19/Chrome实用插件推荐/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Google</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Chrome</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/资料总结/" class="article-tag-list-link color5">资料总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/19/Chrome实用插件推荐/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android学习笔记——listview和自定义adapter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/24/Android学习笔记——listview和自定义adapter/">Android学习笔记——listview和自定义adapter</a>
+    <h1 class="article-title" itemprop="name">
+      Android学习笔记——listview和自定义adapter
     </h1>
   
 
@@ -399,18 +236,74 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/24/Android学习笔记——listview和自定义adapter/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:www.xyzardq.com/2017/03/24/Android学习笔记——listview和自定义adapter/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/10/Android常见问题解决方案/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android常见问题解决方案</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -418,548 +311,28 @@
 
 
   
-    <article id="post-Android常见问题解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/10/Android常见问题解决方案/">Android常见问题解决方案</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/10/Android常见问题解决方案/" class="archive-article-date">
-  	<time datetime="2017-03-10T02:20:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近由于一个grade的问题，重装了as和sdk四五次。。。最后才在网上找到了解决方法。于是就想着吧一些很难解决的错误记录下来，供以后查看。</p>
-<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><h3 id="无法创建Grade-无法识别Grade"><a href="#无法创建Grade-无法识别Grade" class="headerlink" title="无法创建Grade/无法识别Grade"></a>无法创建Grade/无法识别Grade</h3><p>也是版本不兼容所导致的的，最简单的解决方法是把当前用户文件夹下的.grade文件夹删掉，再重开项目等待as重建该文件夹</p>
-<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><h3 id="Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started"><a href="#Error-while-executing-am-startservice-com-xxx-xxx-com-android-tools-fd-runtime-InstantRunService-Starting-service-Intent-act-android-intent-action-MAIN-cat-android-intent-category-LAUNCHER-cmp-com-xyzardq-qweather-com-android-tools-fd-runtime-InstantRunService-Error-Not-found-no-service-started" class="headerlink" title="Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started."></a>Error while executing: am startservice com.xxx.xxx/com.android.tools.fd.runtime.InstantRunService Starting service: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.xyzardq.qweather/com.android.tools.fd.runtime.InstantRunService } Error: Not found; no service started.</h3><p>通常是由于新版as中运行了旧版的as所导致的的。暂时的解决方法是进入<code>File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Instant Run</code>把Instant Run关掉</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/10/Android常见问题解决方案/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Android学习笔记——listview和自定义adapter" data-title="Android学习笔记——listview和自定义adapter" data-url="www.xyzardq.com/2017/03/24/Android学习笔记——listview和自定义adapter/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"xyzardq"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
   
-    <article id="post-服务器一键搭建shadowsocks及优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/07/服务器一键搭建shadowsocks及优化/">服务器一键搭建shadowsocks及优化</a>
-    </h1>
-  
 
-        
-        <a href="/2017/03/07/服务器一键搭建shadowsocks及优化/" class="archive-article-date">
-  	<time datetime="2017-03-07T00:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自从第一次剁了台vps，感觉有点上瘾，最近开了几个vps来玩（感觉钱包药丸）不过都只搭了SS。所以今天就总结下搭建shadowsocks server的一些一键脚本及其优化吧。<br>
-        
-          <a class="article-more-a" href="/2017/03/07/服务器一键搭建shadowsocks及优化/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VPS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">shadowsocks</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/资料总结/" class="article-tag-list-link color5">资料总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/07/服务器一键搭建shadowsocks及优化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Linux学习笔记——第三章：系统管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/06/Linux学习笔记——第三章：系统管理/">Linux学习笔记——第三章：系统管理</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/06/Linux学习笔记——第三章：系统管理/" class="archive-article-date">
-  	<time datetime="2017-03-06T08:51:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="3-1用户管理"><a href="#3-1用户管理" class="headerlink" title="3.1用户管理"></a>3.1用户管理</h2><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">useradd [选项] [用户账号] #建立用户账号</div><div class="line">passwd [选项] [用户账号]  #更改账号密码</div><div class="line">userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件</div><div class="line">usermod [选项] [用户账号] #修改用户信息</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/03/06/Linux学习笔记——第三章：系统管理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/06/Linux学习笔记——第三章：系统管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Linux学习笔记——第二章：Linux的用户接口与文本编辑器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/">Linux学习笔记——第二章：Linux的用户接口与文本编辑器</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/" class="archive-article-date">
-  	<time datetime="2017-03-03T03:06:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2-1-Shell"><a href="#2-1-Shell" class="headerlink" title="2.1 Shell"></a>2.1 Shell</h2><h3 id="命令和文件名的自动补齐功能"><a href="#命令和文件名的自动补齐功能" class="headerlink" title="命令和文件名的自动补齐功能"></a>命令和文件名的自动补齐功能</h3><p>在命令和文件名输入到一半时，按<code>Tab</code>可以自动匹配命令和文件名剩余的部分，如果有多个可匹配选项，会在下方逐一列出来。<br>
-        
-          <a class="article-more-a" href="/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习笔记/" class="article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/03/Linux学习笔记——第二章：Linux的用户接口与文本编辑器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-通过wifi连接ADB调试Android应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/通过wifi连接ADB调试Android应用/">通过wifi连接ADB调试Android应用</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/25/通过wifi连接ADB调试Android应用/" class="archive-article-date">
-  	<time datetime="2017-02-25T02:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以前我调试Android程序都是用usb线连接手机和电脑调试，之后无意间发现一款叫Andoird ADB的app后才发现adb调试是多么好用！于是我从网上找了不少adb调试应用的方法，在这里总结出来。<br>
-        
-          <a class="article-more-a" href="/2017/02/25/通过wifi连接ADB调试Android应用/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ADB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/资料总结/" class="article-tag-list-link color5">资料总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/25/通过wifi连接ADB调试Android应用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-C语言程序运行后闪退的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/C语言程序运行后闪退的解决方法/">C语言程序运行后闪退的解决方法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/25/C语言程序运行后闪退的解决方法/" class="archive-article-date">
-  	<time datetime="2017-02-25T02:10:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>（日常吐槽部分）仔细一看我有两个月没写博客了。其实，我是不想鸽的（）寒假开始前，我都定好了一个非常宏z伟z的计划，每周写XX篇博客啥的，结果发现计划不如变化，三天至少出去玩两天（）于是寒假计划就变成开学计划了！<br>
-        
-          <a class="article-more-a" href="/2017/02/25/C语言程序运行后闪退的解决方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/25/C语言程序运行后闪退的解决方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-服务器概念科普" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/28/服务器概念科普/">服务器概念科普</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/28/服务器概念科普/" class="archive-article-date">
-  	<time datetime="2016-11-28T02:15:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>每周一篇的Blog不知道要写些什么，正好昨天剁了台辣鸡vps，就来讲讲服务器的各种概念吧（哼哼，为了买服务器我还是研究了很久的说<br>
-        
-          <a class="article-more-a" href="/2016/11/28/服务器概念科普/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VPS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hosts</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/资料总结/" class="article-tag-list-link color5">资料总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/28/服务器概念科普/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -981,8 +354,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
