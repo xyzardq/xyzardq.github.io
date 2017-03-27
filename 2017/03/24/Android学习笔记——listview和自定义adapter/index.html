@@ -8,21 +8,18 @@
   <link rel="dns-prefetch" href="www.xyzardq.com">
   <title>Android学习笔记——listview和自定义adapter | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。
-定义数据Model创建一个测试用类123456789101112131415161718192021222324252627282930publi">
+  <meta name="description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android学习笔记——listview和自定义adapter">
 <meta property="og:url" content="www.xyzardq.com/2017/03/24/Android学习笔记——listview和自定义adapter/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
-<meta property="og:description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。
-定义数据Model创建一个测试用类123456789101112131415161718192021222324252627282930publi">
+<meta property="og:description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_自定义布局样式.png">
 <meta property="og:image" content="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_结果界面.jpg">
-<meta property="og:updated_time" content="2017-03-24T09:25:31.096Z">
+<meta property="og:updated_time" content="2017-03-27T09:55:48.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android学习笔记——listview和自定义adapter">
-<meta name="twitter:description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。
-定义数据Model创建一个测试用类123456789101112131415161718192021222324252627282930publi">
+<meta name="twitter:description" content="自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。">
 <meta name="twitter:image" content="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_自定义布局样式.png">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
@@ -185,10 +182,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。</p>
-<h2 id="定义数据Model"><a href="#定义数据Model" class="headerlink" title="定义数据Model"></a>定义数据Model</h2><p>创建一个测试用类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public class ArrayTest &#123;</div><div class="line">    public ArrayTest(String topic, String time,int picture)&#123;</div><div class="line">        this.topic = topic;</div><div class="line">        this.time = time;</div><div class="line">        this.picture = picture;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    private int picture;</div><div class="line">    private String topic;</div><div class="line">    private String time;</div><div class="line"></div><div class="line">    public int getPicture()&#123;</div><div class="line">        return picture;</div><div class="line">    &#125;</div><div class="line">    public void setPicture(int picture)&#123;</div><div class="line">        this.picture = picture;</div><div class="line">    &#125;</div><div class="line">    public String getTopic() &#123;</div><div class="line">        return topic;</div><div class="line">    &#125;</div><div class="line">    public void setTopic(String topic) &#123;</div><div class="line">        this.topic = topic;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getTime() &#123;</div><div class="line">        return time;</div><div class="line">    &#125;</div><div class="line">    public void setTime(String time) &#123;</div><div class="line">        this.time = time;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<h2 id="定义布局样式"><a href="#定义布局样式" class="headerlink" title="定义布局样式"></a>定义布局样式</h2><p>我自己做的布局样式是这样的：<br><img src="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_自定义布局样式.png" alt="自定义布局样式"><br>以下是代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</div><div class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line">    tools:context=&quot;com.xyzardq.appfortest.MainActivity&quot;&gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:id=&quot;@+id/topic&quot;</div><div class="line">        android:text=&quot;Topic&quot;</div><div class="line">        android:textSize=&quot;30dp&quot;</div><div class="line">        /&gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:id=&quot;@+id/time&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:layout_alignParentLeft=&quot;true&quot;</div><div class="line">        android:layout_below=&quot;@+id/topic&quot;</div><div class="line">        android:text=&quot;12:00&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;ImageView</div><div class="line">        android:id=&quot;@+id/picture&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:layout_alignParentRight=&quot;true&quot;</div><div class="line">        android:layout_alignTop=&quot;@+id/topic&quot; /&gt;</div><div class="line"></div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="自定义Adapter"><a href="#自定义Adapter" class="headerlink" title="自定义Adapter"></a>自定义Adapter</h2><p>创建一个类继承BaseAdapter，复写BaseAdapter中的四个方法</p>
+        <p>自定义adapter是listview中使用最多的一个Adapter适配器，因为它可以自定义listview的布局样式。在学习和查找资料以后，我也自己写了一个自定义adapter的Demo，下面通过我的Demo来了解一下如何写一个自定义Adapter。<br><a id="more"></a></p>
+<h2 id="1-定义数据Model"><a href="#1-定义数据Model" class="headerlink" title="1. 定义数据Model"></a>1. 定义数据Model</h2><p>创建一个测试用类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public class ArrayTest &#123;</div><div class="line">    public ArrayTest(String topic, String time,int picture)&#123;</div><div class="line">        this.topic = topic;</div><div class="line">        this.time = time;</div><div class="line">        this.picture = picture;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    private int picture;</div><div class="line">    private String topic;</div><div class="line">    private String time;</div><div class="line"></div><div class="line">    public int getPicture()&#123;</div><div class="line">        return picture;</div><div class="line">    &#125;</div><div class="line">    public void setPicture(int picture)&#123;</div><div class="line">        this.picture = picture;</div><div class="line">    &#125;</div><div class="line">    public String getTopic() &#123;</div><div class="line">        return topic;</div><div class="line">    &#125;</div><div class="line">    public void setTopic(String topic) &#123;</div><div class="line">        this.topic = topic;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getTime() &#123;</div><div class="line">        return time;</div><div class="line">    &#125;</div><div class="line">    public void setTime(String time) &#123;</div><div class="line">        this.time = time;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="2-定义布局样式"><a href="#2-定义布局样式" class="headerlink" title="2. 定义布局样式"></a>2. 定义布局样式</h2><p>我自己做的布局样式是这样的：<br><img src="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_自定义布局样式.png" alt="自定义布局样式"><br>以下是代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</div><div class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line">    tools:context=&quot;com.xyzardq.appfortest.MainActivity&quot;&gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:id=&quot;@+id/topic&quot;</div><div class="line">        android:text=&quot;Topic&quot;</div><div class="line">        android:textSize=&quot;30dp&quot;</div><div class="line">        /&gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:id=&quot;@+id/time&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:layout_alignParentLeft=&quot;true&quot;</div><div class="line">        android:layout_below=&quot;@+id/topic&quot;</div><div class="line">        android:text=&quot;12:00&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;ImageView</div><div class="line">        android:id=&quot;@+id/picture&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:layout_alignParentRight=&quot;true&quot;</div><div class="line">        android:layout_alignTop=&quot;@+id/topic&quot; /&gt;</div><div class="line"></div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="3-自定义Adapter"><a href="#3-自定义Adapter" class="headerlink" title="3. 自定义Adapter"></a>3. 自定义Adapter</h2><p>创建一个类继承BaseAdapter，复写BaseAdapter中的四个方法</p>
 <ul>
 <li>public int getCount()：<br>　　是用来返回数据的数量的。
 　　</li>
@@ -200,7 +197,7 @@
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">public class ArrayTestAdapter extends BaseAdapter &#123;</div><div class="line"></div><div class="line">    private List&lt;ArrayTest&gt; mData;//定义数据。</div><div class="line">    private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。</div><div class="line"></div><div class="line">    /*</div><div class="line">    定义构造器，在Activity创建对象Adapter的时候将数据data和Inflater传入自定义的Adapter中进行处理。</div><div class="line">    */</div><div class="line">    public ArrayTestAdapter(LayoutInflater inflater,List&lt;ArrayTest&gt; data)&#123;</div><div class="line">        mInflater = inflater;</div><div class="line">        mData = data;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public int getCount() &#123;</div><div class="line">        return mData.size();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public Object getItem(int position) &#123;</div><div class="line">        return position;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public long getItemId(int position) &#123;</div><div class="line">        return position;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public View getView(int position, View convertview, ViewGroup viewGroup) &#123;</div><div class="line">        //获得ListView中的view</div><div class="line">        View viewArrayTest = mInflater.inflate(R.layout.main_item,null);</div><div class="line">        //获得布局对象</div><div class="line">        ArrayTest arrayTest = mData.get(position);</div><div class="line">        //获得自定义布局中每一个控件的对象。</div><div class="line">        TextView name = (TextView) viewArrayTest.findViewById(R.id.topic);</div><div class="line">        TextView age = (TextView) viewArrayTest.findViewById(R.id.time);</div><div class="line">        ImageView picture = (ImageView) viewArrayTest.findViewById(R.id.picture);</div><div class="line">        //将数据一一添加到自定义的布局中。</div><div class="line">        name.setText(arrayTest.getTopic());</div><div class="line">        age.setText(arrayTest.getTime());</div><div class="line">        picture.setBackgroundResource(arrayTest.getPicture());</div><div class="line">        return viewArrayTest ;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="加载自定义Adapter到Listview中"><a href="#加载自定义Adapter到Listview中" class="headerlink" title="加载自定义Adapter到Listview中"></a>加载自定义Adapter到Listview中</h2><p>在onCreate函数中定义并加载listview对象，将自定义Adapter添加进去，并添加数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    //定义数据</div><div class="line">    private List&lt;ArrayTest&gt; mData;</div><div class="line">    //定义ListView对象</div><div class="line">    private ListView ListView;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">        //为ListView对象赋值</div><div class="line">        ListView = (ListView) findViewById(R.id.listview);</div><div class="line">        LayoutInflater inflater = getLayoutInflater();</div><div class="line">        //初始化数据</div><div class="line">        initData();</div><div class="line">        //创建自定义Adapter的对象</div><div class="line">        ArrayTestAdapter adapter = new ArrayTestAdapter(inflater, mData);</div><div class="line">        //将布局添加到ListView中</div><div class="line">        ListView.setAdapter(adapter);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /*</div><div class="line">    初始化数据</div><div class="line">     */</div><div class="line">    private void initData() &#123;</div><div class="line">        Date now = new Date();</div><div class="line">        SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy/MM/dd HH:mm:ss&quot;);</div><div class="line">        String stime = dateFormat.format( now );</div><div class="line">        mData = new ArrayList&lt;ArrayTest&gt;();</div><div class="line">        ArrayTest test1 = new ArrayTest(&quot;哦哈哟&quot;, stime,R.mipmap.ic_launcher);</div><div class="line">        ArrayTest test2 = new ArrayTest(&quot;扣你鸡哇&quot;, stime,R.mipmap.ic_launcher);</div><div class="line">        ArrayTest test3 = new ArrayTest(&quot;哈喽&quot;, stime,R.mipmap.ic_launcher);</div><div class="line">        mData.add(test1);</div><div class="line">        mData.add(test2);</div><div class="line">        mData.add(test3);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="4-加载自定义Adapter到Listview中"><a href="#4-加载自定义Adapter到Listview中" class="headerlink" title="4. 加载自定义Adapter到Listview中"></a>4. 加载自定义Adapter到Listview中</h2><p>在onCreate函数中定义并加载listview对象，将自定义Adapter添加进去，并添加数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    //定义数据</div><div class="line">    private List&lt;ArrayTest&gt; mData;</div><div class="line">    //定义ListView对象</div><div class="line">    private ListView ListView;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">        //为ListView对象赋值</div><div class="line">        ListView = (ListView) findViewById(R.id.listview);</div><div class="line">        LayoutInflater inflater = getLayoutInflater();</div><div class="line">        //初始化数据</div><div class="line">        initData();</div><div class="line">        //创建自定义Adapter的对象</div><div class="line">        ArrayTestAdapter adapter = new ArrayTestAdapter(inflater, mData);</div><div class="line">        //将布局添加到ListView中</div><div class="line">        ListView.setAdapter(adapter);</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /*</div><div class="line">    初始化数据</div><div class="line">     */</div><div class="line">    private void initData() &#123;</div><div class="line">        Date now = new Date();</div><div class="line">        SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy/MM/dd HH:mm:ss&quot;);</div><div class="line">        String stime = dateFormat.format( now );</div><div class="line">        mData = new ArrayList&lt;ArrayTest&gt;();</div><div class="line">        ArrayTest test1 = new ArrayTest(&quot;哦哈哟&quot;, stime,R.mipmap.ic_launcher);</div><div class="line">        ArrayTest test2 = new ArrayTest(&quot;扣你鸡哇&quot;, stime,R.mipmap.ic_launcher);</div><div class="line">        ArrayTest test3 = new ArrayTest(&quot;哈喽&quot;, stime,R.mipmap.ic_launcher);</div><div class="line">        mData.add(test1);</div><div class="line">        mData.add(test2);</div><div class="line">        mData.add(test3);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>最后的界面为：<br><img src="http://source.xyzardq.com/source/_posts/android学习笔记——listview和自定义adapter_结果界面.jpg" alt="结果界面">  </p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>Android疯狂讲义（第三版）<br><a href="http://blog.csdn.net/to_be_designer/article/details/47983017" target="_blank" rel="external">Android UI设计——ListView控件和自定义Adapter（四）</a></p>
 
@@ -296,6 +293,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/03/27/leanote二进制版安装教程forWindows/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          leanote二进制版安装教程forWindows
+        
+      </div>
+    </a>
   
   
     <a href="/2017/03/10/Android常见问题解决方案/" id="article-nav-older" class="article-nav-link-wrap">
@@ -409,19 +415,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,15 +435,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UWP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,19 +447,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color4">UWP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
+                <a href="javascript:void(0)" class="js-tag color3">leanote</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,7 +475,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ADB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
             
             <div class="clearfix"></div>
