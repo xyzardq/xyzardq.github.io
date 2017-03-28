@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="www.xyzardq.com">
-  <title>Category: 技巧经验 | xyzardQ的Blog</title>
+  <title>Linux学习笔记——第四章：磁盘与文件管理 | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xyzardQ的Blog">
-<meta property="og:url" content="www.xyzardq.com/categories/技巧经验/page/2/index.html">
+  <meta name="description" content="4.1 磁盘管理4.1.2 查看磁盘空间12df [选项] [设备或文件名]    #检查文件系统的磁盘空间占用情况du [选项]                  #统计目录所占磁盘空间的大小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习笔记——第四章：磁盘与文件管理">
+<meta property="og:url" content="www.xyzardq.com/2017/03/28/Linux学习笔记——第四章：磁盘与文件管理/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
+<meta property="og:description" content="4.1 磁盘管理4.1.2 查看磁盘空间12df [选项] [设备或文件名]    #检查文件系统的磁盘空间占用情况du [选项]                  #统计目录所占磁盘空间的大小">
+<meta property="og:updated_time" content="2017-03-28T10:07:14.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xyzardQ的Blog">
+<meta name="twitter:title" content="Linux学习笔记——第四章：磁盘与文件管理">
+<meta name="twitter:description" content="4.1 磁盘管理4.1.2 查看磁盘空间12df [选项] [设备或文件名]    #检查文件系统的磁盘空间占用情况du [选项]                  #统计目录所占磁盘空间的大小">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -155,385 +159,162 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux学习笔记——第四章：磁盘与文件管理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux学习笔记——第四章：磁盘与文件管理
+    </h1>
+  
+
+        
+        <a href="/2017/03/28/Linux学习笔记——第四章：磁盘与文件管理/" class="archive-article-date">
+  	<time datetime="2017-03-28T09:51:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="4-1-磁盘管理"><a href="#4-1-磁盘管理" class="headerlink" title="4.1 磁盘管理"></a>4.1 磁盘管理</h2><h3 id="4-1-2-查看磁盘空间"><a href="#4-1-2-查看磁盘空间" class="headerlink" title="4.1.2 查看磁盘空间"></a>4.1.2 查看磁盘空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df [选项] [设备或文件名]    #检查文件系统的磁盘空间占用情况</div><div class="line">du [选项]                  #统计目录所占磁盘空间的大小</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="4-1-4-制作镜像文件"><a href="#4-1-4-制作镜像文件" class="headerlink" title="4.1.4 制作镜像文件"></a>4.1.4 制作镜像文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dd if= of =     #复制且转患文件格式</div><div class="line">cp [if] [of]    #复制</div></pre></td></tr></table></figure>
+<h2 id="4-2-文件与目录管理"><a href="#4-2-文件与目录管理" class="headerlink" title="4.2 文件与目录管理"></a>4.2 文件与目录管理</h2><h3 id="4-2-2-查看目录内容"><a href="#4-2-2-查看目录内容" class="headerlink" title="4.2.2 查看目录内容"></a>4.2.2 查看目录内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd [dirName]    #进入目录</div><div class="line">pwd [选项]      #查看当前工作目录的路径</div><div class="line">ls [选项] [目录或文件] #列出当前目录下的所有子目录和文件</div></pre></td></tr></table></figure>
+<h3 id="4-2-3-查看文件内容"><a href="#4-2-3-查看文件内容" class="headerlink" title="4.2.3 查看文件内容"></a>4.2.3 查看文件内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">more [选项] [用户名] #一页一页地显示内容</div><div class="line">cat [选项] [用户名] #查看文件内容</div><div class="line">tail [选项] [用户名] #显示文件的后几行</div><div class="line">tac #将文件内容从最后一行倒过来输出到屏幕上</div><div class="line">wc  #文件内容统计命令</div></pre></td></tr></table></figure>
+<h3 id="4-2-6-文件与目录的创建、复制、删除、转移及重命名"><a href="#4-2-6-文件与目录的创建、复制、删除、转移及重命名" class="headerlink" title="4.2.6 文件与目录的创建、复制、删除、转移及重命名"></a>4.2.6 文件与目录的创建、复制、删除、转移及重命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">touch   #新建空文件或改变文件属性</div><div class="line">mkdir [选项] [用户名] #创建文件夹</div><div class="line">rmdir [选项] [用户名] #shanchu文件夹</div><div class="line">mv [选项] [if] [of]   #移动文件</div><div class="line">rm [选项] [用户名]   #删除文件</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/11/yilia主题侧边栏添加新的社交账号/" class="archive-article-date">
-  	<time datetime="2016-05-11T12:14:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/11/yilia主题侧边栏添加新的社交账号/">yilia主题侧边栏添加新的社交账号</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
+        			<a href="/categories/学习笔记/" class="article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http:www.xyzardq.com/2017/03/28/Linux学习笔记——第四章：磁盘与文件管理/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/17/Hexo文章小技巧/" class="archive-article-date">
-  	<time datetime="2016-04-17T12:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/17/Hexo文章小技巧/">Hexo文章小技巧</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/14/Hexo新建文章后立即打开文本编辑器/" class="archive-article-date">
-  	<time datetime="2016-04-14T13:50:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/14/Hexo新建文章后立即打开文本编辑器/">Hexo新建文章后立即打开文本编辑器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/14/Hexo添加文章置顶/" class="archive-article-date">
-  	<time datetime="2016-04-14T13:49:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/14/Hexo添加文章置顶/">Hexo添加文章置顶</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/14/Hexo配置小技巧/" class="archive-article-date">
-  	<time datetime="2016-04-14T12:25:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/14/Hexo配置小技巧/">Hexo配置小技巧</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/06/在Windows命令行下编译包含中文字符的Java文件时报错/" class="archive-article-date">
-  	<time datetime="2016-04-06T13:15:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/06/在Windows命令行下编译包含中文字符的Java文件时报错/">在Windows命令行下编译包含中文字符的Java文件时报错</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">encoding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/02/在不引入第三个变量的前提下，交换两个变量的值/" class="archive-article-date">
-  	<time datetime="2016-04-02T10:47:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/02/在不引入第三个变量的前提下，交换两个变量的值/">在不引入第三个变量的前提下，交换两个变量的值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/03/27/Leanote常见问题汇总/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leanote常见问题汇总</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Linux学习笔记——第四章：磁盘与文件管理" data-title="Linux学习笔记——第四章：磁盘与文件管理" data-url="www.xyzardq.com/2017/03/28/Linux学习笔记——第四章：磁盘与文件管理/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"xyzardq"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/categories/技巧经验/">&laquo; Prev</a><a class="page-number" href="/categories/技巧经验/">1</a><span class="page-number current">2</span>
-    </nav>
-  
+
 
 
           </div>
@@ -556,10 +337,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		root: "/",
 		innerArchive: true,

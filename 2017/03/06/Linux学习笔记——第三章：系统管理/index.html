@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="www.xyzardq.com">
   <title>Linux学习笔记——第三章：系统管理 | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
+  <meta name="description" content="3.1用户管理3.1.1 用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux学习笔记——第三章：系统管理">
 <meta property="og:url" content="www.xyzardq.com/2017/03/06/Linux学习笔记——第三章：系统管理/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
-<meta property="og:description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
-<meta property="og:updated_time" content="2017-03-06T14:55:39.247Z">
+<meta property="og:description" content="3.1用户管理3.1.1 用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
+<meta property="og:updated_time" content="2017-03-28T09:10:40.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux学习笔记——第三章：系统管理">
-<meta name="twitter:description" content="3.1用户管理用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
+<meta name="twitter:description" content="3.1用户管理3.1.1 用户管理1234useradd [选项] [用户账号] #建立用户账号passwd [选项] [用户账号]  #更改账号密码userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件usermod [选项] [用户账号] #修改用户信息">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -179,12 +179,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="3-1用户管理"><a href="#3-1用户管理" class="headerlink" title="3.1用户管理"></a>3.1用户管理</h2><h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">useradd [选项] [用户账号] #建立用户账号</div><div class="line">passwd [选项] [用户账号]  #更改账号密码</div><div class="line">userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件</div><div class="line">usermod [选项] [用户账号] #修改用户信息</div></pre></td></tr></table></figure>
+        <h2 id="3-1用户管理"><a href="#3-1用户管理" class="headerlink" title="3.1用户管理"></a>3.1用户管理</h2><h3 id="3-1-1-用户管理"><a href="#3-1-1-用户管理" class="headerlink" title="3.1.1 用户管理"></a>3.1.1 用户管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">useradd [选项] [用户账号] #建立用户账号</div><div class="line">passwd [选项] [用户账号]  #更改账号密码</div><div class="line">userdel -r [用户账号]  #删除用户账号及其相关的文件，-r删除用户主目录以及目录中的所有文件</div><div class="line">usermod [选项] [用户账号] #修改用户信息</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="组管理"><a href="#组管理" class="headerlink" title="组管理"></a>组管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">groupadd [选项] [组名]  #创建一个新组群</div><div class="line">groupdel [选项] [组名]  #删除组群</div><div class="line">groupmod [选项] [组名]  #更改组群识别码或名称</div><div class="line">gpasswd [选项] [组名]  #管理组</div><div class="line">newgrp [选项] [组名]  #切换当前登录用户所在组</div></pre></td></tr></table></figure>
-<h3 id="su和sudo命令"><a href="#su和sudo命令" class="headerlink" title="su和sudo命令"></a>su和sudo命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su [选项] [用户账号] #切换到另一个账户，默认值为root账户</div><div class="line">sudo [-bhHpV] [-s] [-u用户] command #以另一个账号的身份运行指定命令</div></pre></td></tr></table></figure>
-<h3 id="监视进程"><a href="#监视进程" class="headerlink" title="监视进程"></a>监视进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps      #显示系统中进程的信息</div><div class="line">pstree  #以树状方式表现进程的父子关系</div><div class="line">top     #显示当前系统正在执行的进程的相关信息</div></pre></td></tr></table></figure>
-<h3 id="控制进程"><a href="#控制进程" class="headerlink" title="控制进程"></a>控制进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">kill [选项] PID   #根据PID终止一个进程</div><div class="line">killall [signal] [进程名]  #根据进程名终止一个进程</div></pre></td></tr></table></figure>
+<h3 id="3-1-2-组管理"><a href="#3-1-2-组管理" class="headerlink" title="3.1.2 组管理"></a>3.1.2 组管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">groupadd [选项] [组名]  #创建一个新组群</div><div class="line">groupdel [选项] [组名]  #删除组群</div><div class="line">groupmod [选项] [组名]  #更改组群识别码或名称</div><div class="line">gpasswd [选项] [组名]  #管理组</div><div class="line">newgrp [选项] [组名]  #切换当前登录用户所在组</div></pre></td></tr></table></figure>
+<h3 id="3-1-4-su和sudo命令"><a href="#3-1-4-su和sudo命令" class="headerlink" title="3.1.4 su和sudo命令"></a>3.1.4 su和sudo命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">su [选项] [用户账号] #切换到另一个账户，默认值为root账户</div><div class="line">sudo [-bhHpV] [-s] [-u用户] command #以另一个账号的身份运行指定命令</div></pre></td></tr></table></figure>
+<h2 id="3-2-进程管理"><a href="#3-2-进程管理" class="headerlink" title="3.2 进程管理"></a>3.2 进程管理</h2><h3 id="3-2-1-监视进程"><a href="#3-2-1-监视进程" class="headerlink" title="3.2.1 监视进程"></a>3.2.1 监视进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ps      #显示系统中进程的信息</div><div class="line">pstree  #以树状方式表现进程的父子关系</div><div class="line">top     #显示当前系统正在执行的进程的相关信息</div></pre></td></tr></table></figure>
+<h3 id="3-2-3-控制进程"><a href="#3-2-3-控制进程" class="headerlink" title="3.2.3 控制进程"></a>3.2.3 控制进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">kill [选项] PID   #根据PID终止一个进程</div><div class="line">killall [signal] [进程名]  #根据进程名终止一个进程</div></pre></td></tr></table></figure>
+<h2 id="3-4-其他系统管理"><a href="#3-4-其他系统管理" class="headerlink" title="3.4 其他系统管理"></a>3.4 其他系统管理</h2><h3 id="3-4-1-查询系统状况"><a href="#3-4-1-查询系统状况" class="headerlink" title="3.4.1 查询系统状况"></a>3.4.1 查询系统状况</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">uname [选项]  #显示计算机以及操作系统的相关信息</div><div class="line">free [选项]   #显示系统使用和空闲的内存状况</div></pre></td></tr></table></figure>
+<h3 id="3-4-3-系统日志和dmesg命令"><a href="#3-4-3-系统日志和dmesg命令" class="headerlink" title="3.4.3 系统日志和dmesg命令"></a>3.4.3 系统日志和dmesg命令</h3><ul>
+<li>/var/log/messages #核心系统日志文件</li>
+<li>/var/log/secure   #记录安全相关的信息  </li>
+</ul>
+<h3 id="3-4-4-关机等命令"><a href="#3-4-4-关机等命令" class="headerlink" title="3.4.4 关机等命令"></a>3.4.4 关机等命令</h3><p>shutdown [选项] [时间] [警告信息]   #关机<br>reboot  [选项]                     #重启<br>logout                             #用户注销</p>
 
       
 
@@ -396,15 +402,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -416,15 +418,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -436,15 +442,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Windows</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UWP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,11 +462,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">VPS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VPS</a>
+                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,14 +483,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ADB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
               </li>
             
             <div class="clearfix"></div>
