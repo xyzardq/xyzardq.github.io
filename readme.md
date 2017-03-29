@@ -87,7 +87,7 @@ Github客户端上完成commit和push
 
 
 # 版本说明
-1.1.0Alpha(现1.0.22Alpha)：
+1.1.0Alpha(现1.0.23Alpha)：
 
 - 转移了qiniu的二级域名
 - 添加了置顶功能
@@ -104,3 +104,4 @@ Github客户端上完成commit和push
 - 添加了rss
 - 修复了多说评论系统的一些问题，现在可以在多说后台看到评论了
 - 更新了favion和title
+- 更换评论系统到disqus
