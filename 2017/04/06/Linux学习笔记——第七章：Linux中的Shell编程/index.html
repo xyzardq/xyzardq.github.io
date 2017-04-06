@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.xyzardq.com">
-  <title>Tag: Git | xyzardQ的Blog</title>
+  <title>Linux学习笔记——第七章：Linux中的Shell编程 | xyzardQ的Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xyzardQ的Blog">
-<meta property="og:url" content="http://www.xyzardq.com/tags/Git/index.html">
+  <meta name="description" content="7.1 Shell编程基础
+Shell脚本不用编译，编写好后就可以直接运行
+程序的第一行一般为#!/bin/bash其中#表示该行是注释，!告诉Shell运行叹号之后的命令，即运行/bin/bash，并让/bin/bash去执行Shell脚本文件中的内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习笔记——第七章：Linux中的Shell编程">
+<meta property="og:url" content="http://www.xyzardq.com/2017/04/06/Linux学习笔记——第七章：Linux中的Shell编程/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
+<meta property="og:description" content="7.1 Shell编程基础
+Shell脚本不用编译，编写好后就可以直接运行
+程序的第一行一般为#!/bin/bash其中#表示该行是注释，!告诉Shell运行叹号之后的命令，即运行/bin/bash，并让/bin/bash去执行Shell脚本文件中的内容。">
+<meta property="og:updated_time" content="2017-04-06T09:07:31.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xyzardQ的Blog">
+<meta name="twitter:title" content="Linux学习笔记——第七章：Linux中的Shell编程">
+<meta name="twitter:description" content="7.1 Shell编程基础
+Shell脚本不用编译，编写好后就可以直接运行
+程序的第一行一般为#!/bin/bash其中#表示该行是注释，!告诉Shell运行叹号之后的命令，即运行/bin/bash，并让/bin/bash去执行Shell脚本文件中的内容。">
   
     <link rel="alternative" href="/atom.xml" title="xyzardQ的Blog" type="application/atom+xml">
   
@@ -155,132 +165,174 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux学习笔记——第七章：Linux中的Shell编程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/16/git新建sshkey并添加到代码托管平台/" class="archive-article-date">
-  	<time datetime="2016-11-16T05:04:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/16/git新建sshkey并添加到代码托管平台/">git新建SSHkey并添加到代码托管平台</a>
+    <h1 class="article-title" itemprop="name">
+      Linux学习笔记——第七章：Linux中的Shell编程
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/06/Linux学习笔记——第七章：Linux中的Shell编程/" class="archive-article-date">
+  	<time datetime="2017-04-06T08:39:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="7-1-Shell编程基础"><a href="#7-1-Shell编程基础" class="headerlink" title="7.1 Shell编程基础"></a>7.1 Shell编程基础</h2><ul>
+<li>Shell脚本不用编译，编写好后就可以直接运行</li>
+<li>程序的第一行一般为<code>#!/bin/bash</code>其中#表示该行是注释，!告诉Shell运行叹号之后的命令，即运行/bin/bash，并让/bin/bash去执行Shell脚本文件中的内容。<a id="more"></a>
+</li>
+</ul>
+<h4 id="执行Shell程序的方法："><a href="#执行Shell程序的方法：" class="headerlink" title="执行Shell程序的方法："></a>执行Shell程序的方法：</h4><ul>
+<li>bash &lt;脚本所在的路径&gt; [参数] 或 sh &lt;脚本所在的路径&gt; [参数]</li>
+<li>bash &lt; [Shell程序名]</li>
+<li>用chmod命令使Shell程序成为可执行文件<h3 id="7-1-3-Shell变量"><a href="#7-1-3-Shell变量" class="headerlink" title="7.1.3 Shell变量"></a>7.1.3 Shell变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># x=1</div><div class="line"># x=123</div><div class="line"># x=1 y=$x  #使变量y等于变量x</div><div class="line"># unset x   #删除变量</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-1-7-内部命令"><a href="#7-1-7-内部命令" class="headerlink" title="7.1.7 内部命令"></a>7.1.7 内部命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">echo</div><div class="line">printf  #产生各种格式的输出</div><div class="line">exit</div><div class="line">export [变量名]    #定义全局变量</div><div class="line">read    #从标准输入设备读入一行</div></pre></td></tr></table></figure>
+<h2 id="7-2-Shell程序设计的流程控制"><a href="#7-2-Shell程序设计的流程控制" class="headerlink" title="7.2 Shell程序设计的流程控制"></a>7.2 Shell程序设计的流程控制</h2><h3 id="7-2-1-复合结构"><a href="#7-2-1-复合结构" class="headerlink" title="7.2.1 复合结构"></a>7.2.1 复合结构</h3><ol>
+<li>使用“{}”<br> 使用“{}”括起来的多条命令在逻辑上成为一条命令</li>
+<li>使用“()”<br> 使用“()”会再创建一个新的紫禁城，然后由这个子进程去执行“()”中的命令<h3 id="7-2-2-条件判断"><a href="#7-2-2-条件判断" class="headerlink" title="7.2.2 条件判断"></a>7.2.2 条件判断</h3><h4 id="if-then语句"><a href="#if-then语句" class="headerlink" title="if-then语句"></a>if-then语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if 条件命令串</div><div class="line">then</div><div class="line">    条件为真时的命令串</div><div class="line">fi</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="if-then-else语句"><a href="#if-then-else语句" class="headerlink" title="if-then-else语句"></a>if-then-else语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if 条件命令串</div><div class="line">then</div><div class="line">    条件为真时的命令串</div><div class="line">else</div><div class="line">    条件为假时的命令串</div><div class="line">fi</div></pre></td></tr></table></figure>
+<h4 id="elif-if结构"><a href="#elif-if结构" class="headerlink" title="elif-if结构"></a>elif-if结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if 条件命令串</div><div class="line">then</div><div class="line">    命令串</div><div class="line">elif 条件命令串</div><div class="line">then</div><div class="line">    命令串</div><div class="line">fi</div></pre></td></tr></table></figure>
+<h4 id="case条件选择"><a href="#case条件选择" class="headerlink" title="case条件选择"></a>case条件选择</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">case string in</div><div class="line">    pattern1) 命令串;;</div><div class="line">    pattern2) 命令串;;</div><div class="line">    *) 命令串;;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Coding</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/技巧经验/" class="article-tag-list-link color5">技巧经验</a>
+        			<a href="/categories/学习笔记/" class="article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.xyzardq.com/2017/04/06/Linux学习笔记——第七章：Linux中的Shell编程/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/11/Git学习资料/" class="archive-article-date">
-  	<time datetime="2016-10-11T04:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/11/Git学习资料/">Git系列学习资料</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/资料总结/" class="article-tag-list-link color5">资料总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/28/Linux学习笔记——第四章：磁盘与文件管理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux学习笔记——第四章：磁盘与文件管理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
+
   
-  
-    </div></section>
+    <div class="duoshuo"></div>
   
 
-    
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xyzardq'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 
           </div>
@@ -303,9 +355,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",

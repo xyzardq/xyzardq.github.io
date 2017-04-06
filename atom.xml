@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xyzardq.com/"/>
-  <updated>2017-03-28T10:07:14.429Z</updated>
+  <updated>2017-04-06T09:07:31.365Z</updated>
   <id>http://www.xyzardq.com/</id>
   
   <author>
@@ -16,11 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux学习笔记——第七章：Linux中的Shell编程</title>
+    <link href="http://www.xyzardq.com/2017/04/06/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%9ALinux%E4%B8%AD%E7%9A%84Shell%E7%BC%96%E7%A8%8B/"/>
+    <id>http://www.xyzardq.com/2017/04/06/Linux学习笔记——第七章：Linux中的Shell编程/</id>
+    <published>2017-04-06T08:39:13.000Z</published>
+    <updated>2017-04-06T09:07:31.365Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="7-1-Shell编程基础"><a href="#7-1-Shell编程基础" class="headerlink" title="7.1 Shell编程基础"></a>7.1 Shell编程基础</h2><ul>
+<li>Shell脚本不用编译，编写好后就可以直接运行</li>
+<li>程序的第一行一般为<code>#!/bin/bash</code>其中#表示该行是注释，!告诉Shell运行叹号之后的命令，即运行/bin/bash，并让/bin/bash去执行Shell脚本文件中的内容。<a id="more"></a>
+</li>
+</ul>
+<h4 id="执行Shell程序的方法："><a href="#执行Shell程序的方法：" class="headerlink" title="执行Shell程序的方法："></a>执行Shell程序的方法：</h4><ul>
+<li>bash &lt;脚本所在的路径&gt; [参数] 或 sh &lt;脚本所在的路径&gt; [参数]</li>
+<li>bash &lt; [Shell程序名]</li>
+<li>用chmod命令使Shell程序成为可执行文件<h3 id="7-1-3-Shell变量"><a href="#7-1-3-Shell变量" class="headerlink" title="7.1.3 Shell变量"></a>7.1.3 Shell变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># x=1</div><div class="line"># x=123</div><div class="line"># x=1 y=$x  #使变量y等于变量x</div><div class="line"># unset x   #删除变量</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-1-7-内部命令"><a href="#7-1-7-内部命令" class="headerlink" title="7.1.7 内部命令"></a>7.1.7 内部命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">echo</div><div class="line">printf  #产生各种格式的输出</div><div class="line">exit</div><div class="line">export [变量名]    #定义全局变量</div><div class="line">read    #从标准输入设备读入一行</div></pre></td></tr></table></figure>
+<h2 id="7-2-Shell程序设计的流程控制"><a href="#7-2-Shell程序设计的流程控制" class="headerlink" title="7.2 Shell程序设计的流程控制"></a>7.2 Shell程序设计的流程控制</h2><h3 id="7-2-1-复合结构"><a href="#7-2-1-复合结构" class="headerlink" title="7.2.1 复合结构"></a>7.2.1 复合结构</h3><ol>
+<li>使用“{}”<br> 使用“{}”括起来的多条命令在逻辑上成为一条命令</li>
+<li>使用“()”<br> 使用“()”会再创建一个新的紫禁城，然后由这个子进程去执行“()”中的命令<h3 id="7-2-2-条件判断"><a href="#7-2-2-条件判断" class="headerlink" title="7.2.2 条件判断"></a>7.2.2 条件判断</h3><h4 id="if-then语句"><a href="#if-then语句" class="headerlink" title="if-then语句"></a>if-then语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if 条件命令串</div><div class="line">then</div><div class="line">    条件为真时的命令串</div><div class="line">fi</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="if-then-else语句"><a href="#if-then-else语句" class="headerlink" title="if-then-else语句"></a>if-then-else语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if 条件命令串</div><div class="line">then</div><div class="line">    条件为真时的命令串</div><div class="line">else</div><div class="line">    条件为假时的命令串</div><div class="line">fi</div></pre></td></tr></table></figure>
+<h4 id="elif-if结构"><a href="#elif-if结构" class="headerlink" title="elif-if结构"></a>elif-if结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if 条件命令串</div><div class="line">then</div><div class="line">    命令串</div><div class="line">elif 条件命令串</div><div class="line">then</div><div class="line">    命令串</div><div class="line">fi</div></pre></td></tr></table></figure>
+<h4 id="case条件选择"><a href="#case条件选择" class="headerlink" title="case条件选择"></a>case条件选择</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">case string in</div><div class="line">    pattern1) 命令串;;</div><div class="line">    pattern2) 命令串;;</div><div class="line">    *) 命令串;;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;7-1-Shell编程基础&quot;&gt;&lt;a href=&quot;#7-1-Shell编程基础&quot; class=&quot;headerlink&quot; title=&quot;7.1 Shell编程基础&quot;&gt;&lt;/a&gt;7.1 Shell编程基础&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Shell脚本不用编译，编写好后就可以直接运行&lt;/li&gt;
+&lt;li&gt;程序的第一行一般为&lt;code&gt;#!/bin/bash&lt;/code&gt;其中#表示该行是注释，!告诉Shell运行叹号之后的命令，即运行/bin/bash，并让/bin/bash去执行Shell脚本文件中的内容。
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://www.xyzardq.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Linux" scheme="http://www.xyzardq.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux学习笔记——第四章：磁盘与文件管理</title>
     <link href="http://www.xyzardq.com/2017/03/28/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E7%A3%81%E7%9B%98%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/"/>
     <id>http://www.xyzardq.com/2017/03/28/Linux学习笔记——第四章：磁盘与文件管理/</id>
     <published>2017-03-28T09:51:30.000Z</published>
-    <updated>2017-03-28T10:07:14.429Z</updated>
+    <updated>2017-04-06T08:37:43.501Z</updated>
     
     <content type="html"><![CDATA[<h2 id="4-1-磁盘管理"><a href="#4-1-磁盘管理" class="headerlink" title="4.1 磁盘管理"></a>4.1 磁盘管理</h2><h3 id="4-1-2-查看磁盘空间"><a href="#4-1-2-查看磁盘空间" class="headerlink" title="4.1.2 查看磁盘空间"></a>4.1.2 查看磁盘空间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df [选项] [设备或文件名]    #检查文件系统的磁盘空间占用情况</div><div class="line">du [选项]                  #统计目录所占磁盘空间的大小</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -28,6 +72,19 @@
 <h2 id="4-2-文件与目录管理"><a href="#4-2-文件与目录管理" class="headerlink" title="4.2 文件与目录管理"></a>4.2 文件与目录管理</h2><h3 id="4-2-2-查看目录内容"><a href="#4-2-2-查看目录内容" class="headerlink" title="4.2.2 查看目录内容"></a>4.2.2 查看目录内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd [dirName]    #进入目录</div><div class="line">pwd [选项]      #查看当前工作目录的路径</div><div class="line">ls [选项] [目录或文件] #列出当前目录下的所有子目录和文件</div></pre></td></tr></table></figure>
 <h3 id="4-2-3-查看文件内容"><a href="#4-2-3-查看文件内容" class="headerlink" title="4.2.3 查看文件内容"></a>4.2.3 查看文件内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">more [选项] [用户名] #一页一页地显示内容</div><div class="line">cat [选项] [用户名] #查看文件内容</div><div class="line">tail [选项] [用户名] #显示文件的后几行</div><div class="line">tac #将文件内容从最后一行倒过来输出到屏幕上</div><div class="line">wc  #文件内容统计命令</div></pre></td></tr></table></figure>
 <h3 id="4-2-6-文件与目录的创建、复制、删除、转移及重命名"><a href="#4-2-6-文件与目录的创建、复制、删除、转移及重命名" class="headerlink" title="4.2.6 文件与目录的创建、复制、删除、转移及重命名"></a>4.2.6 文件与目录的创建、复制、删除、转移及重命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">touch   #新建空文件或改变文件属性</div><div class="line">mkdir [选项] [用户名] #创建文件夹</div><div class="line">rmdir [选项] [用户名] #shanchu文件夹</div><div class="line">mv [选项] [if] [of]   #移动文件</div><div class="line">rm [选项] [用户名]   #删除文件</div></pre></td></tr></table></figure>
+<h3 id="4-2-8-文件操作命令"><a href="#4-2-8-文件操作命令" class="headerlink" title="4.2.8 文件操作命令"></a>4.2.8 文件操作命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grep [选项] [查找模式] [文件名]  #查找文件里符合条件的字符串</div><div class="line">awk #解释型编程语言</div></pre></td></tr></table></figure>
+<h3 id="4-2-9-文件的追加、合并、分割"><a href="#4-2-9-文件的追加、合并、分割" class="headerlink" title="4.2.9 文件的追加、合并、分割"></a>4.2.9 文件的追加、合并、分割</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo [-ne] [字符串或环境变量]   #等同于printf</div><div class="line">cat #查看文件内容</div></pre></td></tr></table></figure>
+<h3 id="4-2-11-文件的链接"><a href="#4-2-11-文件的链接" class="headerlink" title="4.2.11 文件的链接"></a>4.2.11 文件的链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ln [源文件] [新建链接名]    #硬链接</div><div class="line">ln -s [源文件] [新建链接名] #软连接</div></pre></td></tr></table></figure>
+<h2 id="4-3-文件与目录的安全"><a href="#4-3-文件与目录的安全" class="headerlink" title="4.3 文件与目录的安全"></a>4.3 文件与目录的安全</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chmod   #改变文件或目录的读写和执行权限，可以用符号法或者八进制数字法</div><div class="line">chown   #改变文件或目录的拥有者和群组</div><div class="line">chroot  #改变程序执行时所参考的根目录位置</div></pre></td></tr></table></figure>
+<h2 id="4-7-文件的压缩与解压缩"><a href="#4-7-文件的压缩与解压缩" class="headerlink" title="4.7 文件的压缩与解压缩"></a>4.7 文件的压缩与解压缩</h2><h3 id="4-7-1-压缩和解压缩命令"><a href="#4-7-1-压缩和解压缩命令" class="headerlink" title="4.7.1 压缩和解压缩命令"></a>4.7.1 压缩和解压缩命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gzip [选项] [文件名]</div><div class="line">bzip2 [选项] [文件名] #对文件进行压缩和解压缩</div><div class="line">gunzip [选项] [文件名.gz]</div><div class="line">bunzip2 [选项] [文件名.gz]    #解压缩</div></pre></td></tr></table></figure>
+<h3 id="4-7-3-显示压缩文件的内容"><a href="#4-7-3-显示压缩文件的内容" class="headerlink" title="4.7.3 显示压缩文件的内容"></a>4.7.3 显示压缩文件的内容</h3><ul>
+<li><p>对于用gzip压缩的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zcat    #直接显示压缩文件的内容</div><div class="line">zless   #直接逐行显示压缩文件的内容</div></pre></td></tr></table></figure>
+</li>
+<li><p>对于用bzip2压缩的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bzcat    #直接显示压缩文件的内容</div><div class="line">bzless   #直接逐行显示压缩文件的内容</div></pre></td></tr></table></figure>
+</li>
+</ul>
 ]]></content>
     
     <summary type="html">
@@ -578,7 +635,7 @@
     <link href="http://www.xyzardq.com/2016/11/21/Windows%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     <id>http://www.xyzardq.com/2016/11/21/Windows实用软件推荐/</id>
     <published>2016-11-21T01:05:49.000Z</published>
-    <updated>2017-03-27T11:54:49.108Z</updated>
+    <updated>2017-04-05T01:28:05.532Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>以下软件是博主亲自用过后比较得出的。</li>
@@ -955,7 +1012,7 @@
     <link href="http://www.xyzardq.com/2016/10/19/Chrome%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     <id>http://www.xyzardq.com/2016/10/19/Chrome实用插件推荐/</id>
     <published>2016-10-19T08:17:13.000Z</published>
-    <updated>2016-11-06T01:44:07.595Z</updated>
+    <updated>2017-04-05T01:28:12.177Z</updated>
     
     <content type="html"><![CDATA[<p>总结一些自用的或者网上看到的Chrome实用插件。<br>ps:Chrome是最好用的浏览器好吗！<br><a id="more"></a></p>
 <h1 id="网络工具"><a href="#网络工具" class="headerlink" title="网络工具"></a>网络工具</h1><h2 id="Tunnello"><a href="#Tunnello" class="headerlink" title="Tunnello"></a>Tunnello</h2><p><a href="https://chrome.google.com/webstore/category/extensions" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://tunnello.com/" target="_blank" rel="external">官网</a>（需要翻墙）<br>一款免费翻墙软件，号称比别的翻墙工具更快更安全（<br>目前提供14个国家的免费节点，支持国家如下：<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Tunnello支持国家.png" alt="Tunnello支持国家"><br>香港节点看y2b视频能到3000kbps，算是很不错的速度了。</p>
@@ -979,34 +1036,6 @@
       <category term="Google" scheme="http://www.xyzardq.com/tags/Google/"/>
     
       <category term="Chrome" scheme="http://www.xyzardq.com/tags/Chrome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git系列学习资料</title>
-    <link href="http://www.xyzardq.com/2016/10/11/Git%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
-    <id>http://www.xyzardq.com/2016/10/11/Git学习资料/</id>
-    <published>2016-10-11T04:56:13.000Z</published>
-    <updated>2016-11-14T09:09:00.835Z</updated>
-    
-    <content type="html"><![CDATA[<p>总结一些网上自己看过的Git和GitHub学习资料吧…新手向。<br><a id="more"></a></p>
-<h1 id="stormzhang的从0开始学习-GitHub-系列"><a href="#stormzhang的从0开始学习-GitHub-系列" class="headerlink" title="stormzhang的从0开始学习 GitHub 系列"></a>stormzhang的从0开始学习 GitHub 系列</h1><p>我自己先前也看过两三个Git和GitHub的教程，今天看完了张老师的教程，感觉是我看过所有GitHub教程中写的最好的。语言浅显易懂，内容涵盖面也很广，推荐给对Git和GitHub一无所知的新手学习。  </p>
-<p><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661735&amp;idx=1&amp;sn=9aceac07d272e9202d1b5294f857a5ff&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「初识 GitHub」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661762&amp;idx=1&amp;sn=8282241cf7414030f4e1d315a173beb1&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「加入 GitHub」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650662303&amp;idx=1&amp;sn=3df7cba7cd85b33a82b4c05bb12cfff5&amp;chksm=87d138c0b0a6b1d6140da9bab6e58c6e2b258de6118175d31c1ac467b3c58bc1a7c0b1a7db9b&amp;mpshare=1&amp;scene=1&amp;srcid=1011BWZLP8r4n08rj3YLBfw4#rd" target="_blank" rel="external">从0开始学习 GitHub 系列之「GitHub 常见的几种操作」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661788&amp;idx=1&amp;sn=b7c54f9b13f4e30fe151905f11c02800&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「Git速成」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661821&amp;idx=1&amp;sn=c6116ed82bff2d083bb152fbd8cbc38d&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「向GitHub 提交代码」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661929&amp;idx=1&amp;sn=69e00516a30723c5a20af3c7a84173a4&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「Git 进阶」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650661978&amp;idx=1&amp;sn=2f5329f5b2bfda7050822cc5e3a4f03f&amp;scene=21#wechat_redirect" target="_blank" rel="external">从0开始学习 GitHub 系列之「团队合作利器 Branch」</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4NTQwNDcyMA==&amp;mid=2650662079&amp;idx=1&amp;sn=65605f0d9bd741d38f0b179980dc09f1&amp;scene=21#wechat_redirect" target="_blank" rel="external">如何发现优秀的开源项目？</a>  </p>
-<h1 id="廖雪峰的Git教程"><a href="#廖雪峰的Git教程" class="headerlink" title="廖雪峰的Git教程"></a>廖雪峰的Git教程</h1><p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git教程 - 廖雪峰的官方网站</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;总结一些网上自己看过的Git和GitHub学习资料吧…新手向。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="资料总结" scheme="http://www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="Git" scheme="http://www.xyzardq.com/tags/Git/"/>
-    
-      <category term="GitHub" scheme="http://www.xyzardq.com/tags/GitHub/"/>
     
   </entry>
   

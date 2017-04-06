@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://www.xyzardq.com/2017/03/28/Linux学习笔记——第四章：磁盘与文件管理/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
 <meta property="og:description" content="4.1 磁盘管理4.1.2 查看磁盘空间12df [选项] [设备或文件名]    #检查文件系统的磁盘空间占用情况du [选项]                  #统计目录所占磁盘空间的大小">
-<meta property="og:updated_time" content="2017-03-28T10:07:14.429Z">
+<meta property="og:updated_time" content="2017-04-06T08:37:43.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux学习笔记——第四章：磁盘与文件管理">
 <meta name="twitter:description" content="4.1 磁盘管理4.1.2 查看磁盘空间12df [选项] [设备或文件名]    #检查文件系统的磁盘空间占用情况du [选项]                  #统计目录所占磁盘空间的大小">
@@ -185,6 +185,19 @@
 <h2 id="4-2-文件与目录管理"><a href="#4-2-文件与目录管理" class="headerlink" title="4.2 文件与目录管理"></a>4.2 文件与目录管理</h2><h3 id="4-2-2-查看目录内容"><a href="#4-2-2-查看目录内容" class="headerlink" title="4.2.2 查看目录内容"></a>4.2.2 查看目录内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd [dirName]    #进入目录</div><div class="line">pwd [选项]      #查看当前工作目录的路径</div><div class="line">ls [选项] [目录或文件] #列出当前目录下的所有子目录和文件</div></pre></td></tr></table></figure>
 <h3 id="4-2-3-查看文件内容"><a href="#4-2-3-查看文件内容" class="headerlink" title="4.2.3 查看文件内容"></a>4.2.3 查看文件内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">more [选项] [用户名] #一页一页地显示内容</div><div class="line">cat [选项] [用户名] #查看文件内容</div><div class="line">tail [选项] [用户名] #显示文件的后几行</div><div class="line">tac #将文件内容从最后一行倒过来输出到屏幕上</div><div class="line">wc  #文件内容统计命令</div></pre></td></tr></table></figure>
 <h3 id="4-2-6-文件与目录的创建、复制、删除、转移及重命名"><a href="#4-2-6-文件与目录的创建、复制、删除、转移及重命名" class="headerlink" title="4.2.6 文件与目录的创建、复制、删除、转移及重命名"></a>4.2.6 文件与目录的创建、复制、删除、转移及重命名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">touch   #新建空文件或改变文件属性</div><div class="line">mkdir [选项] [用户名] #创建文件夹</div><div class="line">rmdir [选项] [用户名] #shanchu文件夹</div><div class="line">mv [选项] [if] [of]   #移动文件</div><div class="line">rm [选项] [用户名]   #删除文件</div></pre></td></tr></table></figure>
+<h3 id="4-2-8-文件操作命令"><a href="#4-2-8-文件操作命令" class="headerlink" title="4.2.8 文件操作命令"></a>4.2.8 文件操作命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grep [选项] [查找模式] [文件名]  #查找文件里符合条件的字符串</div><div class="line">awk #解释型编程语言</div></pre></td></tr></table></figure>
+<h3 id="4-2-9-文件的追加、合并、分割"><a href="#4-2-9-文件的追加、合并、分割" class="headerlink" title="4.2.9 文件的追加、合并、分割"></a>4.2.9 文件的追加、合并、分割</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo [-ne] [字符串或环境变量]   #等同于printf</div><div class="line">cat #查看文件内容</div></pre></td></tr></table></figure>
+<h3 id="4-2-11-文件的链接"><a href="#4-2-11-文件的链接" class="headerlink" title="4.2.11 文件的链接"></a>4.2.11 文件的链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ln [源文件] [新建链接名]    #硬链接</div><div class="line">ln -s [源文件] [新建链接名] #软连接</div></pre></td></tr></table></figure>
+<h2 id="4-3-文件与目录的安全"><a href="#4-3-文件与目录的安全" class="headerlink" title="4.3 文件与目录的安全"></a>4.3 文件与目录的安全</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chmod   #改变文件或目录的读写和执行权限，可以用符号法或者八进制数字法</div><div class="line">chown   #改变文件或目录的拥有者和群组</div><div class="line">chroot  #改变程序执行时所参考的根目录位置</div></pre></td></tr></table></figure>
+<h2 id="4-7-文件的压缩与解压缩"><a href="#4-7-文件的压缩与解压缩" class="headerlink" title="4.7 文件的压缩与解压缩"></a>4.7 文件的压缩与解压缩</h2><h3 id="4-7-1-压缩和解压缩命令"><a href="#4-7-1-压缩和解压缩命令" class="headerlink" title="4.7.1 压缩和解压缩命令"></a>4.7.1 压缩和解压缩命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gzip [选项] [文件名]</div><div class="line">bzip2 [选项] [文件名] #对文件进行压缩和解压缩</div><div class="line">gunzip [选项] [文件名.gz]</div><div class="line">bunzip2 [选项] [文件名.gz]    #解压缩</div></pre></td></tr></table></figure>
+<h3 id="4-7-3-显示压缩文件的内容"><a href="#4-7-3-显示压缩文件的内容" class="headerlink" title="4.7.3 显示压缩文件的内容"></a>4.7.3 显示压缩文件的内容</h3><ul>
+<li><p>对于用gzip压缩的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">zcat    #直接显示压缩文件的内容</div><div class="line">zless   #直接逐行显示压缩文件的内容</div></pre></td></tr></table></figure>
+</li>
+<li><p>对于用bzip2压缩的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bzcat    #直接显示压缩文件的内容</div><div class="line">bzless   #直接逐行显示压缩文件的内容</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
 
@@ -278,6 +291,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/04/06/Linux学习笔记——第七章：Linux中的Shell编程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux学习笔记——第七章：Linux中的Shell编程
+        
+      </div>
+    </a>
   
   
     <a href="/2017/03/27/Leanote常见问题汇总/" id="article-nav-older" class="article-nav-link-wrap">
@@ -385,19 +407,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -417,7 +431,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">leanote</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -425,7 +447,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">leanote</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -449,11 +471,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VPS</a>
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
+                <a href="javascript:void(0)" class="js-tag color4">VPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,7 +487,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
+                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
               </li>
             
             <div class="clearfix"></div>
