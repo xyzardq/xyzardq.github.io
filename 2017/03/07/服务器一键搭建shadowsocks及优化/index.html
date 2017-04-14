@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://www.xyzardq.com/2017/03/07/服务器一键搭建shadowsocks及优化/index.html">
 <meta property="og:site_name" content="xyzardQ的Blog">
 <meta property="og:description" content="自从第一次剁了台vps，感觉有点上瘾，最近开了几个vps来玩（感觉钱包药丸）不过都只搭了SS。所以今天就总结下搭建shadowsocks server的一些一键脚本及其优化吧。">
-<meta property="og:updated_time" content="2017-03-07T01:27:53.815Z">
+<meta property="og:updated_time" content="2017-04-14T02:07:47.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器一键搭建shadowsocks及优化">
 <meta name="twitter:description" content="自从第一次剁了台vps，感觉有点上瘾，最近开了几个vps来玩（感觉钱包药丸）不过都只搭了SS。所以今天就总结下搭建shadowsocks server的一些一键脚本及其优化吧。">
@@ -260,12 +260,14 @@
 <tr>
 <th>名称</th>
 <th>描述</th>
+<th>其他</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/xtaci/kcptun" target="_blank" rel="external">kcptun</a>（推荐）</td>
+<td><a href="https://blog.kuoruan.com/110.html" target="_blank" rel="external">kcptun</a>（推荐）</td>
 <td>使用kcp协议传输数据</td>
+<td><a href="https://github.com/xtaci/kcptun" target="_blank" rel="external">github</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/91yun/finalspeed" target="_blank" rel="external">FinalSpeed</a></td>
@@ -273,7 +275,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="黑科技及小技巧篇"><a href="#黑科技及小技巧篇" class="headerlink" title="黑科技及小技巧篇"></a>黑科技及小技巧篇</h2><h3 id="openVZ下启动BBR"><a href="#openVZ下启动BBR" class="headerlink" title="openVZ下启动BBR"></a><a href="https://www.91yun.org/archives/4996" target="_blank" rel="external">openVZ下启动BBR</a></h3><p>Tips作者建议在1G内存以上的vps中使用，实际应用中，有人用128的小鸡成功启动了虚拟机…所以说见仁见智吧  </p>
+<h2 id="黑科技及小技巧篇"><a href="#黑科技及小技巧篇" class="headerlink" title="黑科技及小技巧篇"></a>黑科技及小技巧篇</h2><h3 id="openVZ下启动BBR"><a href="#openVZ下启动BBR" class="headerlink" title="openVZ下启动BBR"></a><a href="https://www.91yun.org/archives/4996" target="_blank" rel="external">openVZ下启动BBR</a></h3><p>Tips:作者建议在1G内存以上的vps中使用，实际应用中，有人用128的小鸡成功启动了虚拟机…所以说见仁见智吧<br>2017.4.14更新：91yun里有人做了UML+BBR+SSR的<a href="https://www.91yunbbs.com/discussion/65/openvz%E7%9A%84uml-bbr-ssr%E4%B8%80%E9%94%AE%E5%8C%85-%E6%B5%8B%E8%AF%95-64m%E5%B0%8F%E5%86%85%E5%AD%98%E8%BF%90%E8%A1%8C-3%E6%9C%8816%E6%97%A5%E6%9B%B4%E6%96%B0/p1" target="_blank" rel="external">一键脚本</a>作者称可在128小鸡下运行，实测可在256小鸡下运行</p>
 <h3 id="一些shadowsocks-server的优化小技巧：shadowsocks-优化篇"><a href="#一些shadowsocks-server的优化小技巧：shadowsocks-优化篇" class="headerlink" title="一些shadowsocks server的优化小技巧：shadowsocks 优化篇"></a>一些shadowsocks server的优化小技巧：<a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-optimize" target="_blank" rel="external">shadowsocks 优化篇</a></h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>大部分脚本转载自秋水逸冰的一键安装脚本<br><a href="https://teddysun.com" target="_blank" rel="external">秋水逸冰</a><br><a href="https://teddysun.com/451.html" target="_blank" rel="external">一键脚本那些事儿</a><br><a href="https://github.com/iMeiji/shadowsocks_install" target="_blank" rel="external">Github_shadowsocks_install</a><br><a href="https://github.com/91yun" target="_blank" rel="external">91yun_Github</a>  </p>
 
       
@@ -488,11 +490,31 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,22 +526,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Google</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">leanote</a>
               </li>
              
@@ -528,7 +534,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color4">VPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,26 +554,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VPS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hosts</a>
               </li>
              
@@ -568,7 +562,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Coding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
             
             <div class="clearfix"></div>

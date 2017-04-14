@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.xyzardq.com/"/>
-  <updated>2017-04-06T09:07:31.365Z</updated>
+  <updated>2017-04-14T02:30:18.875Z</updated>
   <id>http://www.xyzardq.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows下搭建Shadowoscks服务器端</title>
+    <link href="http://www.xyzardq.com/2017/04/14/Windows%E4%B8%8B%E6%90%AD%E5%BB%BAShadowoscks%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF/"/>
+    <id>http://www.xyzardq.com/2017/04/14/Windows下搭建Shadowoscks服务器端/</id>
+    <published>2017-04-14T02:17:04.000Z</published>
+    <updated>2017-04-14T02:30:18.875Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于有建小号的需要，所以今天研究了下怎么Windows下搭建ss的服务器端。目前网上有Python 版、libev 版、Node.js 版等等几个版本的ss服务器端，不过多数版本都需要安装相应的依赖库，今天介绍的服务器端十分简单，不需要安装任何环境，只需要直接运行服务器端即可，那就是<a href="https://github.com/shadowsocks/libQtShadowsocks" target="_blank" rel="external">libQtShadowsocks</a>。<br><a id="more"></a></p>
+<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><h3 id="下载libQtShadowsocks"><a href="#下载libQtShadowsocks" class="headerlink" title="下载libQtShadowsocks"></a>下载libQtShadowsocks</h3><p>在<a href="https://github.com/shadowsocks/libQtShadowsocks/releases" target="_blank" rel="external">Github</a>上下载最新版的libQtShadowsocks，将安装包解压到一个文件夹里即可。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在文件夹中新建名为<code>config.json</code>的配置文件，内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_port&quot;:2333,</div><div class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;xyzardq&quot;,</div><div class="line">    &quot;timeout&quot;:600,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;http_proxy&quot;: false,</div><div class="line">    &quot;auth&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在文件夹中新建名为<code>shadowsocks-server.bat</code>的批处理文件，内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@echo off</div><div class="line">shadowsocks-libqss.exe -c config.json -S</div></pre></td></tr></table></figure></p>
+<p>然后运行 shadowsocks-server.bat 即可。当出现<code>TCP server listen at port 2333</code>的结果是就证明运行成功了。<br>需要关闭时就关闭批处理就行了。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://github.com/shadowsocks/libQtShadowsocks" target="_blank" rel="external">Github</a><br><a href="https://diveng.io/build-shadowsocks-server-on-windows-server.html" target="_blank" rel="external">在 Windows Server 上搭建 Shadowsocks 服务端</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于有建小号的需要，所以今天研究了下怎么Windows下搭建ss的服务器端。目前网上有Python 版、libev 版、Node.js 版等等几个版本的ss服务器端，不过多数版本都需要安装相应的依赖库，今天介绍的服务器端十分简单，不需要安装任何环境，只需要直接运行服务器端即可，那就是&lt;a href=&quot;https://github.com/shadowsocks/libQtShadowsocks&quot;&gt;libQtShadowsocks&lt;/a&gt;。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="资料总结" scheme="http://www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="VPS" scheme="http://www.xyzardq.com/tags/VPS/"/>
+    
+      <category term="shadowsocks" scheme="http://www.xyzardq.com/tags/shadowsocks/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux学习笔记——第七章：Linux中的Shell编程</title>
@@ -285,7 +315,7 @@
     <link href="http://www.xyzardq.com/2017/03/07/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BAshadowsocks%E5%8F%8A%E4%BC%98%E5%8C%96/"/>
     <id>http://www.xyzardq.com/2017/03/07/服务器一键搭建shadowsocks及优化/</id>
     <published>2017-03-07T00:41:10.000Z</published>
-    <updated>2017-03-07T01:27:53.815Z</updated>
+    <updated>2017-04-14T02:07:47.612Z</updated>
     
     <content type="html"><![CDATA[<p>自从第一次剁了台vps，感觉有点上瘾，最近开了几个vps来玩（感觉钱包药丸）不过都只搭了SS。所以今天就总结下搭建shadowsocks server的一些一键脚本及其优化吧。<br><a id="more"></a></p>
 <h2 id="shadowsocks-server一键安装脚本"><a href="#shadowsocks-server一键安装脚本" class="headerlink" title="shadowsocks server一键安装脚本"></a>shadowsocks server一键安装脚本</h2><table>
@@ -368,12 +398,14 @@
 <tr>
 <th>名称</th>
 <th>描述</th>
+<th>其他</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/xtaci/kcptun" target="_blank" rel="external">kcptun</a>（推荐）</td>
+<td><a href="https://blog.kuoruan.com/110.html" target="_blank" rel="external">kcptun</a>（推荐）</td>
 <td>使用kcp协议传输数据</td>
+<td><a href="https://github.com/xtaci/kcptun" target="_blank" rel="external">github</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/91yun/finalspeed" target="_blank" rel="external">FinalSpeed</a></td>
@@ -381,7 +413,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="黑科技及小技巧篇"><a href="#黑科技及小技巧篇" class="headerlink" title="黑科技及小技巧篇"></a>黑科技及小技巧篇</h2><h3 id="openVZ下启动BBR"><a href="#openVZ下启动BBR" class="headerlink" title="openVZ下启动BBR"></a><a href="https://www.91yun.org/archives/4996" target="_blank" rel="external">openVZ下启动BBR</a></h3><p>Tips作者建议在1G内存以上的vps中使用，实际应用中，有人用128的小鸡成功启动了虚拟机…所以说见仁见智吧  </p>
+<h2 id="黑科技及小技巧篇"><a href="#黑科技及小技巧篇" class="headerlink" title="黑科技及小技巧篇"></a>黑科技及小技巧篇</h2><h3 id="openVZ下启动BBR"><a href="#openVZ下启动BBR" class="headerlink" title="openVZ下启动BBR"></a><a href="https://www.91yun.org/archives/4996" target="_blank" rel="external">openVZ下启动BBR</a></h3><p>Tips:作者建议在1G内存以上的vps中使用，实际应用中，有人用128的小鸡成功启动了虚拟机…所以说见仁见智吧<br>2017.4.14更新：91yun里有人做了UML+BBR+SSR的<a href="https://www.91yunbbs.com/discussion/65/openvz%E7%9A%84uml-bbr-ssr%E4%B8%80%E9%94%AE%E5%8C%85-%E6%B5%8B%E8%AF%95-64m%E5%B0%8F%E5%86%85%E5%AD%98%E8%BF%90%E8%A1%8C-3%E6%9C%8816%E6%97%A5%E6%9B%B4%E6%96%B0/p1" target="_blank" rel="external">一键脚本</a>作者称可在128小鸡下运行，实测可在256小鸡下运行</p>
 <h3 id="一些shadowsocks-server的优化小技巧：shadowsocks-优化篇"><a href="#一些shadowsocks-server的优化小技巧：shadowsocks-优化篇" class="headerlink" title="一些shadowsocks server的优化小技巧：shadowsocks 优化篇"></a>一些shadowsocks server的优化小技巧：<a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-optimize" target="_blank" rel="external">shadowsocks 优化篇</a></h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>大部分脚本转载自秋水逸冰的一键安装脚本<br><a href="https://teddysun.com" target="_blank" rel="external">秋水逸冰</a><br><a href="https://teddysun.com/451.html" target="_blank" rel="external">一键脚本那些事儿</a><br><a href="https://github.com/iMeiji/shadowsocks_install" target="_blank" rel="external">Github_shadowsocks_install</a><br><a href="https://github.com/91yun" target="_blank" rel="external">91yun_Github</a>  </p>
 ]]></content>
     
@@ -1004,38 +1036,6 @@
     
     
       <category term="Hexo" scheme="http://www.xyzardq.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chrome实用插件推荐</title>
-    <link href="http://www.xyzardq.com/2016/10/19/Chrome%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
-    <id>http://www.xyzardq.com/2016/10/19/Chrome实用插件推荐/</id>
-    <published>2016-10-19T08:17:13.000Z</published>
-    <updated>2017-04-05T01:28:12.177Z</updated>
-    
-    <content type="html"><![CDATA[<p>总结一些自用的或者网上看到的Chrome实用插件。<br>ps:Chrome是最好用的浏览器好吗！<br><a id="more"></a></p>
-<h1 id="网络工具"><a href="#网络工具" class="headerlink" title="网络工具"></a>网络工具</h1><h2 id="Tunnello"><a href="#Tunnello" class="headerlink" title="Tunnello"></a>Tunnello</h2><p><a href="https://chrome.google.com/webstore/category/extensions" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://tunnello.com/" target="_blank" rel="external">官网</a>（需要翻墙）<br>一款免费翻墙软件，号称比别的翻墙工具更快更安全（<br>目前提供14个国家的免费节点，支持国家如下：<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Tunnello支持国家.png" alt="Tunnello支持国家"><br>香港节点看y2b视频能到3000kbps，算是很不错的速度了。</p>
-<h2 id="Proxy-SwitchyOmega"><a href="#Proxy-SwitchyOmega" class="headerlink" title="Proxy SwitchyOmega"></a>Proxy SwitchyOmega</h2><p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">Github</a><br>一款魔法上网插件，如果使用shadowsocks进行翻墙的话需要配合Proxy SwitchyOmega在Chrome上实现，另外附带黑白名单功能。<br>附简单教程：<a href="https://portal.shadowsocks.com/knowledgebase.php?action=displayarticle&amp;id=13" target="_blank" rel="external">Chrome + Proxy SwitchyOmega 设置</a></p>
-<h2 id="Adblock-Plus"><a href="#Adblock-Plus" class="headerlink" title="Adblock Plus"></a>Adblock Plus</h2><p><a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?utm_source=chrome-ntp-icon" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://adblockplus.org/" target="_blank" rel="external">官网</a><br>这没什么好解释的…一款广告拦截软件，通过社区上不断更新的过滤列表拦截页面上的广告。</p>
-<h2 id="wappalyzer"><a href="#wappalyzer" class="headerlink" title="wappalyzer"></a>wappalyzer</h2><p><a href="https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg/related" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://wappalyzer.com/" target="_blank" rel="external">官网</a><br>一款网站前端分析插件，可以分析当前网站都用了什么数据库，什么服务器。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_wappalyzer.png" alt="wappalyzer"></p>
-<h2 id="Chrono下载管理器"><a href="#Chrono下载管理器" class="headerlink" title="Chrono下载管理器"></a>Chrono下载管理器</h2><p><a href="https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="http://www.chronodownloader.net/" target="_blank" rel="external">官网</a><br>一款下载功能增强插件，完全替换并增强Chrome浏览器自带的下载管理界面，可以嗅探器网页上的所有链接、图片、音频和视频，还支持批量加载等功能。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Chrono下载管理器.png" alt="Chrono下载管理器"></p>
-<h1 id="办公学习"><a href="#办公学习" class="headerlink" title="办公学习"></a>办公学习</h1><h2 id="Anki-划词制卡助手"><a href="#Anki-划词制卡助手" class="headerlink" title="Anki 划词制卡助手"></a>Anki 划词制卡助手</h2><p><a href="https://chrome.google.com/webstore/detail/anki-%E5%88%92%E8%AF%8D%E5%88%B6%E5%8D%A1%E5%8A%A9%E6%89%8B/ajencmdaamfnkgilhpgkepfhfgjfplnn?hl=zh-CN" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://github.com/ninja33/anki-dict-helper" target="_blank" rel="external">Github</a><br>官方介绍：英语学习者在新闻网站或者社交媒体上进行增量阅读(Incremental Reading)或者沉浸式阅读(Immersion Reading)时，往往需要能够随手翻译生词帮助理解，而阅读过后，又希望能将刚才阅读时遇到的生词和上下文语句作为笔记保存，以供日后复习。Anki本身提供了不错的间隔式复习功能，但是制卡的过程略微繁琐。Anki划词制卡助手，就是为了帮助学习者在阅读的同时，将生词，释义，音标，语音音频和上下文例句一键保存并制作成Anki卡片，以供日后复习。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Anki 划词制卡助手使用界面.jpg" alt="Anki划卡制卡助手使用界面"><br>简单来说，Anki划卡制卡助手可以在阅读英文文章时查阅不明白的单词。如果想要日后记忆的话，就点击右上角的绿色加号将单词做成卡片，上传至ankiweb账号，在多平台查看记忆。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_Anki 划词制卡助手卡片界面.jpg" alt="Anki划卡制卡助手卡片界面"></p>
-<h2 id="印象笔记·剪藏"><a href="#印象笔记·剪藏" class="headerlink" title="印象笔记·剪藏"></a>印象笔记·剪藏</h2><p><a href="https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc" target="_blank" rel="external">Chrome应用商店</a>（需要翻墙）<br><a href="https://evernote.com" target="_blank" rel="external">官网</a><br>虽然evernote不是最好用的笔记本，（不支持markdowm啊啊啊啊啊）但是印象笔记·剪藏可以说是最好用的剪藏插件。在网页上看到什么值得收藏的文章，直接点击插件，设置剪藏类型，目录后即可收藏成笔记。特别推荐剪藏类型中的隐藏广告，直接把网页中的CSS样式屏蔽，只留下最简单的标题和正文。<br><img src="http://source.xyzardq.com/source/_posts/Chrome实用插件推荐_印象笔记·剪藏隐藏广告.jpg" alt="隐藏广告"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;总结一些自用的或者网上看到的Chrome实用插件。&lt;br&gt;ps:Chrome是最好用的浏览器好吗！&lt;br&gt;
-    
-    </summary>
-    
-      <category term="资料总结" scheme="http://www.xyzardq.com/categories/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="Google" scheme="http://www.xyzardq.com/tags/Google/"/>
-    
-      <category term="Chrome" scheme="http://www.xyzardq.com/tags/Chrome/"/>
     
   </entry>
   
