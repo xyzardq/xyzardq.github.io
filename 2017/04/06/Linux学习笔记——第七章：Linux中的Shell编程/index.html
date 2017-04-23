@@ -18,7 +18,7 @@ Shell脚本不用编译，编写好后就可以直接运行
 <meta property="og:description" content="7.1 Shell编程基础
 Shell脚本不用编译，编写好后就可以直接运行
 程序的第一行一般为#!/bin/bash其中#表示该行是注释，!告诉Shell运行叹号之后的命令，即运行/bin/bash，并让/bin/bash去执行Shell脚本文件中的内容。">
-<meta property="og:updated_time" content="2017-04-06T09:07:31.365Z">
+<meta property="og:updated_time" content="2017-04-23T02:04:55.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux学习笔记——第七章：Linux中的Shell编程">
 <meta name="twitter:description" content="7.1 Shell编程基础
@@ -205,6 +205,10 @@ Shell脚本不用编译，编写好后就可以直接运行
 <h4 id="if-then-else语句"><a href="#if-then-else语句" class="headerlink" title="if-then-else语句"></a>if-then-else语句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if 条件命令串</div><div class="line">then</div><div class="line">    条件为真时的命令串</div><div class="line">else</div><div class="line">    条件为假时的命令串</div><div class="line">fi</div></pre></td></tr></table></figure>
 <h4 id="elif-if结构"><a href="#elif-if结构" class="headerlink" title="elif-if结构"></a>elif-if结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if 条件命令串</div><div class="line">then</div><div class="line">    命令串</div><div class="line">elif 条件命令串</div><div class="line">then</div><div class="line">    命令串</div><div class="line">fi</div></pre></td></tr></table></figure>
 <h4 id="case条件选择"><a href="#case条件选择" class="headerlink" title="case条件选择"></a>case条件选择</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">case string in</div><div class="line">    pattern1) 命令串;;</div><div class="line">    pattern2) 命令串;;</div><div class="line">    *) 命令串;;</div></pre></td></tr></table></figure>
+<h3 id="7-2-3-循环控制"><a href="#7-2-3-循环控制" class="headerlink" title="7.2.3 循环控制"></a>7.2.3 循环控制</h3><h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for 变量名 in 参数1 参数2 ... 参数n</div><div class="line">do</div><div class="line">    n个命令行</div><div class="line">done</div></pre></td></tr></table></figure>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">while 条件命令串</div><div class="line">do</div><div class="line">    n个命令行</div><div class="line">done</div></pre></td></tr></table></figure>
+<h4 id="until循环"><a href="#until循环" class="headerlink" title="until循环"></a>until循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">until 条件命令串</div><div class="line">do</div><div class="line">    n个命令行</div><div class="line">dong</div></pre></td></tr></table></figure>
+<h3 id="7-3-Shell脚本中的函数"><a href="#7-3-Shell脚本中的函数" class="headerlink" title="7.3 Shell脚本中的函数"></a>7.3 Shell脚本中的函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//函数定义格式</div><div class="line">functionname()&#123;</div><div class="line">    命令行1</div><div class="line">    ...</div><div class="line">    命令行n;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//函数调用格式</div><div class="line">functionname 参数1 参数2...</div></pre></td></tr></table></figure>
 
       
 
@@ -414,11 +418,23 @@ Shell脚本不用编译，编写好后就可以直接运行
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -427,10 +443,6 @@ Shell脚本不用编译，编写好后就可以直接运行
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,15 +458,15 @@ Shell脚本不用编译，编写好后就可以直接运行
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UWP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,23 +486,15 @@ Shell脚本不用编译，编写好后就可以直接运行
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UWP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">arukas</a>
+                <a href="javascript:void(0)" class="js-tag color4">ADB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,7 +502,7 @@ Shell脚本不用编译，编写好后就可以直接运行
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ADB</a>
+                <a href="javascript:void(0)" class="js-tag color2">arukas</a>
               </li>
             
             <div class="clearfix"></div>
